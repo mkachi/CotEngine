@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="include\CotEngine.h" />
+    <ClInclude Include="include\base\CotType.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotDefine.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotRule.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotTime.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotApplication.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotStringUtility.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{b4179c9f-0c2e-4ee6-900c-2b215cdbbe1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CotTime.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotApplication.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
