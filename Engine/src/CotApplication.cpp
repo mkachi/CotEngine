@@ -1,6 +1,7 @@
 #include "base/CotApplication.h"
 #include "base/CotSceneManager.h"
 #include "render/CotDx9Device.h"
+#include "render/CotDx9Renderer2D.h"
 
 namespace Cot
 {
@@ -29,7 +30,7 @@ namespace Cot
 		{
 			return false;
 		}
-		_graphics->AddRenderer(nullptr);
+		_graphics->AddRenderer(new Dx9Renderer2D());
 
 		return true;
 	}

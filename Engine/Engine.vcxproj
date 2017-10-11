@@ -33,6 +33,7 @@
     <ClInclude Include="include\render\CotIGraphics.h" />
     <ClInclude Include="include\render\CotIRenderer.h" />
     <ClInclude Include="include\render\CotDx9Device.h" />
+    <ClInclude Include="include\render\CotDx9Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />
+    <ClCompile Include="src\CotDx9Renderer2D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

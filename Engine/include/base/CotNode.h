@@ -30,5 +30,7 @@ namespace Cot
 		void SetName(const string& name);
 		string GetName() { return _name; }
 
+		virtual void Update();
+
 	};
 }

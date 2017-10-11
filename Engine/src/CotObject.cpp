@@ -2,5 +2,19 @@
 
 namespace Cot
 {
+	Object::Object()
+	{	}
 
+	Object::~Object()
+	{	}
+
+	void Object::SetActive(bool active)
+	{
+		_active = active;
+	}
+
+	void Object::Update()
+	{
+		Node::Update();
+	}
 }

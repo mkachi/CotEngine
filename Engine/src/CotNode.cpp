@@ -60,4 +60,12 @@ namespace Cot
 	{
 		_name = name;
 	}
+
+	void Node::Update()
+	{	
+		for (auto& child : _children)
+		{
+			child->Update();
+		}
+	}
 }

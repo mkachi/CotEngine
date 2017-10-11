@@ -1,5 +1,7 @@
 #include "DemoScene.h"
 
+using namespace Cot;
+
 bool DemoScene::Init()
 {
 	return true;
@@ -7,4 +9,5 @@ bool DemoScene::Init()
 
 void DemoScene::Update(Cot::Time& time)
 {
+	Node::Update();
 }

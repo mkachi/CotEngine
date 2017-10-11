@@ -41,6 +41,9 @@
     <ClInclude Include="include\base\object\CotObject.h">
       <Filter>Base\Object</Filter>
     </ClInclude>
+    <ClInclude Include="include\render\CotDx9Renderer2D.h">
+      <Filter>Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="src\CotObject.cpp">
       <Filter>Base\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotDx9Renderer2D.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
