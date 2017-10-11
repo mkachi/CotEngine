@@ -30,6 +30,16 @@
     <ClInclude Include="include\base\CotNode.h" />
     <ClInclude Include="include\base\object\CotObject.h" />
     <ClInclude Include="include\CotEngine.h" />
+    <ClInclude Include="include\math\CotColor.h" />
+    <ClInclude Include="include\math\CotColor32.h" />
+    <ClInclude Include="include\math\CotGeometry.h" />
+    <ClInclude Include="include\math\CotMat4.h" />
+    <ClInclude Include="include\math\CotMath.h" />
+    <ClInclude Include="include\math\CotMathFunc.h" />
+    <ClInclude Include="include\math\CotQuaternion.h" />
+    <ClInclude Include="include\math\CotVec2.h" />
+    <ClInclude Include="include\math\CotVec3.h" />
+    <ClInclude Include="include\math\CotVec4.h" />
     <ClInclude Include="include\render\CotIGraphics.h" />
     <ClInclude Include="include\render\CotIRenderer.h" />
     <ClInclude Include="include\render\CotDx9Device.h" />
@@ -37,12 +47,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
+    <ClCompile Include="src\CotColor.cpp" />
+    <ClCompile Include="src\CotColor32.cpp" />
+    <ClCompile Include="src\CotGeometry.cpp" />
+    <ClCompile Include="src\CotMat4.cpp" />
+    <ClCompile Include="src\CotMathFunc.cpp" />
     <ClCompile Include="src\CotNode.cpp" />
     <ClCompile Include="src\CotObject.cpp" />
+    <ClCompile Include="src\CotQuaternion.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />
     <ClCompile Include="src\CotDx9Renderer2D.cpp" />
+    <ClCompile Include="src\CotVec2.cpp" />
+    <ClCompile Include="src\CotVec3.cpp" />
+    <ClCompile Include="src\CotVec4.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -44,6 +44,36 @@
     <ClInclude Include="include\render\CotDx9Renderer2D.h">
       <Filter>Render</Filter>
     </ClInclude>
+    <ClInclude Include="include\math\CotMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotMathFunc.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotVec2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotVec3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotVec4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotColor.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotColor32.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotGeometry.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\math\CotMat4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -54,6 +84,9 @@
     </Filter>
     <Filter Include="Base\Object">
       <UniqueIdentifier>{2ab5c590-7b35-4d8e-99e4-9a958934e817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{db6efc22-21b7-4757-8e9a-ef4f21965888}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +110,33 @@
     </ClCompile>
     <ClCompile Include="src\CotDx9Renderer2D.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotColor.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotColor32.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotQuaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotMat4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotVec3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotVec4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotMathFunc.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotGeometry.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotVec2.cpp">
+      <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

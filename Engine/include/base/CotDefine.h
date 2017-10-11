@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cassert>
+
 #define COT_SINGLETON_H(_CLASS_) \
 private: \
 	_CLASS_() {} \
@@ -30,6 +32,12 @@ public: \
 	virtual ~_CLASS_() {}
 
 #define COT_DEFAULT_CASE default: break
+
+#ifdef _DEBUG
+#define COT_ASSERT(_IF_, _MESSAGE_) if (_IF_) { assert(0); }
+#else
+#define COT_ASSERT(_IF_, _MESSAGE_)
+#endif
 
 #ifdef COT_EXPORTS
 #define COT_API __declspec(dllexport)
