@@ -77,6 +77,18 @@
     <ClInclude Include="include\math\CotGL2DX.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="include\audio\CotOpenAL.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\audio\CotIDecoder.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\audio\CotWavDecoder.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\audio\CotOggDecoder.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -146,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="src\CotGL2DX.cpp">
       <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotWavDecoder.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotOggDecoder.cpp">
+      <Filter>Audio</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
