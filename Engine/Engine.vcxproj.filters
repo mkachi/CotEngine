@@ -74,6 +74,9 @@
     <ClInclude Include="include\math\CotMat4.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="include\math\CotGL2DX.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -136,6 +139,9 @@
       <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="src\CotVec2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotGL2DX.cpp">
       <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>

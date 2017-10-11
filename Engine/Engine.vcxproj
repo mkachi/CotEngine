@@ -33,6 +33,7 @@
     <ClInclude Include="include\math\CotColor.h" />
     <ClInclude Include="include\math\CotColor32.h" />
     <ClInclude Include="include\math\CotGeometry.h" />
+    <ClInclude Include="include\math\CotGL2DX.h" />
     <ClInclude Include="include\math\CotMat4.h" />
     <ClInclude Include="include\math\CotMath.h" />
     <ClInclude Include="include\math\CotMathFunc.h" />
@@ -50,6 +51,7 @@
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />
+    <ClCompile Include="src\CotGL2DX.cpp" />
     <ClCompile Include="src\CotMat4.cpp" />
     <ClCompile Include="src\CotMathFunc.cpp" />
     <ClCompile Include="src\CotNode.cpp" />
