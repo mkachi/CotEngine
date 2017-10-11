@@ -4,10 +4,21 @@
     <Filter Include="Main">
       <UniqueIdentifier>{48103fdb-1183-44f7-9c17-14092daa3146}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DemoScene">
+      <UniqueIdentifier>{05ff2afa-8b39-433f-a65c-ba58a8ff88fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DemoScene.cpp">
+      <Filter>DemoScene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\DemoScene.h">
+      <Filter>DemoScene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,74 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\CotEngine\\Build\Intermediates\Win32_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  CotTime.cpp
-d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-d:\git\cotengine\engine\src\cottime.cpp(17): warning C4244: '=': '__int64'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  CotSceneManager.cpp
-d:\git\cotengine\engine\include\base\cotnode.h(11): warning C4251: 'Cot::Node::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotnode.h(13): warning C4251: 'Cot::Node::_children': class 'std::vector<Cot::Node *,std::allocator<_Ty>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-  d:\git\cotengine\engine\include\base\cotnode.h(13): note: 'std::vector<Cot::Node *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::IScene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::IScene *
-          ]
-  d:\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::IScene *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::IScene *
-          ]
-  CotObject.cpp
-d:\git\cotengine\engine\include\base\cotnode.h(11): warning C4251: 'Cot::Node::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotnode.h(13): warning C4251: 'Cot::Node::_children': class 'std::vector<Cot::Node *,std::allocator<_Ty>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-  d:\git\cotengine\engine\include\base\cotnode.h(13): note: 'std::vector<Cot::Node *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-  CotNode.cpp
-d:\git\cotengine\engine\include\base\cotnode.h(11): warning C4251: 'Cot::Node::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotnode.h(13): warning C4251: 'Cot::Node::_children': class 'std::vector<Cot::Node *,std::allocator<_Ty>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-  d:\git\cotengine\engine\include\base\cotnode.h(13): note: 'std::vector<Cot::Node *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::Node *
-          ]
-  CotDx9Device.cpp
-d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
-  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
   CotApplication.cpp
 d:\git\cotengine\engine\include\base\cotnode.h(11): warning C4251: 'Cot::Node::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
@@ -108,7 +38,5 @@ d:\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot:
           [
               _Ty=Cot::IScene *
           ]
-  코드를 생성하고 있습니다...
-     D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.lib 라이브러리 및 D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.exp 개체를 생성하고 있습니다.
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.dll
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.pdb (Partial PDB)

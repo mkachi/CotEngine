@@ -74,28 +74,28 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -167,12 +167,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\DemoScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
       <Project>{a40bc379-08c7-4ac0-b37e-bc5072104928}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\DemoScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

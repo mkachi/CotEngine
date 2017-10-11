@@ -109,6 +109,7 @@ namespace Cot
 
 	void Application::Destroy()
 	{
+		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
