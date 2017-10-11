@@ -271,7 +271,7 @@ namespace Cot
 	Mat4 Mat4::Perspective(float fov, float aspectRatio, float near, float far)
 	{
 		Mat4 result = Mat4::Identity;
-		float q = 1.0f / tan(Math::ToRad(0.5f * fov));
+		float q = 1.0f / tan(ToRad(0.5f * fov));
 		float a = q / aspectRatio;
 
 		float b = (near + far) / (near - far);

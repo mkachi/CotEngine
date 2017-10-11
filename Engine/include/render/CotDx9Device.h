@@ -21,5 +21,7 @@ namespace Cot
 		void Destroy() override;
 		void Render() override;
 
+		IDirect3DDevice9* GetDevice() { return _device; }
+
 	};
 }

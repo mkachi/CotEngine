@@ -30,7 +30,9 @@ namespace Cot
 		{
 			return false;
 		}
-		_graphics->AddRenderer(new Dx9Renderer2D());
+		_graphics->AddRenderer(
+			new Dx9Renderer2D(static_cast<Dx9Device*>(_graphics)->GetDevice())
+		);
 
 		return true;
 	}

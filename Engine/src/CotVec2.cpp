@@ -246,4 +246,4 @@ namespace Cot
 
 	const Vec2 Vec2::AxisX	( 1.0f,  0.0f);
 	const Vec2 Vec2::AxisY	( 0.0f,  1.0f);
-}}
+}

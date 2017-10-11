@@ -330,4 +330,4 @@ namespace Cot
 	const Vec3 Vec3::AxisX	( 1.0f,  0.0f,  0.0f);
 	const Vec3 Vec3::AxisY	( 0.0f,  1.0f,  0.0f);
 	const Vec3 Vec3::AxisZ	( 0.0f,  0.0f,  1.0f);
-}}
+}

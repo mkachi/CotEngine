@@ -91,6 +91,9 @@
     <Filter Include="Math">
       <UniqueIdentifier>{db6efc22-21b7-4757-8e9a-ef4f21965888}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{23ddd9be-1ded-433e-ae83-87516f061bfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotTime.cpp">

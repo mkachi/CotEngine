@@ -10,7 +10,9 @@ namespace Cot
 	}
 
 	Dx9Renderer2D::~Dx9Renderer2D()
-	{	}
+	{
+		SafeRelease(_sprite);
+	}
 
 	void Dx9Renderer2D::Draw()
 	{
