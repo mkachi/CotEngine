@@ -1,6 +1,6 @@
 #pragma once
 
-#define SINGLETON_H(_CLASS_) \
+#define COT_SINGLETON_H(_CLASS_) \
 private: \
 	_CLASS_(); \
 	~_CLASS_(); \
@@ -8,7 +8,7 @@ public: \
 	static _CLASS_& GetInstance(); \
 	static void Destroy()
 
-#define SINGLETON_CPP(_CLASS_) \
+#define COT_SINGLETON_CPP(_CLASS_) \
 	static _CLASS_* _instance = nullptr; \
 	_CLASS_& _CLASS_::GetInstance() \
 	{ \
@@ -23,13 +23,13 @@ public: \
 		SafeDelete(_instance); \
 	}
 
-#define INTERFACE(_CLASS_) \
+#define COT_INTERFACE(_CLASS_) \
 protected: \
 	_CLASS_() {} \
 public: \
 	virtual ~_CLASS_() {}
 
-#define DEFAULT_CASE default: break
+#define COT_DEFAULT_CASE default: break
 
 #ifdef COT_EXPORTS
 #define COT_API __declspec(dllexport)
@@ -54,6 +54,15 @@ namespace Cot
 		if (obj != nullptr)
 		{
 			delete[] obj;
+			obj = nullptr;
+		}
+	}
+	template <typename T>
+	COT_API inline void SafeRelease(T*& obj)
+	{
+		if (obj != nullptr)
+		{
+			obj->Release();
 			obj = nullptr;
 		}
 	}

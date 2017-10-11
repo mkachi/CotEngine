@@ -20,10 +20,22 @@
     <ClInclude Include="include\base\CotStringUtility.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="include\render\CotIGraphics.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render\CotIRenderer.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render\CotDx9Device.h">
+      <Filter>Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
       <UniqueIdentifier>{b4179c9f-0c2e-4ee6-900c-2b215cdbbe1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{01824e70-87b1-4642-a352-c226e58065e8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="src\CotApplication.cpp">
       <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotDx9Device.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

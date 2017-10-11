@@ -1,8 +1,11 @@
 #include "base/CotApplication.h"
+#include "render/CotDx9Device.h"
+#include "base/CotTime.h"
 
 namespace Cot
 {
 	Application::Application()
+		: _graphics(nullptr)
 	{	}
 
 	Application::~Application()
@@ -17,6 +20,18 @@ namespace Cot
 			return 0;
 		}
 		return DefWindowProc(hWnd, msg, wParam, lParam);
+	}
+
+	bool Application::InitGraphcis()
+	{
+		_graphics = new Dx9Device();
+		if (!_graphics->Init(_wnd))
+		{
+			return false;
+		}
+		_graphics->AddRenderer(nullptr);
+
+		return true;
 	}
 
 	bool Application::Init(HINSTANCE instance, const string& title, int width, int height, bool fullScreen)
@@ -56,6 +71,12 @@ namespace Cot
 			return false;
 		}
 
+		if (!InitGraphcis())
+		{
+			MessageBox(NULL, L"Cannot create graphics device.", L"Error", MB_OK);
+			return false;
+		}
+
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);
 
@@ -64,6 +85,7 @@ namespace Cot
 
 	void Application::Run()
 	{
+		Time time;
 		MSG msg;
 		ZeroMemory(&msg, sizeof(msg));
 		while (msg.message != WM_QUIT)
@@ -75,14 +97,16 @@ namespace Cot
 			}
 			else
 			{
+				time.Tick();
 				// Update
-				// Render
+				_graphics->Render();
 			}
 		}
 	}
 
 	void Application::Destroy()
 	{
+		_graphics->Destroy();
 		DestroyWindow(_wnd);
 		UnregisterClass(_title.c_str(), _instance);
 	}

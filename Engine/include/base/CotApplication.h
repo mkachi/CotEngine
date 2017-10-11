@@ -1,7 +1,8 @@
 #pragma once
 
-#include <Windows.h>
 #include "CotRule.h"
+#include "render/CotIGraphics.h"
+#include <Windows.h>
 
 namespace Cot
 {
@@ -11,8 +12,11 @@ namespace Cot
 		HWND		_wnd;
 		HINSTANCE	_instance;
 		wstring		_title;
+		IGraphics*	_graphics;
 
 		static LRESULT CALLBACK MsgProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+		bool InitGraphcis();
 
 	public:
 		Application();
