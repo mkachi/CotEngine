@@ -1,6 +1,6 @@
 #include "base/CotApplication.h"
+#include "base/CotSceneManager.h"
 #include "render/CotDx9Device.h"
-#include "base/CotTime.h"
 
 namespace Cot
 {
@@ -83,8 +83,11 @@ namespace Cot
 		return true;
 	}
 
-	void Application::Run()
+	void Application::RunWithScene(IScene* scene)
 	{
+		SceneManager& sceneManager = SceneManager::GetInstance();
+		sceneManager.LoadScene(scene);
+
 		Time time;
 		MSG msg;
 		ZeroMemory(&msg, sizeof(msg));
@@ -98,7 +101,7 @@ namespace Cot
 			else
 			{
 				time.Tick();
-				// Update
+				sceneManager.Update(time);
 				_graphics->Render();
 			}
 		}
@@ -106,6 +109,7 @@ namespace Cot
 
 	void Application::Destroy()
 	{
+		SceneManager::Destroy();
 		_graphics->Destroy();
 		DestroyWindow(_wnd);
 		UnregisterClass(_title.c_str(), _instance);

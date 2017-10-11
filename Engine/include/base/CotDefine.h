@@ -2,9 +2,9 @@
 
 #define COT_SINGLETON_H(_CLASS_) \
 private: \
-	_CLASS_(); \
-	~_CLASS_(); \
+	_CLASS_() {} \
 public: \
+	~_CLASS_() {} \
 	static _CLASS_& GetInstance(); \
 	static void Destroy()
 
@@ -16,7 +16,7 @@ public: \
 		{ \
 			_instance = new _CLASS_(); \
 		} \
-		return (*_instance); \
+		return *_instance; \
 	} \
 	void _CLASS_::Destroy() \
 	{ \

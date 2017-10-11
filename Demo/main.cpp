@@ -1,5 +1,4 @@
 #include <crtdbg.h>
-#include <tchar.h>
 #include <CotEngine.h>
 
 int WINAPI WinMain(HINSTANCE hInsetance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
@@ -11,7 +10,7 @@ int WINAPI WinMain(HINSTANCE hInsetance, HINSTANCE hPrevInstance, LPSTR lpszCmdP
 	Cot::Application app;
 	if (app.Init(hInsetance, "Test", 800, 600, false))
 	{
-		app.Run();
+		app.RunWithScene(nullptr);
 	}
 	app.Destroy();
 	

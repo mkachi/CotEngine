@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CotRule.h"
+#include "CotIScene.h"
 #include "render/CotIGraphics.h"
 #include <Windows.h>
 
@@ -23,7 +24,7 @@ namespace Cot
 		~Application();
 
 		bool Init(HINSTANCE instance, const string& title, int width, int height, bool fullScreen);
-		void Run();
+		void RunWithScene(IScene* scene);
 		void Destroy();
 
 	};

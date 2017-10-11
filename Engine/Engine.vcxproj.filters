@@ -29,6 +29,18 @@
     <ClInclude Include="include\render\CotDx9Device.h">
       <Filter>Render</Filter>
     </ClInclude>
+    <ClInclude Include="include\base\CotSceneManager.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotNode.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotIScene.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\object\CotObject.h">
+      <Filter>Base\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -36,6 +48,9 @@
     </Filter>
     <Filter Include="Render">
       <UniqueIdentifier>{01824e70-87b1-4642-a352-c226e58065e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Object">
+      <UniqueIdentifier>{2ab5c590-7b35-4d8e-99e4-9a958934e817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +62,12 @@
     </ClCompile>
     <ClCompile Include="src\CotDx9Device.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotNode.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotSceneManager.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
