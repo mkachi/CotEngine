@@ -75,6 +75,10 @@ namespace Cot
 
 	void Object::Update()
 	{
+		if (!_active)
+		{
+			return;
+		}
 		Node::Update();
 	}
 }

@@ -17,9 +17,6 @@ namespace Cot
 		Node(const string& name);
 		virtual ~Node();
 
-		void SetParent(Node* parent);
-		Node* GetParent() { return _parent; }
-
 		void AddChild(Node* child);
 		std::vector<Node*>& GetChildren() { return _children; }
 
@@ -29,6 +26,9 @@ namespace Cot
 
 		void SetName(const string& name);
 		string GetName() { return _name; }
+
+		void SetParent(Node* parent);
+		virtual Node* GetParent() { return _parent; }
 
 		virtual void Update();
 

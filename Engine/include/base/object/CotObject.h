@@ -39,6 +39,8 @@ namespace Cot
 		void SetActive(bool active);
 		bool IsActive() { return _active; }
 
+		virtual Object* GetParent() { return static_cast<Object*>(_parent); }
+
 		virtual void Update();
 
 	};
