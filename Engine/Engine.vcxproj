@@ -37,6 +37,7 @@
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
     <ClCompile Include="src\CotNode.cpp" />
+    <ClCompile Include="src\CotObject.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />

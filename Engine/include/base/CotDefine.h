@@ -66,4 +66,14 @@ namespace Cot
 			obj = nullptr;
 		}
 	}
+	template <typename T>
+	COT_API inline void SafeDestroy(T*& obj)
+	{
+		if (obj != nullptr)
+		{
+			obj->Destroy();
+			delete obj;
+			obj = nullptr;
+		}
+	}
 }

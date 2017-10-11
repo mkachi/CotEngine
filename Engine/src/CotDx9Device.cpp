@@ -75,7 +75,7 @@ namespace Cot
 
 	void Dx9Device::Render()
 	{
-		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(255, 0, 0), 1.0f, 0);
+		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
 		_device->BeginScene();
 		for (auto& renderer : _renderers)
 		{

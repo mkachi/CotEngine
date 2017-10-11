@@ -110,7 +110,7 @@ namespace Cot
 	void Application::Destroy()
 	{
 		SceneManager::Destroy();
-		_graphics->Destroy();
+		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
 		UnregisterClass(_title.c_str(), _instance);
 	}
