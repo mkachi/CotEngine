@@ -38,9 +38,6 @@
     <ClInclude Include="include\base\CotIScene.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="include\base\object\CotObject.h">
-      <Filter>Base\Object</Filter>
-    </ClInclude>
     <ClInclude Include="include\render\CotDx9Renderer2D.h">
       <Filter>Render</Filter>
     </ClInclude>
@@ -89,6 +86,9 @@
     <ClInclude Include="include\audio\CotOggDecoder.h">
       <Filter>Audio</Filter>
     </ClInclude>
+    <ClInclude Include="include\base\CotEntity.h">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -97,14 +97,14 @@
     <Filter Include="Render">
       <UniqueIdentifier>{01824e70-87b1-4642-a352-c226e58065e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Base\Object">
-      <UniqueIdentifier>{2ab5c590-7b35-4d8e-99e4-9a958934e817}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Math">
       <UniqueIdentifier>{db6efc22-21b7-4757-8e9a-ef4f21965888}</UniqueIdentifier>
     </Filter>
     <Filter Include="Audio">
       <UniqueIdentifier>{23ddd9be-1ded-433e-ae83-87516f061bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{6e4b00ca-6f1c-47c1-a8e7-9495c58066d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="src\CotSceneManager.cpp">
       <Filter>Base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CotObject.cpp">
-      <Filter>Base\Object</Filter>
     </ClCompile>
     <ClCompile Include="src\CotDx9Renderer2D.cpp">
       <Filter>Render</Filter>
@@ -164,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="src\CotOggDecoder.cpp">
       <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotEntity.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
