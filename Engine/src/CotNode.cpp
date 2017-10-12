@@ -18,6 +18,30 @@ namespace Cot
 		RemoveAllChild();
 	}
 
+	void Node::CreateBroadCastProtocol()
+	{
+		if (_broadCastProtocol == nullptr)
+		{
+			_broadCastProtocol = new BroadCastProtocol();
+		}
+	}
+
+	void Node::SendMessage(const string& function)
+	{
+		COT_ASSERT(_broadCastProtocol == nullptr, "_broadCastProtocol is nullptr.");
+		_broadCastProtocol->Invoke(function);
+	}
+
+	void Node::BroadCastMessage(const string& function)
+	{
+		COT_ASSERT(_broadCastProtocol == nullptr, "_broadCastProtocol is nullptr.");
+		_broadCastProtocol->Invoke(function);
+		for (auto& child : _children)
+		{
+			child->BroadCastMessage(function);
+		}
+	}
+
 	void Node::SetParent(Node* parent)
 	{
 		_parent = parent;

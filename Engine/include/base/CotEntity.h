@@ -2,6 +2,7 @@
 
 #include "base/CotNode.h"
 #include "math/CotMath.h"
+#include "CotBroadCastProtocol.h"
 
 namespace Cot
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CotRule.h"
+#include "CotBroadCastProtocol.h"
 #include <vector>
 
 namespace Cot
@@ -11,11 +11,16 @@ namespace Cot
 		string		_name;
 		Node*		_parent;
 		std::vector<Node*> _children;
+		BroadCastProtocol* _broadCastProtocol;
 
 	public:
 		Node();
 		Node(const string& name);
 		virtual ~Node();
+
+		void CreateBroadCastProtocol();
+		void SendMessage(const string& function);
+		void BroadCastMessage(const string& function);
 
 		void AddChild(Node* child);
 		std::vector<Node*>& GetChildren() { return _children; }
