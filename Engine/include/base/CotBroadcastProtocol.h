@@ -28,8 +28,8 @@ namespace Cot
 		std::unordered_map<string, CallBack*> _functions;
 
 	public:
-		BroadCastProtocol() {}
-		~BroadCastProtocol() {}
+		BroadCastProtocol();
+		~BroadCastProtocol();
 
 		void Add(const string& name, const Function& function);
 		void Invoke(const string& function);

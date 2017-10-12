@@ -2,6 +2,17 @@
 
 namespace Cot
 {
+	BroadCastProtocol::BroadCastProtocol()
+	{	}
+
+	BroadCastProtocol::~BroadCastProtocol()
+	{
+		for (auto& func : _functions)
+		{
+			SafeDelete(func.second);
+		}
+	}
+
 	void BroadCastProtocol::Add(const string& name, const Function& function)
 	{
 		auto iter = _functions.find(name);
