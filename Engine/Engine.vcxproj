@@ -27,6 +27,7 @@
     <ClInclude Include="include\base\CotDefine.h" />
     <ClInclude Include="include\base\CotEntity.h" />
     <ClInclude Include="include\base\CotIScene.h" />
+    <ClInclude Include="include\base\CotReciveProtocol.h" />
     <ClInclude Include="include\base\CotRule.h" />
     <ClInclude Include="include\base\CotSceneManager.h" />
     <ClInclude Include="include\base\CotStringUtility.h" />
@@ -63,6 +64,7 @@
     <ClCompile Include="src\CotNode.cpp" />
     <ClCompile Include="src\CotOggDecoder.cpp" />
     <ClCompile Include="src\CotQuaternion.cpp" />
+    <ClCompile Include="src\CotReciveProtocol.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />

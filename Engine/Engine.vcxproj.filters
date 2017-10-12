@@ -92,6 +92,9 @@
     <ClInclude Include="include\component\CotIComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="include\base\CotReciveProtocol.h">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -166,6 +169,9 @@
       <Filter>Audio</Filter>
     </ClCompile>
     <ClCompile Include="src\CotEntity.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotReciveProtocol.cpp">
       <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
