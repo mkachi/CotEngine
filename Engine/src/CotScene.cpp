@@ -1,0 +1,29 @@
+#include "base/CotScene.h"
+#include "base/CotEntity.h"
+
+namespace Cot
+{
+	Scene::Scene()
+	{	}
+
+	Scene::~Scene()
+	{	
+		for (auto& entity : _entitys)
+		{
+			SafeDelete(entity);
+		}
+	}
+
+	void Scene::Update(Time& time)
+	{
+		for (auto& entity : _entitys)
+		{
+			entity->Update(time);
+		}
+	}
+
+	void Scene::AddEntity(Entity* entity)
+	{
+		_entitys.push_back(entity);
+	}
+}

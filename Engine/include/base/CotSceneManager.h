@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CotIScene.h"
+#include "CotScene.h"
 #include <stack>
 
 namespace Cot
@@ -9,11 +9,11 @@ namespace Cot
 	{
 		COT_SINGLETON_H(SceneManager);
 	private:
-		std::vector<IScene*> _scenes;
+		std::vector<Scene*> _scenes;
 
 	public:
-		void LoadScene(IScene* scene);
-		void AddScene(IScene* scene);
+		void LoadScene(Scene* scene);
+		void AddScene(Scene* scene);
 		void Update(Time& time);
 
 		void DestroyAllScene();

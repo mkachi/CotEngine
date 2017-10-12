@@ -1,49 +1,172 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\CotEngine\\Build\Intermediates\Win32_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  CotApplication.cpp
-d:\git\cotengine\engine\include\base\cotnode.h(11): warning C4251: 'Cot::Node::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(\\Mac\Home\Documents\Git\CotEngine\\Build\Intermediates\Win32_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  CotDx9Renderer2D.cpp
+\\mac\home\documents\git\cotengine\engine\include\render\cotdx9renderer2d.h(4): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CotDx9Device.cpp
+\\mac\home\documents\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\render\cotdx9device.h(4): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CotSceneManager.cpp
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::Scene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::Scene *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+  CotScene.cpp
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cotentity.h(13): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotnode.h(13): warning C4251: 'Cot::Node::_children': class 'std::vector<Cot::Node *,std::allocator<_Ty>>'에서는 class 'Cot::Node'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+\\mac\home\documents\git\cotengine\engine\include\base\cotentity.h(19): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
           [
-              _Ty=Cot::Node *
+              _Ty=Cot::Entity *
           ]
-  d:\git\cotengine\engine\include\base\cotnode.h(13): note: 'std::vector<Cot::Node *,std::allocator<_Ty>>' 선언을 참조하십시오.
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
           with
           [
-              _Ty=Cot::Node *
+              _Ty=Cot::Entity *
           ]
-d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  CotEntity.cpp
+\\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cotentity.h(13): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cotentity.h(19): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotentity.h(19): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+\\mac\home\documents\git\cotengine\engine\src\cotentity.cpp(181): error C2561: 'Cot::Entity::GetLocalPosition': 함수는 값을 반환해야 합니다.
+  \\mac\home\documents\git\cotengine\engine\src\cotentity.cpp(176): note: 'Cot::Entity::GetLocalPosition' 선언을 참조하십시오.
+  CotGL2DX.cpp
+\\mac\home\documents\git\cotengine\engine\include\math\cotgl2dx.h(4): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  CotApplication.cpp
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+\\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+\\mac\home\documents\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
           [
               _Ty=Cot::IRenderer *
           ]
-  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+  \\mac\home\documents\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
           with
           [
               _Ty=Cot::IRenderer *
           ]
-d:\git\cotengine\engine\include\base\cotapplication.h(15): warning C4251: 'Cot::Application::_title': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Application'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+\\mac\home\documents\git\cotengine\engine\include\base\cotapplication.h(15): warning C4251: 'Cot::Application::_title': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Application'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::IScene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+\\mac\home\documents\git\cotengine\engine\include\base\cotapplication.h(27): error C2061: 구문 오류: 식별자 'IScene'
+\\mac\home\documents\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::Scene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
           [
-              _Ty=Cot::IScene *
+              _Ty=Cot::Scene *
           ]
-  d:\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::IScene *,std::allocator<_Ty>>' 선언을 참조하십시오.
+  \\mac\home\documents\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::Scene *,std::allocator<_Ty>>' 선언을 참조하십시오.
           with
           [
-              _Ty=Cot::IScene *
+              _Ty=Cot::Scene *
           ]
-d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
-     D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.lib 라이브러리 및 D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.exp 개체를 생성하고 있습니다.
-MSVCRTD.lib(initializers.obj) : warning LNK4098: 'libcmtd.lib' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
-CotApplication.obj : error LNK2001: "private: static float Cot::Time::_deltaTime" (?_deltaTime@Time@Cot@@0MA) 외부 기호를 확인할 수 없습니다.
-CotTime.obj : error LNK2001: "private: static float Cot::Time::_deltaTime" (?_deltaTime@Time@Cot@@0MA) 외부 기호를 확인할 수 없습니다.
-CotApplication.obj : error LNK2001: "private: static float Cot::Time::_timeScale" (?_timeScale@Time@Cot@@0MA) 외부 기호를 확인할 수 없습니다.
-CotTime.obj : error LNK2001: "private: static float Cot::Time::_timeScale" (?_timeScale@Time@Cot@@0MA) 외부 기호를 확인할 수 없습니다.
-CotTime.obj : error LNK2001: "private: static class std::chrono::time_point<struct std::chrono::steady_clock,class std::chrono::duration<__int64,struct std::ratio<1,1000000000> > > Cot::Time::_currentTime" (?_currentTime@Time@Cot@@0V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@A) 외부 기호를 확인할 수 없습니다.
-CotTime.obj : error LNK2001: "private: static class std::chrono::time_point<struct std::chrono::steady_clock,class std::chrono::duration<__int64,struct std::ratio<1,1000000000> > > Cot::Time::_lastTime" (?_lastTime@Time@Cot@@0V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@A) 외부 기호를 확인할 수 없습니다.
-D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.dll : fatal error LNK1120: 4개의 확인할 수 없는 외부 참조입니다.
+\\mac\home\documents\git\cotengine\engine\include\render\cotdx9device.h(4): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  코드를 생성하고 있습니다...

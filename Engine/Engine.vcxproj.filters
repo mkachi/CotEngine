@@ -32,12 +32,6 @@
     <ClInclude Include="include\base\CotSceneManager.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="include\base\CotNode.h">
-      <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="include\base\CotIScene.h">
-      <Filter>Base</Filter>
-    </ClInclude>
     <ClInclude Include="include\render\CotDx9Renderer2D.h">
       <Filter>Render</Filter>
     </ClInclude>
@@ -86,13 +80,16 @@
     <ClInclude Include="include\audio\CotOggDecoder.h">
       <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="include\base\CotEntity.h">
-      <Filter>Base</Filter>
-    </ClInclude>
     <ClInclude Include="include\component\CotIComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="include\base\CotReciveProtocol.h">
+    <ClInclude Include="include\base\CotBroadCastProtocol.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotEntity.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotScene.h">
       <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,9 +119,6 @@
     </ClCompile>
     <ClCompile Include="src\CotDx9Device.cpp">
       <Filter>Render</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CotNode.cpp">
-      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="src\CotSceneManager.cpp">
       <Filter>Base</Filter>
@@ -168,10 +162,13 @@
     <ClCompile Include="src\CotOggDecoder.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
+    <ClCompile Include="src\CotBroadCastProtocol.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
     <ClCompile Include="src\CotEntity.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="src\CotReciveProtocol.cpp">
+    <ClCompile Include="src\CotScene.cpp">
       <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>

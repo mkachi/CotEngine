@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <vector>
 
-#define COT_RECIVE(_FUNCTION_) #_FUNCTION_, _FUNCTION_
+#define COT_BROAD_CAST(_FUNCTION_) #_FUNCTION_, _FUNCTION_
 
 namespace Cot
 {

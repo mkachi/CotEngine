@@ -24,6 +24,11 @@ namespace Cot
 		}
 	}
 
+	void Entity::AddBroadCastListener(const string& name, const std::function<void()>& function)
+	{
+		_broadCastProtocol->Add(name, function);
+	}
+
 	void Entity::SendMessage(const string& function)
 	{
 		COT_ASSERT(_broadCastProtocol == nullptr, "_broadCastProtocol is nullptr.");
@@ -178,7 +183,6 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			return _position - _parent->_position;
-			return;
 		}
 		return _position;
 	}
@@ -268,7 +272,7 @@ namespace Cot
 		_active = active;
 	}
 
-	void Entity::Update()
+	void Entity::Update(Time& time)
 	{	
 		if (!_active)
 		{
@@ -277,7 +281,7 @@ namespace Cot
 
 		for (auto& child : _children)
 		{
-			child->Update();
+			child->Update(time);
 		}
 	}
 }

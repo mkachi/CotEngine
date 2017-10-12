@@ -86,7 +86,7 @@ namespace Cot
 		return true;
 	}
 
-	void Application::RunWithScene(IScene* scene)
+	void Application::RunWithScene(Scene* scene)
 	{
 		SceneManager& sceneManager = SceneManager::GetInstance();
 		sceneManager.LoadScene(scene);

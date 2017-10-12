@@ -2,6 +2,7 @@
 
 #include "CotBroadCastProtocol.h"
 #include "math/CotMath.h"
+#include "base/CotTime.h"
 #include <vector>
 
 namespace Cot
@@ -24,6 +25,7 @@ namespace Cot
 		virtual ~Entity();
 
 		void CreateBroadCastProtocol();
+		void AddBroadCastListener(const string& name, const std::function<void()>& function);
 		void SendMessage(const string& function);
 		void BroadCastMessage(const string& function);
 
@@ -73,7 +75,7 @@ namespace Cot
 		void SetActive(bool active);
 		bool IsActive() { return _active; }
 
-		virtual void Update();
+		virtual void Update(Time& time);
 
 	};
 }

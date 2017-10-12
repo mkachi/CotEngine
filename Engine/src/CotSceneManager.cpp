@@ -14,7 +14,7 @@ namespace Cot
 		_scenes.clear();
 	}
 
-	void SceneManager::LoadScene(IScene* scene)
+	void SceneManager::LoadScene(Scene* scene)
 	{
 		if (scene != nullptr)
 		{
@@ -28,7 +28,7 @@ namespace Cot
 		}
 	}
 
-	void SceneManager::AddScene(IScene* scene)
+	void SceneManager::AddScene(Scene* scene)
 	{
 		_scenes.push_back(scene);
 	}
