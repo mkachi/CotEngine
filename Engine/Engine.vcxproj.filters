@@ -89,6 +89,9 @@
     <ClInclude Include="include\base\CotEntity.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="include\component\CotIComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">

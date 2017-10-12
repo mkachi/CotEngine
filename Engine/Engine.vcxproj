@@ -33,6 +33,7 @@
     <ClInclude Include="include\base\CotTime.h" />
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotNode.h" />
+    <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\CotEngine.h" />
     <ClInclude Include="include\math\CotColor.h" />
     <ClInclude Include="include\math\CotColor32.h" />
