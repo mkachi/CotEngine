@@ -1,23 +1,44 @@
 #pragma once
 
-#include "base/CotNode.h"
-#include "math/CotMath.h"
 #include "CotBroadCastProtocol.h"
+#include "math/CotMath.h"
+#include <vector>
 
 namespace Cot
 {
 	class COT_API Entity
-		: public Node
 	{
 	protected:
-		bool	_active;
-		Vec3	_position;
-		Vec3	_rotate;
-		Vec3	_scale;
+		string		_name;
+		bool		_active;
+		Vec3		_position;
+		Vec3		_rotate;
+		Vec3		_scale;
+		Entity*		_parent;
+		std::vector<Entity*>	_children;
+		BroadCastProtocol*	_broadCastProtocol;
 
 	public:
-		Entity();
+		Entity() = delete;
+		Entity(const string& name);
 		virtual ~Entity();
+
+		void CreateBroadCastProtocol();
+		void SendMessage(const string& function);
+		void BroadCastMessage(const string& function);
+
+		void AddChild(Entity* child);
+		std::vector<Entity*>& GetChildren() { return _children; }
+
+		void RemoveChild(Entity* child);
+		void RemoveChildByName(const string& name);
+		void RemoveAllChild();
+
+		void SetName(const string& name);
+		string GetName() { return _name; }
+
+		void SetParent(Entity* parent);
+		Entity* GetParent() { return _parent; }
 
 		void SetPosition(const Vec3& position);
 		void SetPositionX(float x);
@@ -25,10 +46,7 @@ namespace Cot
 		void SetPositionZ(float z);
 		Vec3 GetPosition() { return _position; }
 
-		void SetRotate(const Vec3& rotate);
-		void SetRotateX(float x);
-		void SetRotateY(float y);
-		void SetRotateZ(float z);
+		void SetRotateAxis(float deg, const Vec3& axis);
 		Vec3 GetRotate() { return _rotate; }
 
 		void SetScale(const Vec3& scale);
@@ -37,10 +55,23 @@ namespace Cot
 		void SetScaleZ(float z);
 		Vec3 GetScale() { return _scale; }
 
+		void SetLocalPosition(const Vec3& position);
+		void SetLocalPositionX(float x);
+		void SetLocalPositionY(float y);
+		void SetLocalPositionZ(float z);
+		Vec3 GetLocalPosition();
+
+		void SetLocalRotateAxis(float deg, const Vec3& axis);
+		Vec3 GetLocalRotate();
+
+		void SetLocalScale(const Vec3& scale);
+		void SetLocalScaleX(float x);
+		void SetLocalScaleY(float y);
+		void SetLocalScaleZ(float z);
+		Vec3 GetLocalScale();
+
 		void SetActive(bool active);
 		bool IsActive() { return _active; }
-
-		virtual Entity* GetParent() { return static_cast<Entity*>(_parent); }
 
 		virtual void Update();
 
