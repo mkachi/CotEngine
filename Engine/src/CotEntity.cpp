@@ -9,6 +9,13 @@ namespace Cot
 
 	Entity::~Entity()
 	{	
+		for (int i = 0; i < _components.size(); ++i)
+		{
+			IComponent* temp = _components[i].second;
+			SafeDelete(temp);
+		}
+		_components.clear();
+
 		if (_parent != nullptr)
 		{
 			_parent->RemoveChild(this);

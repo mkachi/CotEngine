@@ -1,9 +1,9 @@
 #pragma once
 
 #include "CotBroadCastProtocol.h"
+#include "CotTime.h"
 #include "math/CotMath.h"
-#include "base/CotTime.h"
-#include <vector>
+#include "CotVectorMap.hpp"
 
 namespace Cot
 {
@@ -16,13 +16,47 @@ namespace Cot
 		Vec3		_rotate;
 		Vec3		_scale;
 		Entity*		_parent;
-		std::vector<Entity*>	_children;
-		BroadCastProtocol*	_broadCastProtocol;
+
+		std::vector<Entity*> _children;
+		BroadCastProtocol*	 _broadCastProtocol;
+		MultiVectorMap<string, class IComponent*> _components;
 
 	public:
 		Entity() = delete;
 		Entity(const string& name);
 		virtual ~Entity();
+
+		template <typename T>
+		inline T* AddComponent()
+		{
+			T* result = new T();
+			result->SetOwner(this);
+			_components.add(result->GetName(), result);
+			return result;
+		}
+
+		template <typename T>
+		inline void RemoveComponent()
+		{
+			string key = ComponentType<T>::GetType();
+			T* temp = static_cast<T*>(_components.find(key));
+			_components.remove(key);
+			SafeDelete(temp);
+		}
+
+		template <typename T>
+		inline T* GetComponent()
+		{
+			string key = ComponentType<T>::GetType();
+			return _components.find<T*>(key);
+		}
+
+		template <typename T>
+		inline std::vector<T*> GetComponents()
+		{
+			string key = ComponentType<T>::GetType();
+			return _components.finds<T*>(key);
+		}
 
 		void CreateBroadCastProtocol();
 		void AddBroadCastListener(const string& name, const std::function<void()>& function);

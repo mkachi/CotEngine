@@ -33,7 +33,11 @@
     <ClInclude Include="include\base\CotTime.h" />
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotEntity.h" />
+    <ClInclude Include="include\base\CotVectorMap.hpp" />
+    <ClInclude Include="include\cache\CotAsset.h" />
+    <ClInclude Include="include\cache\CotAssetManager.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
+    <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\CotEngine.h" />
     <ClInclude Include="include\math\CotColor.h" />
     <ClInclude Include="include\math\CotColor32.h" />
@@ -53,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
+    <ClCompile Include="src\CotAsset.cpp" />
+    <ClCompile Include="src\CotAssetManager.cpp" />
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />
@@ -65,6 +71,7 @@
     <ClCompile Include="src\CotBroadCastProtocol.cpp" />
     <ClCompile Include="src\CotScene.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
+    <ClCompile Include="src\CotSpriteRenderer.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />
     <ClCompile Include="src\CotDx9Renderer2D.cpp" />

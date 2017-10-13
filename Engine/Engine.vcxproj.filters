@@ -92,6 +92,18 @@
     <ClInclude Include="include\base\CotScene.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="include\base\CotVectorMap.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\component\CotSpriteRenderer.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cache\CotAssetManager.h">
+      <Filter>Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cache\CotAsset.h">
+      <Filter>Cache</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -108,6 +120,12 @@
     </Filter>
     <Filter Include="Component">
       <UniqueIdentifier>{6e4b00ca-6f1c-47c1-a8e7-9495c58066d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{48217712-9426-47ea-b8c9-1c50ff3ee491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cache">
+      <UniqueIdentifier>{edb9366a-0218-47c8-b85d-599b4ca04d0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +188,15 @@
     </ClCompile>
     <ClCompile Include="src\CotScene.cpp">
       <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotSpriteRenderer.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotAssetManager.cpp">
+      <Filter>Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotAsset.cpp">
+      <Filter>Cache</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

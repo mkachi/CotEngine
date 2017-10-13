@@ -45,6 +45,22 @@ public: \
 #define COT_API __declspec(dllimport)
 #endif
 
+template <typename T>
+struct COT_API ComponentType;
+
+#define Component(_TYPE_, ...) \
+class _TYPE_; \
+template <> \
+struct ComponentType<_TYPE_> \
+{ static constexpr const char* GetType() { return #_TYPE_; } }; \
+class __VA_ARGS__ _TYPE_ \
+	: public IComponent
+
+#define COT_COMPONENT(_CLASS_) \
+public: \
+_CLASS_() { _type = ComponentType<_CLASS_>::GetType(); } \
+virtual ~_CLASS_() {}
+
 namespace Cot 
 {
 	template <typename T>

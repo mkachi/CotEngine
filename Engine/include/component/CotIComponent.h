@@ -7,7 +7,7 @@ namespace Cot
 	class COT_API IComponent
 	{
 		COT_INTERFACE(IComponent);
-	private:
+	protected:
 		string _type;
 
 	public:
