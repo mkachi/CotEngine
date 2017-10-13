@@ -1,10 +1,18 @@
 #include "base/CotEntity.h"
+#include "component/CotIComponent.h"
 
 namespace Cot
 {
 	Entity::Entity(const string& name)
 		: _name(name)
 		, _broadCastProtocol(nullptr)
+		, _active(true)
+		, _world(Mat4::Identity)
+		, _dirty(true)
+		, _position(Vec3::Zero)
+		, _rotate(Vec3::Zero)
+		, _scale(Vec3::One)
+		, _parent(nullptr)
 	{	}
 
 	Entity::~Entity()
@@ -98,26 +106,31 @@ namespace Cot
 
 	void Entity::SetPosition(const Vec3& position)
 	{
+		_dirty = true;
 		_position = position;
 	}
 
 	void Entity::SetPositionX(float x)
 	{
+		_dirty = true;
 		_position.x = x;
 	}
 
 	void Entity::SetPositionY(float y)
 	{
+		_dirty = true;
 		_position.y = y;
 	}
 
 	void Entity::SetPositionZ(float z)
 	{
+		_dirty = true;
 		_position.z = z;
 	}
 
 	void Entity::SetRotateAxis(float deg, const Vec3& axis)
 	{
+		_dirty = true;
 		float r = deg;
 		if (r < 0.0f)
 		{
@@ -128,26 +141,31 @@ namespace Cot
 
 	void Entity::SetScale(const Vec3& scale)
 	{
+		_dirty = true;
 		_scale = scale;
 	}
 
 	void Entity::SetScaleX(float x)
 	{
+		_dirty = true;
 		_scale.x = x;
 	}
 
 	void Entity::SetScaleY(float y)
 	{
+		_dirty = true;
 		_scale.y = y;
 	}
 
 	void Entity::SetScaleZ(float z)
 	{
+		_dirty = true;
 		_scale.z = z;
 	}
 
 	void Entity::SetLocalPosition(const Vec3& position)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_position = position + _parent->_position;
@@ -158,6 +176,7 @@ namespace Cot
 
 	void Entity::SetLocalPositionX(float x)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_position.x = x + _parent->_position.x;
@@ -168,6 +187,7 @@ namespace Cot
 
 	void Entity::SetLocalPositionY(float y)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_position.y = y + _parent->_position.y;
@@ -178,6 +198,7 @@ namespace Cot
 
 	void Entity::SetLocalPositionZ(float z)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_position.z = z + _parent->_position.z;
@@ -197,6 +218,7 @@ namespace Cot
 
 	void Entity::SetLocalRotateAxis(float deg, const Vec3& axis)
 	{
+		_dirty = true;
 		float r = deg;
 		if (r < 0.0f)
 		{
@@ -222,6 +244,7 @@ namespace Cot
 
 	void Entity::SetLocalScale(const Vec3& scale)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_scale = _parent->_scale * scale;
@@ -232,6 +255,7 @@ namespace Cot
 
 	void Entity::SetLocalScaleX(float x)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_scale.x = _parent->_scale.x * x;
@@ -242,6 +266,7 @@ namespace Cot
 
 	void Entity::SetLocalScaleY(float y)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_scale.y = _parent->_scale.y * y;
@@ -252,6 +277,7 @@ namespace Cot
 
 	void Entity::SetLocalScaleZ(float z)
 	{
+		_dirty = true;
 		if (_parent != nullptr)
 		{
 			_scale.z = _parent->_scale.z * z;
@@ -275,6 +301,28 @@ namespace Cot
 		return _scale;
 	}
 
+	Mat4 Entity::GetWorldMatrix()
+	{
+		if (_dirty)
+		{
+			_world = Mat4::Identity;
+
+			if (_parent != nullptr)
+			{
+				_world = _parent->GetWorldMatrix();
+			}
+
+			_world *= Mat4::Translate(_position);
+			Quaternion quaternion = Quaternion::Identity;
+			quaternion.SetEuler(_rotate);
+			_world *= Mat4::Rotate(quaternion);
+			_world *= Mat4::Scale(_scale);
+
+			_dirty = false;
+		}
+		return _world;
+	}
+
 	void Entity::SetActive(bool active)
 	{
 		_active = active;
@@ -290,6 +338,15 @@ namespace Cot
 		for (auto& child : _children)
 		{
 			child->Update(time);
+		}
+
+		for (int i = 0; i < _components.size(); ++i)
+		{
+			IComponent* temp = _components[i].second;
+			if (temp->IsEnable())
+			{
+				temp->Update(time);
+			}
 		}
 	}
 }

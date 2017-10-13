@@ -8,6 +8,7 @@ namespace Cot
 	{
 	protected:
 		string	_key;
+		wstring	_wkey;
 		uint	_refCount;
 
 	public:

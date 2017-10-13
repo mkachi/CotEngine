@@ -10,7 +10,6 @@ namespace Cot
 	{
 	private:
 		IDirect3D9*			_d3d;
-		IDirect3DDevice9*	_device;
 
 	public:
 		Dx9Device();
@@ -21,7 +20,7 @@ namespace Cot
 		void Destroy() override;
 		void Render() override;
 
-		IDirect3DDevice9* GetDevice() { return _device; }
+		static IDirect3DDevice9* GetDevice();
 
 	};
 }

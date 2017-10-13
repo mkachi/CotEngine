@@ -74,29 +74,29 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;$(SolutionDir)Engine\include;$(SolutionDir)Classes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

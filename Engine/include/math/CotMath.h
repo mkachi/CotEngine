@@ -9,3 +9,4 @@
 #include "CotColor32.h"
 #include "CotGeometry.h"
 #include "CotMathFunc.h"
+#include "CotGL2DX.h"

@@ -11,4 +11,5 @@ namespace Cot
 	COT_API inline D3DXVECTOR3		ToDxMath(const Vec3& vec);
 	COT_API inline D3DXVECTOR4		ToDxMath(const Vec4& vec);
 	COT_API inline D3DXQUATERNION	ToDxMath(const Quaternion& quternion);
+	COT_API inline RECT				ToDxMath(const Rect& rect);
 }

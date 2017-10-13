@@ -98,11 +98,20 @@
     <ClInclude Include="include\component\CotSpriteRenderer.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="include\cache\CotAssetManager.h">
-      <Filter>Cache</Filter>
+    <ClInclude Include="include\asset\CotAudioClip.h">
+      <Filter>Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\cache\CotAsset.h">
-      <Filter>Cache</Filter>
+    <ClInclude Include="include\asset\CotAsset.h">
+      <Filter>Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\asset\CotTexture.h">
+      <Filter>Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\asset\CotAssetManager.h">
+      <Filter>Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render\CotRenderManager.h">
+      <Filter>Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,7 +133,7 @@
     <Filter Include="Editor">
       <UniqueIdentifier>{48217712-9426-47ea-b8c9-1c50ff3ee491}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Cache">
+    <Filter Include="Asset">
       <UniqueIdentifier>{edb9366a-0218-47c8-b85d-599b4ca04d0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -193,10 +202,22 @@
       <Filter>Component</Filter>
     </ClCompile>
     <ClCompile Include="src\CotAssetManager.cpp">
-      <Filter>Cache</Filter>
+      <Filter>Asset</Filter>
     </ClCompile>
     <ClCompile Include="src\CotAsset.cpp">
-      <Filter>Cache</Filter>
+      <Filter>Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotAudioClip.cpp">
+      <Filter>Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotTexture.cpp">
+      <Filter>Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotIComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotRenderManager.cpp">
+      <Filter>Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

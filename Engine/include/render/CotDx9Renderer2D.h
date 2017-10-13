@@ -10,11 +10,9 @@ namespace Cot
 	{
 	private:
 		ID3DXSprite*		_sprite;
-		IDirect3DDevice9*	_device;
 
 	public:
-		Dx9Renderer2D() = delete;
-		Dx9Renderer2D(IDirect3DDevice9* device);
+		Dx9Renderer2D();
 		virtual ~Dx9Renderer2D();
 
 		void Draw() override;

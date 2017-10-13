@@ -2,16 +2,21 @@
 
 #include "CotBroadCastProtocol.h"
 #include "CotTime.h"
-#include "math/CotMath.h"
 #include "CotVectorMap.hpp"
+#include "math/CotMath.h"
 
 namespace Cot
 {
+	class IComponent;
 	class COT_API Entity
 	{
 	protected:
 		string		_name;
 		bool		_active;
+
+		Mat4		_world;
+		bool		_dirty;
+
 		Vec3		_position;
 		Vec3		_rotate;
 		Vec3		_scale;
@@ -19,7 +24,7 @@ namespace Cot
 
 		std::vector<Entity*> _children;
 		BroadCastProtocol*	 _broadCastProtocol;
-		MultiVectorMap<string, class IComponent*> _components;
+		MultiVectorMap<string, IComponent*> _components;
 
 	public:
 		Entity() = delete;
@@ -27,16 +32,16 @@ namespace Cot
 		virtual ~Entity();
 
 		template <typename T>
-		inline T* AddComponent()
+		T* AddComponent()
 		{
 			T* result = new T();
 			result->SetOwner(this);
-			_components.add(result->GetName(), result);
+			_components.add(result->GetType(), result);
 			return result;
 		}
 
 		template <typename T>
-		inline void RemoveComponent()
+		void RemoveComponent()
 		{
 			string key = ComponentType<T>::GetType();
 			T* temp = static_cast<T*>(_components.find(key));
@@ -45,7 +50,7 @@ namespace Cot
 		}
 
 		template <typename T>
-		inline T* GetComponent()
+		T* GetComponent()
 		{
 			string key = ComponentType<T>::GetType();
 			return _components.find<T*>(key);
@@ -105,6 +110,8 @@ namespace Cot
 		void SetLocalScaleY(float y);
 		void SetLocalScaleZ(float z);
 		Vec3 GetLocalScale();
+
+		Mat4 GetWorldMatrix();
 
 		void SetActive(bool active);
 		bool IsActive() { return _active; }

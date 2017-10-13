@@ -1,10 +1,11 @@
 #include "render/CotDx9Device.h"
 
+static IDirect3DDevice9* _device = nullptr;
+
 namespace Cot
 {
 	Dx9Device::Dx9Device()
 		: _d3d(nullptr)
-		, _device(nullptr)
 	{	}
 
 	Dx9Device::~Dx9Device()
@@ -83,5 +84,9 @@ namespace Cot
 		}
 		_device->EndScene();
 		_device->Present(NULL, NULL, NULL, NULL);
+	}
+	IDirect3DDevice9* Dx9Device::GetDevice()
+	{
+		return _device;
 	}
 }

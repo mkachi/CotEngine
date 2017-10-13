@@ -4,9 +4,9 @@ using namespace Cot;
 
 bool DemoScene::Init()
 {
-	Entity* entity = new Entity("Test");
-	entity->CreateBroadCastProtocol();
-	entity->AddBroadCastListener(COT_BROAD_CAST(DemoScene::Test));
+	entity = new Entity("Test");
+	entity->AddComponent<SpriteRenderer>()->Init("Test.png");
+	this->AddEntity(entity);
 
 	return true;
 }

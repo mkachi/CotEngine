@@ -2,6 +2,7 @@
 #include "base/CotSceneManager.h"
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
+#include "asset/CotAudioClip.h"
 
 namespace Cot
 {
@@ -31,7 +32,7 @@ namespace Cot
 			return false;
 		}
 		_graphics->AddRenderer(
-			new Dx9Renderer2D(static_cast<Dx9Device*>(_graphics)->GetDevice())
+			new Dx9Renderer2D()
 		);
 
 		return true;
@@ -112,8 +113,11 @@ namespace Cot
 
 	void Application::Destroy()
 	{
+		DestroyAllDecoder();
+
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
+
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
 		UnregisterClass(_title.c_str(), _instance);

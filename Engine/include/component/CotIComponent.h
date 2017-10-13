@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/CotTime.h"
+#include "base/CotEntity.h"
 
 namespace Cot
 {
@@ -8,16 +8,24 @@ namespace Cot
 	{
 		COT_INTERFACE(IComponent);
 	protected:
-		string _type;
+		string		_type;
+		Entity*		_owner;
+		bool		_enable;
 
 	public:
+		string GetType() { return _type; }
+
+		void SetOwner(Entity* owner);
+		Entity* GetOwner() { return _owner; }
+
+		void SetEnable(bool enable);
+		bool IsEnable() { return _enable; }
+
 		virtual void OnEnable()			{}
 		virtual void Reset()			{}
 		virtual void Awake()			{}
 		virtual void Start()			{}
-		virtual void FixedUpdate()		{}
 		virtual void Update(Time& time)	{}
-		virtual void LateUpdate()		{}
 		virtual void OnDisable()		{}
 		virtual void OnDestroy()		{}
 	};

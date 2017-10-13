@@ -39,11 +39,13 @@ public: \
 #define COT_ASSERT(_IF_, _MESSAGE_)
 #endif
 
-#ifdef COT_EXPORTS
+#ifdef COT_EXPORTS1
 #define COT_API __declspec(dllexport)
 #else
-#define COT_API __declspec(dllimport)
+#define COT_API2 __declspec(dllimport)
 #endif
+
+#define COT_API __declspec(dllexport)
 
 template <typename T>
 struct COT_API ComponentType;
@@ -58,8 +60,8 @@ class __VA_ARGS__ _TYPE_ \
 
 #define COT_COMPONENT(_CLASS_) \
 public: \
-_CLASS_() { _type = ComponentType<_CLASS_>::GetType(); } \
-virtual ~_CLASS_() {}
+_CLASS_() { _type = #_CLASS_; _enable = true; Awake(); } \
+virtual ~_CLASS_() { OnDestroy(); }
 
 namespace Cot 
 {

@@ -19,6 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\asset\CotAsset.h" />
+    <ClInclude Include="include\asset\CotAssetManager.h" />
+    <ClInclude Include="include\asset\CotAudioClip.h" />
+    <ClInclude Include="include\asset\CotTexture.h" />
     <ClInclude Include="include\audio\CotIDecoder.h" />
     <ClInclude Include="include\audio\CotOggDecoder.h" />
     <ClInclude Include="include\audio\CotOpenAL.h" />
@@ -34,8 +38,6 @@
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotEntity.h" />
     <ClInclude Include="include\base\CotVectorMap.hpp" />
-    <ClInclude Include="include\cache\CotAsset.h" />
-    <ClInclude Include="include\cache\CotAssetManager.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\CotEngine.h" />
@@ -54,24 +56,29 @@
     <ClInclude Include="include\render\CotIRenderer.h" />
     <ClInclude Include="include\render\CotDx9Device.h" />
     <ClInclude Include="include\render\CotDx9Renderer2D.h" />
+    <ClInclude Include="include\render\CotRenderManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
     <ClCompile Include="src\CotAsset.cpp" />
     <ClCompile Include="src\CotAssetManager.cpp" />
+    <ClCompile Include="src\CotAudioClip.cpp" />
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />
     <ClCompile Include="src\CotGL2DX.cpp" />
+    <ClCompile Include="src\CotIComponent.cpp" />
     <ClCompile Include="src\CotMat4.cpp" />
     <ClCompile Include="src\CotMathFunc.cpp" />
     <ClCompile Include="src\CotEntity.cpp" />
     <ClCompile Include="src\CotOggDecoder.cpp" />
     <ClCompile Include="src\CotQuaternion.cpp" />
     <ClCompile Include="src\CotBroadCastProtocol.cpp" />
+    <ClCompile Include="src\CotRenderManager.cpp" />
     <ClCompile Include="src\CotScene.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotSpriteRenderer.cpp" />
+    <ClCompile Include="src\CotTexture.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />
     <ClCompile Include="src\CotDx9Renderer2D.cpp" />

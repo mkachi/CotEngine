@@ -10,7 +10,8 @@ namespace Cot
 	D3DXMATRIX ToDxMath(const Mat4& mat)
 	{
 		Mat4 temp = Mat4::Transpose(mat);
-		return D3DXMATRIX(temp.ToArray);
+		D3DXMATRIX result = D3DXMATRIX(temp.ToArray);
+		return result;
 	}
 
 	D3DXVECTOR2 ToDxMath(const Vec2& vec)
@@ -33,4 +34,8 @@ namespace Cot
 		return D3DXQUATERNION(quternion.ToArray);
 	}
 
+	RECT ToDxMath(const Rect& rect)
+	{
+		return { (long)rect.x, (long)rect.y, (long)rect.width, (long)rect.height };
+	}
 }
