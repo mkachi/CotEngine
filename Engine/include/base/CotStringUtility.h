@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include "CotDefine.h"
 
 inline std::string ReplaceAll(const std::string& str, const std::string& beforeStr, const std::string& newStr) 
 {
@@ -93,7 +94,7 @@ inline std::string ToString(const std::wstring& value)
 	wcstombs_s(&size, buffer, size, str, size);
 
 	std::string result = buffer;
-	delete buffer;
+	Cot::SafeDelete(buffer);
 
 	return result;
 }
@@ -112,7 +113,7 @@ inline std::wstring ToWString(const std::string& value)
 	mbstowcs_s(&size, buffer, size, str, size);
 
 	std::wstring result = buffer;
-	delete buffer;
+	Cot::SafeDelete(buffer);
 
 	return result;
 }

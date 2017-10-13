@@ -26,5 +26,7 @@ namespace Cot
 
 		bool IsHave(const string& key);
 
+		void DestroyAllAssets();
+
 	};
 }

@@ -38,4 +38,12 @@ namespace Cot
 		}
 		return false;
 	}
+
+	void AssetManager::DestroyAllAssets()
+	{
+		for (auto& asset : _assets)
+		{
+			SafeDelete(asset.second);
+		}
+	}
 }

@@ -314,8 +314,9 @@ namespace Cot
 
 			_world *= Mat4::Translate(_position);
 			Quaternion quaternion = Quaternion::Identity;
-			quaternion.SetEuler(_rotate);
-			_world *= Mat4::Rotate(quaternion);
+			_world *= Mat4::Rotate(_rotate.x, Vec3(1.0f, 0.0f, 0.0f));
+			_world *= Mat4::Rotate(_rotate.y, Vec3(0.0f, 1.0f, 0.0f));
+			_world *= Mat4::Rotate(_rotate.z, Vec3(0.0f, 0.0f, 1.0f));
 			_world *= Mat4::Scale(_scale);
 
 			_dirty = false;

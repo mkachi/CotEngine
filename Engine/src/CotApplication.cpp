@@ -2,7 +2,9 @@
 #include "base/CotSceneManager.h"
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
+#include "render/CotRenderManager.h"
 #include "asset/CotAudioClip.h"
+#include "asset/CotAssetManager.h"
 
 namespace Cot
 {
@@ -114,6 +116,10 @@ namespace Cot
 	void Application::Destroy()
 	{
 		DestroyAllDecoder();
+
+		RenderManager::Destroy();
+		AssetManager::GetInstance().DestroyAllAssets();
+		AssetManager::Destroy();
 
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();

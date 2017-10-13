@@ -1,4 +1,870 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\CotEngine\\Build\Intermediates\Win32_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  CotWavDecoder.cpp
+  CotVec4.cpp
+  CotVec3.cpp
+  CotVec2.cpp
+  CotTime.cpp
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\src\cottime.cpp(17): warning C4244: '=': '__int64'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CotTexture.cpp
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  CotSpriteRenderer.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(25): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\render\cotrendermanager.h(12): warning C4251: 'Cot::RenderManager::_renderQ': class 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::RenderManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotrendermanager.h(12): note: 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  CotSceneManager.cpp
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::Scene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+  d:\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::Scene *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+  CotScene.cpp
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+  CotRenderManager.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(25): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\render\cotrendermanager.h(12): warning C4251: 'Cot::RenderManager::_renderQ': class 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::RenderManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotrendermanager.h(12): note: 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  CotQuaternion.cpp
+  CotOggDecoder.cpp
+d:\git\cotengine\engine\src\cotoggdecoder.cpp(79): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CotMat4.cpp
+  CotIComponent.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(25): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+  CotGeometry.cpp
+d:\git\cotengine\engine\src\cotgeometry.cpp(7): warning C4244: '초기화 중': 'float'에서 'uint'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotgeometry.cpp(63): warning C4244: '초기화 중': 'float'에서 'uint'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CotGL2DX.cpp
+  CotEntity.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(25): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\src\cotentity.cpp(20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\git\cotengine\engine\src\cotentity.cpp(344): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  CotDx9Renderer2D.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(25): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\render\cotrendermanager.h(12): warning C4251: 'Cot::RenderManager::_renderQ': class 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::RenderManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotrendermanager.h(12): note: 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  CotDx9Device.cpp
+d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  CotColor32.cpp
+d:\git\cotengine\engine\src\cotcolor32.cpp(60): warning C4244: '인수': 'float'에서 'const uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(65): warning C4244: '인수': 'float'에서 'const uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(70): warning C4244: '인수': 'float'에서 'const uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(76): warning C4244: '인수': 'float'에서 'const uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(122): warning C4244: '+=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(123): warning C4244: '+=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(124): warning C4244: '+=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(125): warning C4244: '+=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(131): warning C4244: '-=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(132): warning C4244: '-=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(133): warning C4244: '-=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(134): warning C4244: '-=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(140): warning C4244: '*=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(141): warning C4244: '*=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(142): warning C4244: '*=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(143): warning C4244: '*=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(151): warning C4244: '/=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(152): warning C4244: '/=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(153): warning C4244: '/=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotcolor32.cpp(154): warning C4244: '/=': 'float'에서 'uchar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  CotColor.cpp
+  CotBroadCastProtocol.cpp
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  CotAudioClip.cpp
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  CotAssetManager.cpp
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  CotAsset.cpp
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+  CotApplication.cpp
+d:\git\cotengine\engine\include\base\cottime.h(11): warning C4251: 'Cot::Time::_currentTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cottime.h(12): warning C4251: 'Cot::Time::_lastTime': class 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에서는 class 'Cot::Time'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\chrono(820): note: 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotscene.h(10): warning C4251: 'Cot::Scene::_entitys': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Scene'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\render\cotigraphics.h(13): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotigraphics.h(13): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::IRenderer *
+          ]
+d:\git\cotengine\engine\include\base\cotapplication.h(15): warning C4251: 'Cot::Application::_title': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Application'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotscenemanager.h(12): warning C4251: 'Cot::SceneManager::_scenes': class 'std::vector<Cot::Scene *,std::allocator<_Ty>>'에서는 class 'Cot::SceneManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+  d:\git\cotengine\engine\include\base\cotscenemanager.h(12): note: 'std::vector<Cot::Scene *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Scene *
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): warning C4251: 'Cot::BroadCastProtocol::CallBack::_functions': class 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>'에서는 class 'Cot::BroadCastProtocol::CallBack'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(18): note: 'std::vector<Cot::BroadCastProtocol::Function,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::BroadCastProtocol::Function
+          ]
+d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): warning C4251: 'Cot::BroadCastProtocol::_functions': class 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::BroadCastProtocol'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+  d:\git\cotengine\engine\include\base\cotbroadcastprotocol.h(28): note: 'std::unordered_map<string,Cot::BroadCastProtocol::CallBack *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::BroadCastProtocol::CallBack *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): warning C4251: 'Cot::VectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::VectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(119): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::VectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<Key,Value>::_map': class 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<Key,Value>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(13): note: 'std::vector<std::pair<_Ty1,_Ty2>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<_Ty1,_Ty2>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(254): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<Key,Value>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\base\cotentity.h(14): warning C4251: 'Cot::Entity::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\base\cotentity.h(25): warning C4251: 'Cot::Entity::_children': class 'std::vector<Cot::Entity *,std::allocator<_Ty>>'에서는 class 'Cot::Entity'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+  d:\git\cotengine\engine\include\base\cotscene.h(10): note: 'std::vector<Cot::Entity *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::Entity *
+          ]
+d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): warning C4251: 'Cot::MultiVectorMap<string,Cot::IComponent *>::_map': class 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>'에서는 class 'Cot::MultiVectorMap<string,Cot::IComponent *>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotvectormap.hpp(126): note: 'std::vector<std::pair<Key,Value>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              Key=string,
+              Value=Cot::IComponent *,
+              _Ty=std::pair<string,Cot::IComponent *>
+          ]
+  d:\git\cotengine\engine\include\base\cotentity.h(27): note: 컴파일 중인 클래스 템플릿 인스턴스화 'Cot::MultiVectorMap<string,Cot::IComponent *>'에 대한 참조를 확인하세요.
+d:\git\cotengine\engine\include\component\coticomponent.h(11): warning C4251: 'Cot::IComponent::_type': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::IComponent'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_wkey': class 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+d:\git\cotengine\engine\include\render\cotrendermanager.h(12): warning C4251: 'Cot::RenderManager::_renderQ': class 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::RenderManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+  d:\git\cotengine\engine\include\render\cotrendermanager.h(12): note: 'std::vector<Cot::SpriteRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::SpriteRenderer *
+          ]
+d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  d:\git\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=string,
+              _Ty=Cot::Asset *
+          ]
+  코드를 생성하고 있습니다...
+     D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.lib 라이브러리 및 D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.exp 개체를 생성하고 있습니다.
+MSVCRTD.lib(initializers.obj) : warning LNK4098: 'libcmtd.lib' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+libogg_static_d.lib(bitwise.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(bitwise.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libogg_static_d.lib(framing.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(framing.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(bitrate.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(bitrate.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(block.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(block.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(codebook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(codebook.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(envelope.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(envelope.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(floor0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor0.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(floor1.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor1.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(info.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(info.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(lpc.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lpc.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(lsp.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lsp.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(mapping0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mapping0.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(mdct.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mdct.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(psy.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(psy.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(registry.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(registry.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(res0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(res0.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(sharedbook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(sharedbook.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(smallft.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(smallft.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(synthesis.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(synthesis.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(window.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(window.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbisfile_static_d.lib(vorbisfile.obj) : warning LNK4099: 'libvorbisfile.pdb' PDB를 'libvorbisfile_static_d.lib(vorbisfile.obj)' 또는 'D:\Git\CotEngine\Build\Products\Win32_Debug\libvorbisfile.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.dll
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.pdb (Partial PDB)

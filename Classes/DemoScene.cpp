@@ -14,4 +14,6 @@ bool DemoScene::Init()
 void DemoScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
+	entity->SetPosition(Vec3(500.0f, 500.0f, 0.0f));
+	entity->SetScale(Vec3(-1.0f, 1.0f, 1.0f));
 }
