@@ -6,7 +6,8 @@ bool DemoScene::Init()
 {
 	Entity* entity = new Entity("Test");
 	entity->CreateBroadCastProtocol();
-	entity->AddBroadCastListener(COT_BROAD_CAST(Test));
+	entity->AddBroadCastListener(COT_BROAD_CAST(DemoScene::Test));
+
 	return true;
 }
 

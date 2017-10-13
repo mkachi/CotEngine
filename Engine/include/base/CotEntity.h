@@ -26,8 +26,8 @@ namespace Cot
 
 		void CreateBroadCastProtocol();
 		void AddBroadCastListener(const string& name, const std::function<void()>& function);
-		void SendMessage(const string& function);
-		void BroadCastMessage(const string& function);
+		void SendMsg(const string& function);
+		void BroadCastMsg(const string& function);
 
 		void AddChild(Entity* child);
 		std::vector<Entity*>& GetChildren() { return _children; }

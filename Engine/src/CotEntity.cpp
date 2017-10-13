@@ -4,6 +4,7 @@ namespace Cot
 {
 	Entity::Entity(const string& name)
 		: _name(name)
+		, _broadCastProtocol(nullptr)
 	{	}
 
 	Entity::~Entity()
@@ -29,19 +30,19 @@ namespace Cot
 		_broadCastProtocol->Add(name, function);
 	}
 
-	void Entity::SendMessage(const string& function)
+	void Entity::SendMsg(const string& function)
 	{
 		COT_ASSERT(_broadCastProtocol == nullptr, "_broadCastProtocol is nullptr.");
 		_broadCastProtocol->Invoke(function);
 	}
 
-	void Entity::BroadCastMessage(const string& function)
+	void Entity::BroadCastMsg(const string& function)
 	{
 		COT_ASSERT(_broadCastProtocol == nullptr, "_broadCastProtocol is nullptr.");
 		_broadCastProtocol->Invoke(function);
 		for (auto& child : _children)
 		{
-			child->BroadCastMessage(function);
+			child->BroadCastMsg(function);
 		}
 	}
 

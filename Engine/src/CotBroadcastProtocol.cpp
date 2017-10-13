@@ -15,15 +15,29 @@ namespace Cot
 
 	void BroadCastProtocol::Add(const string& name, const Function& function)
 	{
-		auto iter = _functions.find(name);
-		if (iter != _functions.cend())
+		std::vector<string> tokens = Split(name, { "::" });
+		string splitName;
+		if (tokens.size() > 1)
 		{
-			iter->second->Add(function);
-			return;
+			splitName = tokens[1];
+		}
+		else
+		{
+			splitName = name;
 		}
 
-		_functions.emplace(std::make_pair(name, new BroadCastProtocol::CallBack()));
-		_functions[name]->Add(function);
+		if (!_functions.empty())
+		{
+			auto iter = _functions.find(splitName);
+			if (iter != _functions.cend())
+			{
+				iter->second->Add(function);
+				return;
+			}
+		}
+
+		_functions.emplace(std::make_pair(splitName, new BroadCastProtocol::CallBack()));
+		_functions[splitName]->Add(function);
 	}
 
 	void BroadCastProtocol::Invoke(const string& function)

@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <vector>
 
-#define COT_BROAD_CAST(_FUNCTION_) #_FUNCTION_, _FUNCTION_
+#define COT_BROAD_CAST(_FUNCTION_) #_FUNCTION_, std::bind(&_FUNCTION_, this)
 
 namespace Cot
 {

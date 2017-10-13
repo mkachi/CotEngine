@@ -8,6 +8,6 @@ class DemoScene
 public:
 	bool Init() override;
 	void Update(Cot::Time& time) override;
-	void Test() {}
+	void Test() { printf(""); }
 
 };
