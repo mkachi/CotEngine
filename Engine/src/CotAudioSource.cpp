@@ -40,6 +40,11 @@ namespace Cot
 		}
 	}
 
+	void AudioSource::OnDestroy()
+	{
+		_clip->Release();
+	}
+
 	void AudioSource::Play()
 	{
 		alSourceStop(_source);

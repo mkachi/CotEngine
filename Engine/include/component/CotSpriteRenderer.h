@@ -22,6 +22,7 @@ namespace Cot
 
 		void Reset() override;
 		void Update(Time& time) override;
+		void OnDestroy() override;
 
 		void SetTexture(const string& filename);
 		Texture* GetTexture() { return _texture; }

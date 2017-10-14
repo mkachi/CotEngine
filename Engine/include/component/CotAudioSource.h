@@ -30,6 +30,7 @@ namespace Cot
 
 		void Reset() override;
 		void Update(Time& time) override;
+		void OnDestroy() override;
 
 		void Play();
 		void Pause();

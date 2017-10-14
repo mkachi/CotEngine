@@ -33,6 +33,11 @@ namespace Cot
 		RenderManager::GetInstance().Add(this);
 	}
 
+	void SpriteRenderer::OnDestroy()
+	{
+		_texture->Release();
+	}
+
 	void SpriteRenderer::SetTexture(const string& filename)
 	{
 		SafeRelease(_texture);
