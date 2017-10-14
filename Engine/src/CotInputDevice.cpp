@@ -57,6 +57,12 @@ namespace Cot
 			return false;
 		}
 
+		result = _mouse->SetDataFormat(&c_dfDIMouse);
+		if (FAILED(result))
+		{
+			return false;
+		}
+
 		result = _mouse->SetCooperativeLevel(wnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
 		if (FAILED(result))
 		{
@@ -140,12 +146,7 @@ namespace Cot
 
 	void InputDevice::Update()
 	{
-		if (!ReadKeyState())
-		{
-			return;
-		}
-
-		if (!ReadMouseState())
+		if ((!ReadKeyState()) && (!ReadMouseState()))
 		{
 			return;
 		}

@@ -19,6 +19,12 @@ namespace Cot
 
 	LRESULT Application::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
+		switch (msg)
+		{
+		case WM_DESTROY:
+			PostQuitMessage(0);
+			break;
+		}
 		return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
@@ -79,6 +85,9 @@ namespace Cot
 			return false;
 		}
 
+		ShowWindow(_wnd, SW_SHOWDEFAULT);
+		UpdateWindow(_wnd);
+
 		_inputDevice = new InputDevice();
 		if (!_inputDevice->Init(_instance, _wnd, width, height))
 		{
@@ -86,9 +95,6 @@ namespace Cot
 			return false;
 		}
 		RegisterInputDevice(_inputDevice);
-
-		ShowWindow(_wnd, SW_SHOWDEFAULT);
-		UpdateWindow(_wnd);
 
 		return true;
 	}

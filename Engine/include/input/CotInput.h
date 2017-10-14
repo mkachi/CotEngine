@@ -2,7 +2,9 @@
 
 #include "CotInputDevice.h"
 #include "math/CotVec2.h"
-
+/*
+DIMOUSESTATEÀÇ lZ´Â Wheel°ª
+*/
 namespace Cot
 {
 	COT_API inline void RegisterInputDevice(InputDevice* device);

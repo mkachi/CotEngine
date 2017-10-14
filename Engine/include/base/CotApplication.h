@@ -4,6 +4,8 @@
 #include "CotScene.h"
 #include "render/CotIGraphics.h"
 #include "input/CotInputDevice.h"
+
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 namespace Cot

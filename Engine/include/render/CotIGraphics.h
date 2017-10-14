@@ -2,6 +2,8 @@
 
 #include "CotIRenderer.h"
 #include <vector>
+
+#define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
 namespace Cot

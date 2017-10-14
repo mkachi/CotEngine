@@ -15,6 +15,7 @@ namespace Cot
 		{
 			return false;
 		}
+		return _device->GetKeyState()[_device->DikToKeyCode(code)] & 0x80;
 	}
 
 	bool IsKeyUp(KeyCode code)
@@ -23,6 +24,7 @@ namespace Cot
 		{
 			return false;
 		}
+		return false;
 	}
 	
 	bool IsKeyPressed(KeyCode code)
@@ -31,6 +33,7 @@ namespace Cot
 		{
 			return false;
 		}
+		return false;
 	}
 
 	Vec2 GetMousePosition()
@@ -47,6 +50,13 @@ namespace Cot
 		{
 			return false;
 		}
+
+		switch (code)
+		{
+		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
+		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
+		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
+		}
 	}
 
 	bool IsMouseUp(KeyCode code)
@@ -55,6 +65,13 @@ namespace Cot
 		{
 			return false;
 		}
+
+		switch (code)
+		{
+		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
+		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
+		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
+		}
 	}
 
 	bool IsMousePressed(KeyCode code)
@@ -62,6 +79,13 @@ namespace Cot
 		if (_device == nullptr)
 		{
 			return false;
+		}
+
+		switch (code)
+		{
+		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
+		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
+		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
 		}
 	}
 }

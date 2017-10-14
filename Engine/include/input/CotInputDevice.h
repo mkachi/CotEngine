@@ -38,6 +38,7 @@ namespace Cot
 
 		uchar* GetKeyState() { return _keyState; }
 		Vec2 GetMousePosition() { return _mousePosition; }
+		DIMOUSESTATE GetMouseState() { return _mouseState; }
 
 		void CreateKeyCodeTable();
 		uint DikToKeyCode(KeyCode code);
