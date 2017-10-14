@@ -4,10 +4,11 @@
 
 namespace Cot
 {
+	class Entity;
 	class COT_API Scene
 	{
 	private:
-		std::vector<class Entity*> _entitys;
+		std::vector<Entity*> _entitys;
 
 	protected:
 		Scene();
@@ -18,6 +19,7 @@ namespace Cot
 		virtual bool Init() = 0;
 		virtual void Update(Time& time);
 
+		void Start();
 		void AddEntity(Entity* entity);
 
 	};

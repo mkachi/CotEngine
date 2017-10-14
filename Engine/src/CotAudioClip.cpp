@@ -27,6 +27,7 @@ namespace Cot
 		if (result != nullptr && result->Init(filename))
 		{
 			AssetManager::GetInstance().Add(filename, result);
+			result->Retain();
 			return result;
 		}
 		return nullptr;

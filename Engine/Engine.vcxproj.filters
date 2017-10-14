@@ -113,6 +113,12 @@
     <ClInclude Include="include\render\CotRenderManager.h">
       <Filter>Render</Filter>
     </ClInclude>
+    <ClInclude Include="include\component\CotAudioListener.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\component\CotAudioSource.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -218,6 +224,12 @@
     </ClCompile>
     <ClCompile Include="src\CotRenderManager.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotAudioListener.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotAudioSource.cpp">
+      <Filter>Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

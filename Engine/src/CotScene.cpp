@@ -22,6 +22,14 @@ namespace Cot
 		}
 	}
 
+	void Scene::Start()
+	{
+		for (auto& entity : _entitys)
+		{
+			entity->ComponentStart();
+		}
+	}
+
 	void Scene::AddEntity(Entity* entity)
 	{
 		_entitys.push_back(entity);

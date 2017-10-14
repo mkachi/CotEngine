@@ -5,7 +5,10 @@ using namespace Cot;
 bool DemoScene::Init()
 {
 	entity = new Entity("Test");
+	entity->AddComponent<AudioListener>()->Init();
 	entity->AddComponent<SpriteRenderer>()->Init("Test.png");
+	entity->AddComponent<AudioSource>()->Init("Test.wav")->Play();
+	entity->SetPosition(Vec2(400, 300));
 	this->AddEntity(entity);
 
 	return true;
@@ -14,6 +17,4 @@ bool DemoScene::Init()
 void DemoScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
-	entity->SetPosition(Vec3(500.0f, 500.0f, 0.0f));
-	entity->SetScale(Vec3(-1.0f, 1.0f, 1.0f));
 }

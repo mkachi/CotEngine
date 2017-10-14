@@ -38,6 +38,8 @@
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotEntity.h" />
     <ClInclude Include="include\base\CotVectorMap.hpp" />
+    <ClInclude Include="include\component\CotAudioListener.h" />
+    <ClInclude Include="include\component\CotAudioSource.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\CotEngine.h" />
@@ -63,6 +65,8 @@
     <ClCompile Include="src\CotAsset.cpp" />
     <ClCompile Include="src\CotAssetManager.cpp" />
     <ClCompile Include="src\CotAudioClip.cpp" />
+    <ClCompile Include="src\CotAudioListener.cpp" />
+    <ClCompile Include="src\CotAudioSource.cpp" />
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />

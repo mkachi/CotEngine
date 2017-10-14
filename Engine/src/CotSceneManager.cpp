@@ -24,12 +24,14 @@ namespace Cot
 				MessageBox(NULL, L"Scene init failed.", L"Error", MB_OK);
 				return;
 			}
+			scene->Start();
 			_scenes.push_back(scene);
 		}
 	}
 
 	void SceneManager::AddScene(Scene* scene)
 	{
+		scene->Start();
 		_scenes.push_back(scene);
 	}
 

@@ -31,6 +31,8 @@ namespace Cot
 		Entity(const string& name);
 		virtual ~Entity();
 
+		void ComponentStart();
+
 		template <typename T>
 		T* AddComponent()
 		{
@@ -81,6 +83,8 @@ namespace Cot
 		void SetParent(Entity* parent);
 		Entity* GetParent() { return _parent; }
 
+		void ResetTransform();
+
 		void SetPosition(const Vec3& position);
 		void SetPositionX(float x);
 		void SetPositionY(float y);
@@ -112,6 +116,7 @@ namespace Cot
 		Vec3 GetLocalScale();
 
 		Mat4 GetWorldMatrix();
+		bool IsDirty() { return _dirty; }
 
 		void SetActive(bool active);
 		bool IsActive() { return _active; }

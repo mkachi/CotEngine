@@ -32,6 +32,15 @@ namespace Cot
 		SafeDelete(_broadCastProtocol);
 	}
 
+	void Entity::ComponentStart()
+	{
+		for (int i = 0; i < _components.size(); ++i)
+		{
+			IComponent* temp = _components[i].second;
+			temp->Start();
+		}
+	}
+
 	void Entity::CreateBroadCastProtocol()
 	{
 		if (_broadCastProtocol == nullptr)
@@ -102,6 +111,14 @@ namespace Cot
 	void Entity::SetName(const string& name)
 	{
 		_name = name;
+	}
+
+	void Entity::ResetTransform()
+	{
+		_position = Vec3::Zero;
+		_rotate = Vec3::Zero;
+		_scale = Vec3::One;
+		_dirty = true;
 	}
 
 	void Entity::SetPosition(const Vec3& position)
