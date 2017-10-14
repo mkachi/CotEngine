@@ -3,6 +3,7 @@
 #include "CotRule.h"
 #include "CotScene.h"
 #include "render/CotIGraphics.h"
+#include "input/CotInputDevice.h"
 #include <Windows.h>
 
 namespace Cot
@@ -13,7 +14,8 @@ namespace Cot
 		HWND		_wnd;
 		HINSTANCE	_instance;
 		wstring		_title;
-		IGraphics*	_graphics;
+		IGraphics*		_graphics;
+		InputDevice*	_inputDevice;
 
 		static LRESULT CALLBACK MsgProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
 

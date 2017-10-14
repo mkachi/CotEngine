@@ -122,6 +122,15 @@
     <ClInclude Include="include\editor\CotEditorAttribute.h">
       <Filter>Editor</Filter>
     </ClInclude>
+    <ClInclude Include="include\input\CotInputDevice.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotKeyCode.h">
+      <Filter>Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -144,6 +153,9 @@
     </Filter>
     <Filter Include="Asset">
       <UniqueIdentifier>{edb9366a-0218-47c8-b85d-599b4ca04d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{c2a98f3e-3b31-48a4-9912-25991f47e2bb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +245,12 @@
     </ClCompile>
     <ClCompile Include="src\CotAudioSource.cpp">
       <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotInputDevice.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotInput.cpp">
+      <Filter>Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

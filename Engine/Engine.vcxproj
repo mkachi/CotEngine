@@ -44,6 +44,9 @@
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\CotEngine.h" />
     <ClInclude Include="include\editor\CotEditorAttribute.h" />
+    <ClInclude Include="include\input\CotInput.h" />
+    <ClInclude Include="include\input\CotInputDevice.h" />
+    <ClInclude Include="include\input\CotKeyCode.h" />
     <ClInclude Include="include\math\CotColor.h" />
     <ClInclude Include="include\math\CotColor32.h" />
     <ClInclude Include="include\math\CotGeometry.h" />
@@ -73,6 +76,8 @@
     <ClCompile Include="src\CotGeometry.cpp" />
     <ClCompile Include="src\CotGL2DX.cpp" />
     <ClCompile Include="src\CotIComponent.cpp" />
+    <ClCompile Include="src\CotInput.cpp" />
+    <ClCompile Include="src\CotInputDevice.cpp" />
     <ClCompile Include="src\CotMat4.cpp" />
     <ClCompile Include="src\CotMathFunc.cpp" />
     <ClCompile Include="src\CotEntity.cpp" />

@@ -5,11 +5,13 @@
 #include "render/CotRenderManager.h"
 #include "asset/CotAudioClip.h"
 #include "asset/CotAssetManager.h"
+#include "input/CotInput.h"
 
 namespace Cot
 {
 	Application::Application()
 		: _graphics(nullptr)
+		, _inputDevice(nullptr)
 	{	}
 
 	Application::~Application()
@@ -17,12 +19,6 @@ namespace Cot
 
 	LRESULT Application::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
-		switch (msg)
-		{
-		case WM_DESTROY:
-			PostQuitMessage(0);
-			return 0;
-		}
 		return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
@@ -83,11 +79,13 @@ namespace Cot
 			return false;
 		}
 
-		if (!InitInput(_wnd))
+		_inputDevice = new InputDevice();
+		if (!_inputDevice->Init(_instance, _wnd, width, height))
 		{
 			MessageBox(NULL, L"Cannot create input device.", L"Error", MB_OK);
 			return false;
 		}
+		RegisterInputDevice(_inputDevice);
 
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);
@@ -113,6 +111,7 @@ namespace Cot
 			else
 			{
 				time.Tick();
+				_inputDevice->Update();
 				sceneManager.Update(time);
 				_graphics->Render();
 			}
@@ -129,6 +128,9 @@ namespace Cot
 
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
+
+		_inputDevice->Destroy();
+		SafeDelete(_inputDevice);
 
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
