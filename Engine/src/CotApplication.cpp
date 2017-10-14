@@ -83,6 +83,12 @@ namespace Cot
 			return false;
 		}
 
+		if (!InitInput(_wnd))
+		{
+			MessageBox(NULL, L"Cannot create input device.", L"Error", MB_OK);
+			return false;
+		}
+
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);
 

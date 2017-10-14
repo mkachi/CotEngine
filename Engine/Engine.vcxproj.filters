@@ -119,6 +119,9 @@
     <ClInclude Include="include\component\CotAudioSource.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="include\editor\CotEditorAttribute.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">

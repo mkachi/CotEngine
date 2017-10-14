@@ -39,13 +39,11 @@ public: \
 #define COT_ASSERT(_IF_, _MESSAGE_)
 #endif
 
-#ifdef COT_EXPORTS1
+#ifdef COT_EXPORTS
 #define COT_API __declspec(dllexport)
 #else
-#define COT_API2 __declspec(dllimport)
-#endif
-
 #define COT_API __declspec(dllexport)
+#endif
 
 template <typename T>
 struct COT_API ComponentType;
