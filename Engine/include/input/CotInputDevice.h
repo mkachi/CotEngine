@@ -1,47 +1,55 @@
 #pragma once
 
-#include "CotKeyCode.h"
+#include "base/CotRule.h"
 #include "math/CotVec2.h"
-
-#define DIRECTINPUT_VERSION 0x0800
-#include <dinput.h>
+#include "CotKeyCode.h"
+#include <queue>
 #include <unordered_map>
+
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
 
 namespace Cot
 {
 	class COT_API InputDevice final
 	{
 	private:
-		std::unordered_map<KeyCode, uint> _swaper;
-		IDirectInput8*			_directInput;
-		IDirectInputDevice8*	_keyboard;
-		IDirectInputDevice8*	_mouse;
+		bool _keyState[(uint)KeyCode::KEYBOARD_END];
+		bool _keyStayState[(uint)KeyCode::KEYBOARD_END];
+		std::queue<KeyCode> _keyDownQueue;
+		std::queue<KeyCode> _keyUpQueue;
 
-		uchar			_keyState[256];
-		DIMOUSESTATE	_mouseState;
+		bool _mouseState[(uint)MouseButton::MOUSE_END];
+		std::queue<MouseButton> _mouseDownQueue;
+		std::queue<MouseButton> _mouseUpQueue;
 
-		int		_screenWidth;
-		int		_screenHeight;
-		Vec2	_mousePosition;
+		std::unordered_map<uchar, KeyCode>		_keySwaper;
+		HWND _wnd;
 
-		bool ReadKeyState();
-		bool ReadMouseState();
-		void ProcessInput();
+		KeyCode ToKeyCode(uint key) { return _keySwaper[key]; }
 
 	public:
-		InputDevice();
+		InputDevice() = delete;
+		InputDevice(HWND wnd);
 		~InputDevice();
 
-		bool Init(HINSTANCE instance, HWND wnd, int width, int height);
-		void Destroy();
-		void Update();
-
-		uchar* GetKeyState() { return _keyState; }
-		Vec2 GetMousePosition() { return _mousePosition; }
-		DIMOUSESTATE GetMouseState() { return _mouseState; }
-
 		void CreateKeyCodeTable();
-		uint DikToKeyCode(KeyCode code);
+		Vec2 GetMousePosition();
+
+		bool IsKeyDown(KeyCode code);
+		bool IsKeyUp(KeyCode code);
+		bool IsKeyStay(KeyCode code);
+
+		bool IsMouseDown(MouseButton code);
+		bool IsMouseUp(MouseButton code);
+		bool IsMouseStay(MouseButton code);
+
+		void UpdateKeyDown(uint key);
+		void UpdateKeyUp(uint key);
+
+		void UpdateMouseDown(MouseButton button);
+		void UpdateMouseUp(MouseButton button);
+		void Clear();
 
 	};
 }

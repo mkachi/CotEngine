@@ -1,20 +1,61 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\CotEngine\\Build\Intermediates\Win32_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  CotInput.cpp
-d:\git\cotengine\engine\include\input\cotinputdevice.h(15): warning C4251: 'Cot::InputDevice::_swaper': class 'std::unordered_map<Cot::KeyCode,uint,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+  CotInputDevice.cpp
+d:\git\cotengine\engine\include\input\cotinputdevice.h(19): warning C4251: 'Cot::InputDevice::_keyDownQueue': class 'std::queue<Cot::KeyCode,std::deque<_Ty,std::allocator<_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
           [
-              _Kty=Cot::KeyCode,
-              _Ty=uint
+              _Ty=Cot::KeyCode
           ]
-  d:\git\cotengine\engine\include\input\cotinputdevice.h(15): note: 'std::unordered_map<Cot::KeyCode,uint,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+  d:\git\cotengine\engine\include\input\cotinputdevice.h(19): note: 'std::queue<Cot::KeyCode,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
           with
           [
-              _Kty=Cot::KeyCode,
-              _Ty=uint
+              _Ty=Cot::KeyCode
           ]
-d:\git\cotengine\engine\src\cotinput.cpp(45): warning C4715: 'Cot::GetMousePosition': 모든 제어 경로에서 값을 반환하지는 않습니다.
-d:\git\cotengine\engine\src\cotinput.cpp(60): warning C4715: 'Cot::IsMouseDown': 모든 제어 경로에서 값을 반환하지는 않습니다.
-d:\git\cotengine\engine\src\cotinput.cpp(90): warning C4715: 'Cot::IsMousePressed': 모든 제어 경로에서 값을 반환하지는 않습니다.
-d:\git\cotengine\engine\src\cotinput.cpp(75): warning C4715: 'Cot::IsMouseUp': 모든 제어 경로에서 값을 반환하지는 않습니다.
+d:\git\cotengine\engine\include\input\cotinputdevice.h(20): warning C4251: 'Cot::InputDevice::_keyUpQueue': class 'std::queue<Cot::KeyCode,std::deque<_Ty,std::allocator<_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::KeyCode
+          ]
+  d:\git\cotengine\engine\include\input\cotinputdevice.h(19): note: 'std::queue<Cot::KeyCode,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::KeyCode
+          ]
+d:\git\cotengine\engine\include\input\cotinputdevice.h(23): warning C4251: 'Cot::InputDevice::_mouseDownQueue': class 'std::queue<Cot::MouseButton,std::deque<_Ty,std::allocator<_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::MouseButton
+          ]
+  d:\git\cotengine\engine\include\input\cotinputdevice.h(23): note: 'std::queue<Cot::MouseButton,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::MouseButton
+          ]
+d:\git\cotengine\engine\include\input\cotinputdevice.h(24): warning C4251: 'Cot::InputDevice::_mouseUpQueue': class 'std::queue<Cot::MouseButton,std::deque<_Ty,std::allocator<_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Ty=Cot::MouseButton
+          ]
+  d:\git\cotengine\engine\include\input\cotinputdevice.h(23): note: 'std::queue<Cot::MouseButton,std::deque<_Ty,std::allocator<_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Cot::MouseButton
+          ]
+d:\git\cotengine\engine\include\input\cotinputdevice.h(26): warning C4251: 'Cot::InputDevice::_keySwaper': class 'std::unordered_map<uchar,Cot::KeyCode,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::InputDevice'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
+          with
+          [
+              _Kty=uchar,
+              _Ty=Cot::KeyCode
+          ]
+  d:\git\cotengine\engine\include\input\cotinputdevice.h(26): note: 'std::unordered_map<uchar,Cot::KeyCode,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
+          with
+          [
+              _Kty=uchar,
+              _Ty=Cot::KeyCode
+          ]
+d:\git\cotengine\engine\src\cotinputdevice.cpp(26): warning C4244: '인수': 'LONG'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\git\cotengine\engine\src\cotinputdevice.cpp(133): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\git\cotengine\engine\src\cotinputdevice.cpp(134): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\git\cotengine\engine\src\cotinputdevice.cpp(135): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\git\cotengine\engine\src\cotinputdevice.cpp(136): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.dll
   Engine.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Engine.pdb (Partial PDB)

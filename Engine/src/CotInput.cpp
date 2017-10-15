@@ -4,88 +4,111 @@ namespace Cot
 {
 	static InputDevice* _device = nullptr;
 
-	void RegisterInputDevice(InputDevice* device)
+	void RegisteInputDevice(InputDevice* device)
 	{
 		_device = device;
 	}
 
+	void UpdateKeyDown(uint code)
+	{
+		if (_device != nullptr)
+		{
+			_device->UpdateKeyDown(code);
+		}
+	}
+
+	void UpdateKeyUp(uint code)
+	{
+		if (_device != nullptr)
+		{
+			_device->UpdateKeyUp(code);
+		}
+	}
+
+	void UpdateMouseDown(MouseButton button)
+	{
+		if (_device != nullptr)
+		{
+			_device->UpdateMouseDown(button);
+		}
+	}
+
+	void UpdateMouseUp(MouseButton button)
+	{
+		if (_device != nullptr)
+		{
+			_device->UpdateMouseUp(button);
+		}
+	}
+
 	bool IsKeyDown(KeyCode code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsKeyDown(code);
 		}
-		return _device->GetKeyState()[_device->DikToKeyCode(code)] & 0x80;
+		return false;
 	}
 
 	bool IsKeyUp(KeyCode code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsKeyUp(code);
 		}
 		return false;
 	}
 	
-	bool IsKeyPressed(KeyCode code)
+	bool IsKeyStay(KeyCode code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsKeyStay(code);
 		}
 		return false;
 	}
 
 	Vec2 GetMousePosition()
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return Vec2::Zero;
+			return _device->GetMousePosition();
 		}
+		return Vec2::Zero;
 	}
 
-	bool IsMouseDown(KeyCode code)
+	bool IsMouseDown(MouseButton code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsMouseDown(code);
 		}
-
-		switch (code)
-		{
-		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
-		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
-		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
-		}
+		return false;
 	}
 
-	bool IsMouseUp(KeyCode code)
+	bool IsMouseUp(MouseButton code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsMouseUp(code);
 		}
-
-		switch (code)
-		{
-		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
-		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
-		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
-		}
+		return false;
 	}
 
-	bool IsMousePressed(KeyCode code)
+	bool IsMouseStay(MouseButton code)
 	{
-		if (_device == nullptr)
+		if (_device != nullptr)
 		{
-			return false;
+			return _device->IsMouseStay(code);
 		}
+		return false;
+	}
 
-		switch (code)
+	void InputClear()
+	{
+		if (_device != nullptr)
 		{
-		case KeyCode::MouseLButton: return (_device->GetMouseState().rgbButtons[0] & 0x80);
-		case KeyCode::MouseRButton: return (_device->GetMouseState().rgbButtons[1] & 0x80);
-		case KeyCode::MouseMButton: return (_device->GetMouseState().rgbButtons[2] & 0x80);
+			return _device->Clear();
 		}
 	}
 }

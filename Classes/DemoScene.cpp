@@ -20,31 +20,31 @@ void DemoScene::Update(Cot::Time& time)
 
 	if (IsKeyDown(KeyCode::A))
 	{
-		OutputDebugStringA("Down A\n");
+		printf("Down A\n");
 	}
 
-	if (IsKeyPressed(KeyCode::B))
+	if (IsKeyStay(KeyCode::S))
 	{
-		OutputDebugStringA("Pressed B\n");
+		printf("Pressed S\n");
 	}
 
 	if (IsKeyUp(KeyCode::A))
 	{
-		OutputDebugStringA("Up A\n");
+		printf("Up A\n");
 	}
 
-	if (IsMouseDown(KeyCode::MouseLButton))
+	if (IsMouseDown(MouseButton::LButton))
 	{
-		OutputDebugStringA("Down LButton\n");
+		printf("Down LButton\n");
 	}
 
-	if (IsMouseUp(KeyCode::MouseMButton))
+	if (IsMouseUp(MouseButton::MButton))
 	{
-		OutputDebugStringA("Up MButton\n");
+		printf("Up MButton\n");
 	}
 
-	if (IsMousePressed(KeyCode::MouseRButton))
+	if (IsMouseStay(MouseButton::RButton))
 	{
-		OutputDebugStringA("Pressed RButton\n");
+		printf("Pressed RButton\n");
 	}
 }

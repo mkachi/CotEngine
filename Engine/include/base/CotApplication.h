@@ -3,7 +3,7 @@
 #include "CotRule.h"
 #include "CotScene.h"
 #include "render/CotIGraphics.h"
-#include "input/CotInputDevice.h"
+#include "input/CotInput.h"
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>

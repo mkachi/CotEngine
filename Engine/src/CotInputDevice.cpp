@@ -1,267 +1,250 @@
 #include "input/CotInputDevice.h"
 
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+
+#define CLEAR_QUEUE(_queue_) \
+	for(int i = 0; i < _queue_.size(); ++i) \
+	{ \
+		_queue_.pop(); \
+	}
+
 namespace Cot
 {
-	InputDevice::InputDevice()
-		: _directInput(nullptr)
-		, _keyboard(nullptr)
-		, _mouse(nullptr)
-		, _mousePosition(Vec2::Zero)
+	InputDevice::InputDevice(HWND wnd)
+		: _wnd(wnd)
 	{	}
 
 	InputDevice::~InputDevice()
 	{	}
 
-	bool InputDevice::Init(HINSTANCE instance, HWND wnd, int width, int height)
+	Vec2 InputDevice::GetMousePosition()
 	{
-		CreateKeyCodeTable();
-
-		_screenWidth = width;
-		_screenHeight = height;
-
-		HRESULT result;
-
-		result = DirectInput8Create(instance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&_directInput, NULL);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _directInput->CreateDevice(GUID_SysKeyboard, &_keyboard, NULL);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _keyboard->SetDataFormat(&c_dfDIKeyboard);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _keyboard->SetCooperativeLevel(wnd, DISCL_FOREGROUND | DISCL_EXCLUSIVE);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _keyboard->Acquire();
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _directInput->CreateDevice(GUID_SysMouse, &_mouse, NULL);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _mouse->SetDataFormat(&c_dfDIMouse);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _mouse->SetCooperativeLevel(wnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		result = _mouse->Acquire();
-		if (FAILED(result))
-		{
-			return false;
-		}
-
-		return true;
+		POINT point;
+		GetCursorPos(&point);
+		ScreenToClient(_wnd, &point);
+		return Vec2(point.x, point.y);
 	}
 
-	bool InputDevice::ReadKeyState()
+	bool InputDevice::IsKeyDown(KeyCode code)
 	{
-		HRESULT result = _keyboard->GetDeviceState(sizeof(_keyboard), (LPVOID)&_keyState);
-		if (FAILED(result))
+		if (_keyDownQueue.empty() || _keyStayState[(uint)code])
 		{
-			if ((result == DIERR_INPUTLOST) || (result == DIERR_NOTACQUIRED)) 
-			{
-				_keyboard->Acquire(); 
-			}
-			else 
-			{ 
-				return false; 
-			}
+			return false;
 		}
-		return true;
+
+		KeyCode temp = _keyDownQueue.front();
+		if (temp == code)
+		{
+			_keyStayState[(uint)code] = true;
+			_keyDownQueue.pop();
+			return true;
+		}
+		return false;
 	}
 
-	bool InputDevice::ReadMouseState()
+	bool InputDevice::IsKeyUp(KeyCode code)
 	{
-		HRESULT result = _mouse->GetDeviceState(sizeof(DIMOUSESTATE), (LPVOID)&_mouseState);
-		if (FAILED(result))
+		if (_keyUpQueue.empty())
 		{
-			if ((result == DIERR_INPUTLOST) || (result == DIERR_NOTACQUIRED))
-			{
-				_mouse->Acquire();
-			}
-			else
-			{
-				return false;
-			}
+			return false;
 		}
 
-		return true;
+		KeyCode temp = _keyUpQueue.front();
+		if (temp == code)
+		{
+			_keyUpQueue.pop();
+			return true;
+		}
+		return false;
 	}
 
-	void InputDevice::ProcessInput()
+	bool InputDevice::IsKeyStay(KeyCode code)
 	{
-		_mousePosition.x += _mouseState.lX;
-		_mousePosition.y += _mouseState.lY;
-
-		if (_mousePosition.x < 0.0f) { _mousePosition.x = 0.0f; }
-		if (_mousePosition.y < 0.0f) { _mousePosition.y = 0.0f; }
-
-		if (_mousePosition.x > _screenWidth) { _mousePosition.x = _screenWidth; }
-		if (_mousePosition.y > _screenHeight) { _mousePosition.y = _screenHeight; }
+		return _keyState[(uint)code];
 	}
 
-	void InputDevice::Destroy()
+	bool InputDevice::IsMouseDown(MouseButton code)
 	{
-		if (_mouse != nullptr)
+		if (_mouseDownQueue.empty())
 		{
-			_mouse->Unacquire();
-			_mouse->Release();
-			_mouse = nullptr;
+			return false;
 		}
 
-		if (_keyboard != nullptr)
+		MouseButton temp = _mouseDownQueue.front();
+		if (temp == code)
 		{
-			_keyboard->Unacquire();
-			_keyboard->Release();
-			_keyboard = nullptr;
+			_mouseDownQueue.pop();
+			return true;
 		}
-
-		SafeRelease(_directInput);
+		return false;
 	}
 
-	void InputDevice::Update()
+	bool InputDevice::IsMouseUp(MouseButton code)
 	{
-		if ((!ReadKeyState()) && (!ReadMouseState()))
+		if (_mouseUpQueue.empty())
 		{
-			return;
+			return false;
 		}
-		ProcessInput();
+
+		MouseButton temp = _mouseUpQueue.front();
+		if (temp == code)
+		{
+			_mouseUpQueue.pop();
+			return true;
+		}
+		return false;
+	}
+
+	bool InputDevice::IsMouseStay(MouseButton code)
+	{
+		return _mouseState[(uint)code];
+	}
+
+	void InputDevice::UpdateKeyDown(uint key)
+	{
+		KeyCode code = ToKeyCode(key);
+		_keyState[(uint)code] = true;
+		_keyDownQueue.push(code);
+	}
+
+	void InputDevice::UpdateKeyUp(uint key)
+	{
+		KeyCode code = ToKeyCode(key);
+		_keyState[(uint)code] = false;
+		_keyStayState[(uint)code] = false;
+		_keyUpQueue.push(code);
+	}
+
+	void InputDevice::UpdateMouseDown(MouseButton button)
+	{
+		_mouseState[(uint)button] = true;
+		_mouseDownQueue.push(button);
+	}
+
+	void InputDevice::UpdateMouseUp(MouseButton button)
+	{
+		_mouseState[(uint)button] = false;
+		_mouseUpQueue.push(button);
+	}
+
+	void InputDevice::Clear()
+	{
+		CLEAR_QUEUE(_keyDownQueue);
+		CLEAR_QUEUE(_keyUpQueue);
+		CLEAR_QUEUE(_mouseDownQueue);
+		CLEAR_QUEUE(_mouseUpQueue);
 	}
 
 	void InputDevice::CreateKeyCodeTable()
 	{
-		_swaper = {
-			{	KeyCode::Esc,				DIK_ESCAPE			},
-			{	KeyCode::F1,				DIK_F1				},
-			{	KeyCode::F2,				DIK_F2				},
-			{	KeyCode::F3,				DIK_F3				},
-			{	KeyCode::F4,				DIK_F4				},
-			{	KeyCode::F5,				DIK_F5				},
-			{	KeyCode::F6,				DIK_F6				},
-			{	KeyCode::F7,				DIK_F7				},
-			{	KeyCode::F8,				DIK_F8				},
-			{	KeyCode::F9,				DIK_F9				},
-			{	KeyCode::F10,				DIK_F10				},
-			{	KeyCode::F11,				DIK_F11				},
-			{	KeyCode::F12,				DIK_F12				},
-			{	KeyCode::PrintScreen,		DIK_SYSRQ			},
-			{	KeyCode::Scroll,			DIK_SCROLL			},
-			{	KeyCode::Pause,				DIK_PAUSE			},
-			{	KeyCode::_0,				DIK_1				},
-			{	KeyCode::_1,				DIK_2				},
-			{	KeyCode::_2,				DIK_3				},
-			{	KeyCode::_3,				DIK_4				},
-			{	KeyCode::_4,				DIK_5				},
-			{	KeyCode::_5,				DIK_6				},
-			{	KeyCode::_6,				DIK_7				},
-			{	KeyCode::_7,				DIK_8				},
-			{	KeyCode::_8,				DIK_9				},
-			{	KeyCode::_9,				DIK_0				},
-			{	KeyCode::Minus,				DIK_MINUS			},
-			{	KeyCode::Equals,			DIK_EQUALS			},
-			{	KeyCode::BackSpace,			DIK_BACKSPACE		},
-			{	KeyCode::Tab,				DIK_TAB				},
-			{	KeyCode::Q,					DIK_Q				},
-			{	KeyCode::W,					DIK_W				},
-			{	KeyCode::E,					DIK_E				},
-			{	KeyCode::R,					DIK_R				},
-			{	KeyCode::T,					DIK_T				},
-			{	KeyCode::Y,					DIK_Y				},
-			{	KeyCode::U,					DIK_U				},
-			{	KeyCode::I,					DIK_I				},
-			{	KeyCode::O,					DIK_O				},
-			{	KeyCode::P,					DIK_P				},
-			{	KeyCode::LBracket,			DIK_LBRACKET		},
-			{	KeyCode::RBracket,			DIK_RBRACKET		},
-			{	KeyCode::Enter,				DIK_RETURN			},
-			{	KeyCode::LCtrl,				DIK_LCONTROL		},
-			{	KeyCode::A,					DIK_A				},
-			{	KeyCode::S,					DIK_S				},
-			{	KeyCode::D,					DIK_D				},
-			{	KeyCode::F,					DIK_F				},
-			{	KeyCode::G,					DIK_G				},
-			{	KeyCode::H,					DIK_H				},
-			{	KeyCode::J,					DIK_J				},
-			{	KeyCode::K,					DIK_K				},
-			{	KeyCode::L,					DIK_L				},
-			{	KeyCode::Semicolon,			DIK_SEMICOLON		},
-			{	KeyCode::Apostrophe, 		DIK_APOSTROPHE		},
-			{	KeyCode::Grave,				DIK_GRAVE			},
-			{	KeyCode::LSHIFT,			DIK_LSHIFT			},
-			{	KeyCode::BackSlash,			DIK_BACKSLASH		},
-			{	KeyCode::Z,					DIK_Z				},
-			{	KeyCode::X,					DIK_X				},
-			{	KeyCode::C,					DIK_C				},
-			{	KeyCode::V,					DIK_V				},
-			{	KeyCode::B,					DIK_B				},
-			{	KeyCode::N,					DIK_N				},
-			{	KeyCode::M,					DIK_M				},
-			{	KeyCode::Comma,				DIK_COMMA			},
-			{	KeyCode::Period,			DIK_PERIOD			},
-			{	KeyCode::Slash,				DIK_SLASH			},
-			{	KeyCode::RShift,			DIK_RSHIFT			},
-			{	KeyCode::LAlt,				DIK_LALT			},
-			{	KeyCode::RAlt,				DIK_RALT			},
-			{	KeyCode::LWin,				DIK_LWIN			},
-			{	KeyCode::RWin,				DIK_RWIN			},
-			{	KeyCode::CapsLock,			DIK_CAPSLOCK		},
-			{	KeyCode::Up,				DIK_UPARROW			},
-			{	KeyCode::Down,				DIK_DOWNARROW		},
-			{	KeyCode::Left,				DIK_LEFTARROW		},
-			{	KeyCode::Right,				DIK_RIGHTARROW		},
-			{	KeyCode::PgUp,				DIK_PGUP			},
-			{	KeyCode::PgDown,			DIK_PGDN			},
-			{	KeyCode::Insert,			DIK_INSERT			},
-			{	KeyCode::Home,				DIK_HOME			},
-			{	KeyCode::Delete,			DIK_DELETE			},
-			{	KeyCode::End,				DIK_END				},
-			{	KeyCode::Num_Lock,			DIK_NUMLOCK			},
-			{	KeyCode::Num_Slash,			DIK_NUMPADSLASH		},
-			{	KeyCode::Num_Multiple,		DIK_NUMPADSTAR		},
-			{	KeyCode::Num_Minus,			DIK_NUMPADMINUS		},
-			{	KeyCode::Num_Plus,			DIK_NUMPADPLUS		},
-			{	KeyCode::Num_Enter,			DIK_NUMPADENTER		},
-			{	KeyCode::Num_Decimal,		DIK_NUMPADPERIOD	},
-			{	KeyCode::Num_0,				DIK_NUMPAD0			},
-			{	KeyCode::Num_1,				DIK_NUMPAD1			},
-			{	KeyCode::Num_2,				DIK_NUMPAD2			},
-			{	KeyCode::Num_3,				DIK_NUMPAD3			},
-			{	KeyCode::Num_4,				DIK_NUMPAD4			},
-			{	KeyCode::Num_5,				DIK_NUMPAD5			},
-			{	KeyCode::Num_6,				DIK_NUMPAD6			},
-			{	KeyCode::Num_7,				DIK_NUMPAD7			},
-			{	KeyCode::Num_8,				DIK_NUMPAD8			},
-			{	KeyCode::Num_9,				DIK_NUMPAD9			},
-		};
-	}
+		_keySwaper = {
+			{ VK_ESCAPE			, KeyCode::Esc			 , },
+			{ VK_F1				, KeyCode::F1			 , },
+			{ VK_F2				, KeyCode::F2			 , },
+			{ VK_F3				, KeyCode::F3			 , },
+			{ VK_F4				, KeyCode::F4			 , },
+			{ VK_F5				, KeyCode::F5			 , },
+			{ VK_F6				, KeyCode::F6			 , },
+			{ VK_F7				, KeyCode::F7			 , },
+			{ VK_F8				, KeyCode::F8			 , },
+			{ VK_F9				, KeyCode::F9			 , },
+			{ VK_F10			, KeyCode::F10			 , },
+			{ VK_F11			, KeyCode::F11			 , },
+			{ VK_F12			, KeyCode::F12			 , },
+			{ VK_SNAPSHOT		, KeyCode::PrintScreen	 , },
+			{ VK_SCROLL			, KeyCode::Scroll		 , },
+			{ VK_PAUSE			, KeyCode::Pause		 , },
+			{ '0'				, KeyCode::_0			 , },
+			{ '1'				, KeyCode::_1			 , },
+			{ '2'				, KeyCode::_2			 , },
+			{ '3'				, KeyCode::_3			 , },
+			{ '4'				, KeyCode::_4			 , },
+			{ '5'				, KeyCode::_5			 , },
+			{ '6'				, KeyCode::_6			 , },
+			{ '7'				, KeyCode::_7			 , },
+			{ '8'				, KeyCode::_8			 , },
+			{ '9'				, KeyCode::_9			 , },
+			{ VK_OEM_MINUS		, KeyCode::Minus		 , },
+			{ VK_OEM_PLUS		, KeyCode::Equals		 , },
+			{ 0x08	/* ? */		, KeyCode::BackSpace	 , },
+			{ VK_TAB			, KeyCode::Tab			 , },
+			{ 'Q'				, KeyCode::Q			 , },
+			{ 'W'				, KeyCode::W			 , },
+			{ 'E'				, KeyCode::E			 , },
+			{ 'R'				, KeyCode::R			 , },
+			{ 'T'				, KeyCode::T			 , },
+			{ 'Y'				, KeyCode::Y			 , },
+			{ 'U'				, KeyCode::U			 , },
+			{ 'I'				, KeyCode::I			 , },
+			{ 'O'				, KeyCode::O			 , },
+			{ 'P'				, KeyCode::P			 , },
+			{ VK_OEM_4			, KeyCode::LBracket		 , },
+			{ VK_OEM_6			, KeyCode::RBracket	 	 , },
+			{ VK_RETURN			, KeyCode::Enter		 , },
+			{ VK_LCONTROL		, KeyCode::LCtrl		 , },
+			{ VK_RCONTROL		, KeyCode::RCtrl		 , },
+			{ 'A'				, KeyCode::A			 , },
+			{ 'S'				, KeyCode::S			 , },
+			{ 'D'				, KeyCode::D			 , },
+			{ 'F'				, KeyCode::F			 , },
+			{ 'G'				, KeyCode::G			 , },
+			{ 'H'				, KeyCode::H			 , },
+			{ 'J'				, KeyCode::J			 , },
+			{ 'K'				, KeyCode::K			 , },
+			{ 'L'				, KeyCode::L			 , },
+			{ VK_OEM_1			, KeyCode::Semicolon	 , },
+			{ VK_OEM_7			, KeyCode::Apostrophe 	 , },
+			{ VK_OEM_3			, KeyCode::Grave		 , },
+			{ VK_LSHIFT			, KeyCode::LShift		 , },
+			{ VK_OEM_102		, KeyCode::BackSlash	 , },
+			{ 'Z'				, KeyCode::Z			 , },
+			{ 'X'				, KeyCode::X			 , },
+			{ 'C'				, KeyCode::C			 , },
+			{ 'V'				, KeyCode::V			 , },
+			{ 'B'				, KeyCode::B			 , },
+			{ 'N'				, KeyCode::N			 , },
+			{ 'M'				, KeyCode::M			 , },
+			{ VK_OEM_COMMA		, KeyCode::Comma		 , },
+			{ VK_OEM_PERIOD		, KeyCode::Period		 , },
+			{ VK_OEM_2			, KeyCode::Slash		 , },
+			{ VK_RSHIFT			, KeyCode::RShift		 , },
 
-	uint InputDevice::DikToKeyCode(KeyCode code)
-	{
-		return _swaper[code];
+			// Alt										
+			{ VK_MENU			, KeyCode::LAlt			 , },
+			{ VK_MENU			, KeyCode::RAlt			 , },
+
+			{ VK_LWIN			, KeyCode::LWin			 , },
+			{ VK_RWIN			, KeyCode::RWin			 , },
+			{ VK_CAPITAL		, KeyCode::CapsLock		 , },
+			{ VK_UP				, KeyCode::Up			 , },
+			{ VK_DOWN			, KeyCode::Down			 , },
+			{ VK_LEFT			, KeyCode::Left			 , },
+			{ VK_RIGHT			, KeyCode::Right		 , },
+			{ VK_PRIOR			, KeyCode::PgUp			 , },
+			{ VK_NEXT			, KeyCode::PgDown		 , },
+			{ VK_INSERT			, KeyCode::Insert		 , },
+			{ VK_HOME			, KeyCode::Home			 , },
+			{ VK_DELETE			, KeyCode::Delete		 , },
+			{ VK_END			, KeyCode::End			 , },
+			{ VK_NUMLOCK		, KeyCode::Num_Lock		 , },
+			{ VK_DIVIDE			, KeyCode::Num_Slash	 , },
+			{ VK_MULTIPLY		, KeyCode::Num_Multiply  , },
+			{ VK_SUBTRACT		, KeyCode::Num_Minus	 , },
+			{ VK_ADD			, KeyCode::Num_Plus		 , },
+			{ VK_RETURN			, KeyCode::Num_Enter	 , },
+			{ VK_DECIMAL		, KeyCode::Num_Decimal	 , },
+			{ VK_NUMPAD0		, KeyCode::Num_0		 , },
+			{ VK_NUMPAD1		, KeyCode::Num_1		 , },
+			{ VK_NUMPAD2		, KeyCode::Num_2		 , },
+			{ VK_NUMPAD3		, KeyCode::Num_3		 , },
+			{ VK_NUMPAD4		, KeyCode::Num_4		 , },
+			{ VK_NUMPAD5		, KeyCode::Num_5		 , },
+			{ VK_NUMPAD6		, KeyCode::Num_6		 , },
+			{ VK_NUMPAD7		, KeyCode::Num_7		 , },
+			{ VK_NUMPAD8		, KeyCode::Num_8		 , },
+			{ VK_NUMPAD9		, KeyCode::Num_9		 , },
+			{ VK_SPACE			, KeyCode::SpaceBar		 , },
+		};
 	}
 }

@@ -1,10 +1,12 @@
 #pragma once
 
+#include "base/CotRule.h"
+
 namespace Cot
 {
 	enum class KeyCode
 	{
-		Esc,
+		Esc = 0,
 		F1,
 		F2,
 		F3,
@@ -48,6 +50,7 @@ namespace Cot
 		RBracket,	// ]
 		Enter,
 		LCtrl,
+		RCtrl,
 		A,
 		S,
 		D,
@@ -60,7 +63,7 @@ namespace Cot
 		Semicolon,	// ; :
 		Apostrophe, // ' "
 		Grave,		// ` ~
-		LSHIFT,
+		LShift,
 		BackSlash,	// \ //
 		Z,
 		X,
@@ -88,9 +91,10 @@ namespace Cot
 		Home,
 		Delete,
 		End,
+		SpaceBar,
 		Num_Lock,
 		Num_Slash,
-		Num_Multiple,
+		Num_Multiply,
 		Num_Minus,
 		Num_Plus,
 		Num_Enter,
@@ -105,8 +109,13 @@ namespace Cot
 		Num_7,
 		Num_8,
 		Num_9,
-		MouseLButton,
-		MouseRButton,
-		MouseMButton,
+		KEYBOARD_END,
+	};
+	enum class MouseButton
+	{
+		LButton = 0,
+		MButton,
+		RButton,
+		MOUSE_END,
 	};
 }

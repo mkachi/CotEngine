@@ -5,7 +5,6 @@
 #include "render/CotRenderManager.h"
 #include "asset/CotAudioClip.h"
 #include "asset/CotAssetManager.h"
-#include "input/CotInput.h"
 
 namespace Cot
 {
@@ -21,6 +20,18 @@ namespace Cot
 	{
 		switch (msg)
 		{
+		case WM_KEYUP:			UpdateKeyUp(wParam);		return 0;
+		case WM_KEYDOWN:		UpdateKeyDown(wParam);		return 0;
+
+		case WM_LBUTTONDOWN:	UpdateMouseDown(MouseButton::LButton);	return 0;
+		case WM_LBUTTONUP:		UpdateMouseUp(MouseButton::LButton);	return 0;
+
+		case WM_RBUTTONDOWN:	UpdateMouseDown(MouseButton::RButton);	return 0;
+		case WM_RBUTTONUP:		UpdateMouseUp(MouseButton::RButton);	return 0;
+
+		case WM_MBUTTONDOWN:	UpdateMouseDown(MouseButton::MButton);	return 0;;
+		case WM_MBUTTONUP:		UpdateMouseUp(MouseButton::MButton);	return 0;;
+
 		case WM_DESTROY:
 			PostQuitMessage(0);
 			break;
@@ -35,9 +46,7 @@ namespace Cot
 		{
 			return false;
 		}
-		_graphics->AddRenderer(
-			new Dx9Renderer2D()
-		);
+		_graphics->AddRenderer(new Dx9Renderer2D());
 
 		return true;
 	}
@@ -88,13 +97,14 @@ namespace Cot
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);
 
-		_inputDevice = new InputDevice();
-		if (!_inputDevice->Init(_instance, _wnd, width, height))
+		_inputDevice = new InputDevice(_wnd);
+		if (_inputDevice == nullptr)
 		{
 			MessageBox(NULL, L"Cannot create input device.", L"Error", MB_OK);
 			return false;
 		}
-		RegisterInputDevice(_inputDevice);
+		_inputDevice->CreateKeyCodeTable();
+		RegisteInputDevice(_inputDevice);
 
 		return true;
 	}
@@ -117,8 +127,8 @@ namespace Cot
 			else
 			{
 				time.Tick();
-				_inputDevice->Update();
 				sceneManager.Update(time);
+				InputClear();
 				_graphics->Render();
 			}
 		}
@@ -132,11 +142,10 @@ namespace Cot
 		AssetManager::GetInstance().DestroyAllAssets();
 		AssetManager::Destroy();
 
+		SafeDelete(_inputDevice);
+
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
-
-		_inputDevice->Destroy();
-		SafeDelete(_inputDevice);
 
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
