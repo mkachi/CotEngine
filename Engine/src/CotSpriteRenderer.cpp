@@ -35,6 +35,7 @@ namespace Cot
 
 	void SpriteRenderer::OnDestroy()
 	{
+		RenderManager::GetInstance().Remove(this);
 		_texture->Release();
 	}
 

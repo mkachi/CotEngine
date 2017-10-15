@@ -13,6 +13,7 @@ namespace Cot
 
 	public:
 		void Add(SpriteRenderer* command);
+		void Remove(SpriteRenderer* command);
 		void Clear();
 
 		std::vector<SpriteRenderer*> GetRenderQ() { return _renderQ; }

@@ -9,6 +9,11 @@ namespace Cot
 		_renderQ.push_back(command);
 	}
 
+	void RenderManager::Remove(SpriteRenderer* command)
+	{
+		_renderQ.erase(std::find(_renderQ.cbegin(), _renderQ.cend(), command));
+	}
+
 	void RenderManager::Clear()
 	{
 		_renderQ.clear();

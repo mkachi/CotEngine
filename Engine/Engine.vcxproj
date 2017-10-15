@@ -29,6 +29,7 @@
     <ClInclude Include="include\audio\CotWavDecoder.h" />
     <ClInclude Include="include\base\CotApplication.h" />
     <ClInclude Include="include\base\CotDefine.h" />
+    <ClInclude Include="include\base\CotPhysics.h" />
     <ClInclude Include="include\base\CotScene.h" />
     <ClInclude Include="include\base\CotBroadCastProtocol.h" />
     <ClInclude Include="include\base\CotRule.h" />

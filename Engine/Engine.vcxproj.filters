@@ -131,6 +131,9 @@
     <ClInclude Include="include\input\CotInputDevice.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="include\base\CotPhysics.h">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">

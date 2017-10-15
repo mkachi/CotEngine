@@ -157,5 +157,6 @@ d:\git\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4080): note: 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>' 선언을 참조하십시오.
 d:\git\cotengine\engine\include\asset\cottexture.h(13): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
   c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
+     D:\Git\CotEngine\\Build\Products\Win32_Debug\Demo.lib 라이브러리 및 D:\Git\CotEngine\\Build\Products\Win32_Debug\Demo.exp 개체를 생성하고 있습니다.
   Demo.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Demo.exe
   Demo.vcxproj -> D:\Git\CotEngine\\Build\Products\Win32_Debug\Demo.pdb (Partial PDB)
