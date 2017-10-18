@@ -25,6 +25,8 @@ namespace Cot
 		static Texture* Load(const string& filename);
 		IDirect3DTexture9* GetTexture() { return _texture; }
 
+		string GetFilename() { return _filename; }
+
 		uint GetWidth() { return _info.Width; }
 		uint GetHeight() { return _info.Height; }
 

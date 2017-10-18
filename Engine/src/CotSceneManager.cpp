@@ -16,11 +16,17 @@ namespace Cot
 		_scenes.clear();
 	}
 
+	void SceneManager::SetGraphicsDevice(IGraphics* graphics)
+	{
+		_graphics = graphics;
+	}
+
 	void SceneManager::LoadScene(Scene* scene)
 	{
 		if (scene != nullptr)
 		{
 			DestroyAllScene();
+			scene->SetGraphicsDevice(_graphics);
 			if (!scene->Init())
 			{
 				MessageBox(NULL, L"Scene init failed.", L"Error", MB_OK);
@@ -33,6 +39,12 @@ namespace Cot
 
 	void SceneManager::AddScene(Scene* scene)
 	{
+		scene->SetGraphicsDevice(_graphics);
+		if (!scene->Init())
+		{
+			MessageBox(NULL, L"Scene init failed.", L"Error", MB_OK);
+			return;
+		}
 		scene->Start();
 		_scenes.push_back(scene);
 	}

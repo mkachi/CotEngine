@@ -1,4 +1,5 @@
 #include "render/CotDx9Device.h"
+#include "math/CotGL2DX.h"
 
 static IDirect3DDevice9* _device = nullptr;
 
@@ -13,6 +14,8 @@ namespace Cot
 
 	bool Dx9Device::Init(HWND wnd)
 	{
+		_clearColor = Color::Black;
+
 		_d3d = Direct3DCreate9(D3D_SDK_VERSION);
 		if (_d3d == NULL)
 		{
@@ -76,7 +79,7 @@ namespace Cot
 
 	void Dx9Device::Render()
 	{
-		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
+		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, ToDxMath(_clearColor), 1.0f, 0);
 		_device->BeginScene();
 		for (auto& renderer : _renderers)
 		{

@@ -55,7 +55,7 @@ namespace Cot
 		T* GetComponent()
 		{
 			string key = ComponentType<T>::GetType();
-			return _components.find<T*>(key);
+			return static_cast<T*>(_components.find(key));
 		}
 
 		template <typename T>

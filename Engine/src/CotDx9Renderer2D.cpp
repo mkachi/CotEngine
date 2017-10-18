@@ -24,7 +24,7 @@ namespace Cot
 		{
 			std::sort(renderQ.begin(), renderQ.end(), [](SpriteRenderer* a, SpriteRenderer* b)->bool
 			{
-				return a->GetDepth() < b->GetDepth();
+				return a->GetDepth() > b->GetDepth();
 			});
 		}
 

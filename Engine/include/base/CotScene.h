@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CotTime.h"
+#include "render/CotIGraphics.h"
 
 namespace Cot
 {
@@ -11,10 +12,13 @@ namespace Cot
 		std::vector<Entity*> _entitys;
 
 	protected:
+		IGraphics* graphics;
 		Scene();
 
 	public:
 		virtual ~Scene();
+
+		void SetGraphicsDevice(IGraphics* graphics);
 
 		virtual bool Init() = 0;
 		virtual void Update(Time& time);

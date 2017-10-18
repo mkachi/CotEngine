@@ -13,9 +13,9 @@ namespace Cot
 	class COT_API Application final
 	{
 	private:
-		HWND		_wnd;
-		HINSTANCE	_instance;
-		wstring		_title;
+		HWND			_wnd;
+		HINSTANCE		_instance;
+		wstring			_title;
 		IGraphics*		_graphics;
 		InputDevice*	_inputDevice;
 

@@ -14,6 +14,11 @@ namespace Cot
 		}
 	}
 
+	void Scene::SetGraphicsDevice(IGraphics* graphics)
+	{
+		this->graphics = graphics;
+	}
+
 	void Scene::Update(Time& time)
 	{
 		for (auto& entity : _entitys)

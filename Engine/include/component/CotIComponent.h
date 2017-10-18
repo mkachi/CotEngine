@@ -21,6 +21,8 @@ namespace Cot
 		void SetEnable(bool enable);
 		bool IsEnable() { return _enable; }
 
+		void Release();
+
 		virtual void OnEnable()			{}
 		virtual void Reset()			{}
 		virtual void Awake()			{}

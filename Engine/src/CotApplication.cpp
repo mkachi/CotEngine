@@ -93,6 +93,7 @@ namespace Cot
 			MessageBox(NULL, L"Cannot create graphics device.", L"Error", MB_OK);
 			return false;
 		}
+		SceneManager::GetInstance().SetGraphicsDevice(_graphics);
 
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);

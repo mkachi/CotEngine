@@ -24,7 +24,7 @@ namespace Cot
 	{	}
 
 	Color32::Color32(const Color& color)
-		: r(static_cast<uchar>(color.a * 255)), g(static_cast<uchar>(color.g * 255)), b(static_cast<uchar>(color.b * 255))
+		: r(static_cast<uchar>(color.r * 255)), g(static_cast<uchar>(color.g * 255)), b(static_cast<uchar>(color.b * 255)), a(static_cast<uchar>(color.a * 255))
 	{	}
 
 	Color32::~Color32()

@@ -67,7 +67,7 @@ namespace Cot
 			{
 				return NULL;
 			}
-			for (MLuint i = 0; i < _map.size(); ++i)
+			for (uint i = 0; i < _map.size(); ++i)
 			{
 				if (_map[i].first == key)
 				{
@@ -83,7 +83,7 @@ namespace Cot
 			{
 				return false;
 			}
-			for (MLuint i = 0; i < _map.size(); ++i)
+			for (uint i = 0; i < _map.size(); ++i)
 			{
 				if (_map[i].first == key)
 				{
@@ -180,7 +180,7 @@ namespace Cot
 			{
 				return NULL;
 			}
-			for (MLuint i = 0; i < _map.size(); ++i)
+			for (uint i = 0; i < _map.size(); ++i)
 			{
 				if (_map[i].first == key)
 				{
@@ -201,7 +201,7 @@ namespace Cot
 			}
 
 			result.reserve(150);
-			for (MLuint i = 0; i < _map.size(); ++i)
+			for (uint i = 0; i < _map.size(); ++i)
 			{
 				if (_map[i].first == key)
 				{
@@ -217,7 +217,7 @@ namespace Cot
 			{
 				return false;
 			}
-			for (MLuint i = 0; i < _map.size(); ++i)
+			for (uint i = 0; i < _map.size(); ++i)
 			{
 				if (_map[i].first == key)
 				{

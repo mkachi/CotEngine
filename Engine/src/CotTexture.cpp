@@ -33,6 +33,20 @@ namespace Cot
 
 	bool Texture::Init(const string& filename)
 	{
+		string::size_type pos = string::npos;
+
+		filename.find_last_of('/');
+		if (pos != string::npos)
+		{
+			_filename = filename.substr(pos + 1);
+		}
+
+		pos = filename.find_last_of('\\');
+		if (pos != string::npos)
+		{
+			_filename = filename.substr(pos + 1);
+		}
+
 		_key = filename;
 		_wkey = ToWString(filename);
 		D3DXGetImageInfoFromFile(_wkey.c_str(), &_info);
