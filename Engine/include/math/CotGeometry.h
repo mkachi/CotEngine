@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/CotRule.h"
+#include "CotVec2.h"
 
 namespace Cot 
 {
@@ -32,24 +32,42 @@ namespace Cot
 	class COT_API Rect final
 	{
 	public:
-		uint x;
-		uint y;
-		uint width;
-		uint height;
+		Vec2 origin;
+		Size size;
 
 		Rect();
-		Rect(const uint x, const uint y, const uint w, const uint h);
+		Rect(const float x, const float y, const float w, const float h);
+		Rect(const Vec2& center, const Size& size);
 		Rect(const Rect& rect);
 		Rect(const Rect&& rect);
 		~Rect();
 
-		Rect& operator=(const Rect& size);
-		Rect operator+(const Rect& size) const;
-		Rect operator-(const Rect& size) const;
-		Rect operator*(const uint value) const;
-		Rect operator/(const uint value) const;
+		Rect& operator=(const Rect& rect);
 
-		void SetRect(const uint x, const uint y, const uint w, const uint h);
+		void SetRect(float x, float y, float w, float h);
+
+		float GetMinX();
+		float GetMidX();
+		float GetMaxX();
+		float GetMinY();
+		float GetMidY();
+		float GetMaxY();
+
+	};
+
+	class COT_API Circle
+	{
+	public:
+		float r;
+		Vec2 center;
+
+		Circle();
+		Circle(float r, Vec2& center);
+		Circle(Circle& circle);
+
+		Circle& operator=(Circle& circle);
+
+		void SetCircle(float r, Vec2& center);
 
 	};
 }

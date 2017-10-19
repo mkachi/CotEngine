@@ -32,8 +32,8 @@ namespace Cot
 		return quternion.ToArray;
 	}
 
-	RECT ToDxMath(const Rect& rect)
+	RECT ToDxMath(Rect& rect)
 	{
-		return { (long)rect.x, (long)rect.y, (long)rect.width, (long)rect.height };
+		return { (long)rect.GetMinX(), (long)rect.GetMinY(), (long)rect.GetMaxX(), (long)rect.GetMaxY() };
 	}
 }

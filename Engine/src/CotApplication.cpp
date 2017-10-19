@@ -2,9 +2,11 @@
 #include "base/CotSceneManager.h"
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
+#include "render/CotDx9DebugRenderer.h"
 #include "render/CotRenderManager.h"
 #include "asset/CotAudioClip.h"
 #include "asset/CotAssetManager.h"
+#include "physics/CotPhysicsManager.h"
 
 namespace Cot
 {
@@ -47,6 +49,7 @@ namespace Cot
 			return false;
 		}
 		_graphics->AddRenderer(new Dx9Renderer2D());
+		_graphics->AddRenderer(new Dx9DebugRenderer());
 
 		return true;
 	}
@@ -129,6 +132,7 @@ namespace Cot
 			{
 				time.Tick();
 				sceneManager.Update(time);
+				PhysicsManager::GetInstance().Update(time);
 				InputClear();
 				_graphics->Render();
 			}

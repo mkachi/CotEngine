@@ -21,8 +21,6 @@ namespace Cot
 		void SetEnable(bool enable);
 		bool IsEnable() { return _enable; }
 
-		void Release();
-
 		virtual void OnEnable()			{}
 		virtual void Reset()			{}
 		virtual void Awake()			{}
@@ -30,5 +28,10 @@ namespace Cot
 		virtual void Update(Time& time)	{}
 		virtual void OnDisable()		{}
 		virtual void OnDestroy()		{}
+
+		virtual void OnTriggerEnter(Entity* entity) {}
+		virtual void OnTriggerStay(Entity* entity)	{}
+		virtual void OnTriggerExit(Entity* entity)	{}
+
 	};
 }

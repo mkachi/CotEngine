@@ -65,6 +65,8 @@ namespace Cot
 			return _components.finds<T*>(key);
 		}
 
+		MultiVectorMap<string, IComponent*>& GetComponentMap() { return _components; }
+
 		void CreateBroadCastProtocol();
 		void AddBroadCastListener(const string& name, const std::function<void()>& function);
 		void SendMsg(const string& function);

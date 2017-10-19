@@ -37,24 +37,12 @@ namespace Cot
 				0.0f);
 
 			_sprite->SetTransform(&ToDxMath(renderQ[i]->GetOwner()->GetWorldMatrix()));
-			if (renderQ[i]->IsAtlasSprite())
-			{
-				_sprite->Draw(
-					renderQ[i]->GetTexture()->GetTexture(),
-					&ToDxMath(renderQ[i]->GetAtlasRect()),
-					&ToDxMath(center),
-					nullptr,
-					ToDxMath(renderQ[i]->GetColor()));
-			}
-			else
-			{
-				_sprite->Draw(
-					renderQ[i]->GetTexture()->GetTexture(),
-					NULL,
-					&ToDxMath(center),
-					nullptr,
-					ToDxMath(renderQ[i]->GetColor()));
-			}
+			_sprite->Draw(
+				renderQ[i]->GetTexture()->GetTexture(),
+				&ToDxMath(renderQ[i]->GetRect()),
+				&ToDxMath(center),
+				nullptr,
+				ToDxMath(renderQ[i]->GetColor()));
 		}
 		_sprite->End();
 		RenderManager::GetInstance().Clear();

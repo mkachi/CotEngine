@@ -59,57 +59,93 @@ namespace Cot
 	const Size Size::One(1, 1);
 
 	Rect::Rect()
-		:x(0.0f), y(0.0f), width(0.0f), height(0.0f)
-	{	}
+	{
+		SetRect(0.0f, 0.0f, 0.0f, 0.0f);
+	}
 
-	Rect::Rect(const uint xx, const uint yy, const uint w, const uint h)
-		: x(xx), y(yy), width(w), height(h)
-	{	}
+	Rect::Rect(float xx, float yy, float w, float h)
+	{	
+		SetRect(xx, yy, w, h);
+	}
 
 	Rect::Rect(const Rect& rect)
-		: x(rect.x), y(rect.y), width(rect.width), height(rect.height)
-	{	}
+	{
+		SetRect(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+	}
 
 	Rect::Rect(const Rect&& rect)
-		: x(rect.x), y(rect.y), width(rect.width), height(rect.height)
-	{	}
+	{	
+		SetRect(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+	}
 
 	Rect::~Rect()
 	{   }
 
 	Rect& Rect::operator=(const Rect& rect)
 	{
-		SetRect(rect.x, rect.y, rect.width, rect.height);
+		SetRect(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 		return *this;
 	}
 
-	Rect Rect::operator+(const Rect& rect) const
+	void Rect::SetRect(float x, float y, float w, float h)
 	{
-		return Rect(x + rect.x, y + rect.y, width + rect.width, height + rect.height);
+		origin.x = x;
+		origin.y = y;
+		size.width = w;
+		size.height = h;
 	}
 
-	Rect Rect::operator-(const Rect& rect) const
+	float Rect::GetMinX()
 	{
-		return Rect(x - rect.x, y - rect.y, width - rect.width, height - rect.height);
+		return origin.x;
 	}
 
-	Rect Rect::operator*(uint value) const
+	float Rect::GetMidX()
 	{
-		return Rect(x * value, y * value, width * value, height * value);
+		return origin.x + size.width / 2.0f;
 	}
 
-	Rect Rect::operator/(uint value) const
+	float Rect::GetMaxX()
 	{
-		COT_ASSERT(value <= 0.0f, "Division by 0");
-
-		return Rect(x / value, y / value, width / value, height / value);
+		return origin.x + size.width;
 	}
 
-	void Rect::SetRect(const uint xx, const uint yy, const uint w, const uint h)
+	float Rect::GetMinY()
 	{
-		x = xx;
-		y = yy;
-		width = w;
-		height = h;
+		return origin.y;
+	}
+
+	float Rect::GetMidY()
+	{
+		return origin.y + size.height / 2.0f;
+	}
+
+	float Rect::GetMaxY()
+	{
+		return origin.y + size.height;
+	}
+
+	Circle::Circle()
+		: r(0.0f), center(Vec2::Zero)
+	{	}
+
+	Circle::Circle(const float r, Vec2& center)
+		: r(r), center(center)
+	{	}
+
+	Circle::Circle(Circle& circle)
+		: r(circle.r), center(circle.center)
+	{	}
+
+	Circle& Circle::operator=(Circle& circle)
+	{
+		SetCircle(circle.r, circle.center);
+		return *this;
+	}
+
+	void Circle::SetCircle(float r, Vec2& center)
+	{
+		this->r = r;
+		this->center = center;
 	}
 }

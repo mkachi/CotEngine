@@ -13,7 +13,7 @@ namespace Cot
 		}
 	}
 
-	void BroadCastProtocol::Add(const string& name, const Function& function)
+	void BroadCastProtocol::Add(const string& name, const Function<void()>& function)
 	{
 		std::vector<string> tokens = Split(name, { "::" });
 		string splitName;
@@ -36,7 +36,7 @@ namespace Cot
 			}
 		}
 
-		_functions.emplace(std::make_pair(splitName, new BroadCastProtocol::CallBack()));
+		_functions.emplace(std::make_pair(splitName, new CallBack<void()>()));
 		_functions[splitName]->Add(function);
 	}
 
@@ -46,19 +46,6 @@ namespace Cot
 		if (iter != _functions.cend())
 		{
 			iter->second->Invoke();
-		}
-	}
-
-	void BroadCastProtocol::CallBack::Add(const Function& function)
-	{
-		_functions.push_back(function);
-	}
-
-	void BroadCastProtocol::CallBack::Invoke()
-	{
-		for (auto& function : _functions)
-		{
-			function();
 		}
 	}
 }

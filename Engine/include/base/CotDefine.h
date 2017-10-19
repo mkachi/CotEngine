@@ -54,11 +54,19 @@ template <> \
 struct ComponentType<_TYPE_> \
 { static constexpr const char* GetType() { return #_TYPE_; } }; \
 class __VA_ARGS__ _TYPE_ \
-	: public IComponent
+	: public Cot::IComponent
+
+#define ComponentExt(_TYPE_, _EXT_, ...) \
+class _TYPE_; \
+template <> \
+struct ComponentType<_TYPE_> \
+{ static constexpr const char* GetType() { return #_TYPE_; } }; \
+class __VA_ARGS__ _TYPE_ \
+	: public _EXT_
 
 #define COT_COMPONENT(_CLASS_) \
 public: \
-_CLASS_() { _type = #_CLASS_; _enable = true; OnEnable(); Awake(); } \
+_CLASS_() { _type = #_CLASS_; _enable = true; Reset(); OnEnable(); Awake(); } \
 virtual ~_CLASS_() { OnDisable(); OnDestroy(); }
 
 namespace Cot 

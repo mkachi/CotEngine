@@ -14,11 +14,10 @@ namespace Cot
 		Color		_color;
 		Rect		_rect;
 		int			_depth;
-		bool		_atlas;
 
 	public:
 		SpriteRenderer* Init(const string& filename);
-		SpriteRenderer* InitWithAtlas(const string& atlas, const Rect& rect);
+		SpriteRenderer* Init(const string& filename, const Rect& rect);
 
 		void Reset() override;
 		void Update(Time& time) override;
@@ -33,13 +32,11 @@ namespace Cot
 		void SetColor(const Color& color);
 		Color GetColor() { return _color; }
 
-		void SetAtlasRect(const Rect& rect);
-		Rect GetAtlasRect() { return _rect; }
+		void SetRect(const Rect& rect);
+		Rect GetRect() { return _rect; }
 
 		void SetDepth(int depth);
 		int GetDepth() { return _depth; }
-
-		bool IsAtlasSprite() { return _atlas; }
 
 	};
 }

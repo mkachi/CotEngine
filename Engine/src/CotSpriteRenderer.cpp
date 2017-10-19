@@ -5,17 +5,15 @@ namespace Cot
 {
 	SpriteRenderer* SpriteRenderer::Init(const string& filename)
 	{
-		Reset();
 		_texture = Texture::Load(filename);
+		_rect = Rect(0, 0, _texture->GetWidth(), _texture->GetHeight());
 		return this;
 	}
 
-	SpriteRenderer* SpriteRenderer::InitWithAtlas(const string& atlas, const Rect& rect)
+	SpriteRenderer* SpriteRenderer::Init(const string& filename, const Rect& rect)
 	{
-		Reset();
-		_texture = Texture::Load(atlas);
+		_texture = Texture::Load(filename);
 		_rect = rect;
-		_atlas = true;
 		return this;
 	}
 
@@ -24,8 +22,7 @@ namespace Cot
 		SafeRelease(_texture);
 		_anchor = Vec2(0.5f, 0.5f);
 		_color = Color::White;
-		_depth = false;
-		_atlas = false;
+		_depth = 0;
 	}
 
 	void SpriteRenderer::Update(Time& time)
@@ -54,7 +51,7 @@ namespace Cot
 		_color = color;
 	}
 
-	void SpriteRenderer::SetAtlasRect(const Rect& rect)
+	void SpriteRenderer::SetRect(const Rect& rect)
 	{
 		_rect = rect;
 	}
