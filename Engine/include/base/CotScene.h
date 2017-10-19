@@ -25,6 +25,7 @@ namespace Cot
 
 		void Start();
 		void AddEntity(Entity* entity);
+		void RemoveEntity(Entity* entity);
 
 	};
 }

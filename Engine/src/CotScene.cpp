@@ -39,4 +39,9 @@ namespace Cot
 	{
 		_entitys.push_back(entity);
 	}
+
+	void Scene::RemoveEntity(Entity* entity)
+	{
+		_entitys.erase(std::find(_entitys.cbegin(), _entitys.cend(), entity));
+	}
 }

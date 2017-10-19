@@ -12,12 +12,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\DemoScene.cpp">
+    <ClCompile Include="..\Classes\MapEditor.cpp">
       <Filter>DemoScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\DemoScene.h">
+    <ClInclude Include="..\Classes\MapEditor.h">
       <Filter>DemoScene</Filter>
     </ClInclude>
   </ItemGroup>

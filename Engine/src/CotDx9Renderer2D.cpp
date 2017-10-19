@@ -24,36 +24,36 @@ namespace Cot
 		{
 			std::sort(renderQ.begin(), renderQ.end(), [](SpriteRenderer* a, SpriteRenderer* b)->bool
 			{
-				return a->GetDepth() > b->GetDepth();
+				return a->GetDepth() < b->GetDepth();
 			});
 		}
 
-		_sprite->Begin(D3DXSPRITE_ALPHABLEND | D3DXSPRITE_SORT_TEXTURE);
-		for (auto& renderer : renderQ)
+		_sprite->Begin(D3DXSPRITE_ALPHABLEND);
+		for (uint i = 0; i < renderQ.size(); ++i)
 		{
 			Vec3 center = Vec3(
-				renderer->GetTexture()->GetWidth() * renderer->GetAnchor().x,
-				renderer->GetTexture()->GetHeight() * renderer->GetAnchor().y,
+				renderQ[i]->GetTexture()->GetWidth() * renderQ[i]->GetAnchor().x,
+				renderQ[i]->GetTexture()->GetHeight() * renderQ[i]->GetAnchor().y,
 				0.0f);
 
-			_sprite->SetTransform(&ToDxMath(renderer->GetOwner()->GetWorldMatrix()));
-			if (renderer->IsAtlasSprite())
+			_sprite->SetTransform(&ToDxMath(renderQ[i]->GetOwner()->GetWorldMatrix()));
+			if (renderQ[i]->IsAtlasSprite())
 			{
 				_sprite->Draw(
-					renderer->GetTexture()->GetTexture(),
-					&ToDxMath(renderer->GetAtlasRect()),
+					renderQ[i]->GetTexture()->GetTexture(),
+					&ToDxMath(renderQ[i]->GetAtlasRect()),
 					&ToDxMath(center),
 					nullptr,
-					ToDxMath(renderer->GetColor()));
+					ToDxMath(renderQ[i]->GetColor()));
 			}
 			else
 			{
 				_sprite->Draw(
-					renderer->GetTexture()->GetTexture(),
+					renderQ[i]->GetTexture()->GetTexture(),
 					NULL,
 					&ToDxMath(center),
 					nullptr,
-					ToDxMath(renderer->GetColor()));
+					ToDxMath(renderQ[i]->GetColor()));
 			}
 		}
 		_sprite->End();

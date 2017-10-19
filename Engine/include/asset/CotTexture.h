@@ -10,6 +10,7 @@ namespace Cot
 		: public Asset
 	{
 	private:
+		uint				_id;
 		std::string			_filename;
 		D3DXIMAGE_INFO		_info;
 		IDirect3DTexture9*	_texture;
@@ -26,6 +27,8 @@ namespace Cot
 		IDirect3DTexture9* GetTexture() { return _texture; }
 
 		string GetFilename() { return _filename; }
+
+		uint GetId() { return _id; }
 
 		uint GetWidth() { return _info.Width; }
 		uint GetHeight() { return _info.Height; }

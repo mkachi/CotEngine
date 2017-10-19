@@ -154,29 +154,29 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(DXSDK_DIR)Include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\$(PlatformTarget);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

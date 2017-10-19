@@ -41,8 +41,8 @@ namespace Cot
 		}
 
 		_device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-		_device->SetRenderState(D3DRS_ZENABLE, true);
-		_device->SetRenderState(D3DRS_LIGHTING, true);
+		_device->SetRenderState(D3DRS_ZENABLE, false);
+		_device->SetRenderState(D3DRS_LIGHTING, false);
 		_device->SetRenderState(D3DRS_AMBIENT, 0x00202020);
 		_device->SetRenderState(D3DRS_NORMALIZENORMALS, true);
 		_device->SetRenderState(D3DRS_SPECULARENABLE, true);

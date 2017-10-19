@@ -33,18 +33,22 @@ namespace Cot
 
 	bool Texture::Init(const string& filename)
 	{
-		string::size_type pos = string::npos;
+		static uint ID_COUNT = 0;
 
-		filename.find_last_of('/');
-		if (pos != string::npos)
+		_id = ++ID_COUNT;
+
+		string::size_type pos = string::npos;
+		if ((pos = filename.find_last_of('/')) != string::npos)
 		{
 			_filename = filename.substr(pos + 1);
 		}
-
-		pos = filename.find_last_of('\\');
-		if (pos != string::npos)
+		else if ((pos = filename.find_last_of('\\')) != string::npos)
 		{
 			_filename = filename.substr(pos + 1);
+		}
+		else
+		{
+			_filename = filename;
 		}
 
 		_key = filename;
