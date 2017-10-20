@@ -38,6 +38,8 @@ namespace Cot
 		{
 			T* result = new T();
 			result->SetOwner(this);
+			result->OnEnable();
+			result->Awake();
 			_components.add(result->GetType(), result);
 			return result;
 		}

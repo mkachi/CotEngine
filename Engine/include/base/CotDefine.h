@@ -66,7 +66,7 @@ class __VA_ARGS__ _TYPE_ \
 
 #define COT_COMPONENT(_CLASS_) \
 public: \
-_CLASS_() { _type = #_CLASS_; _enable = true; Reset(); OnEnable(); Awake(); } \
+_CLASS_() { _type = #_CLASS_; _enable = true; Reset(); } \
 virtual ~_CLASS_() { OnDisable(); OnDestroy(); }
 
 namespace Cot 

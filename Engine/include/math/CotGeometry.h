@@ -37,7 +37,7 @@ namespace Cot
 
 		Rect();
 		Rect(const float x, const float y, const float w, const float h);
-		Rect(const Vec2& center, const Size& size);
+		Rect(const Vec2& origin, const Size& size);
 		Rect(const Rect& rect);
 		Rect(const Rect&& rect);
 		~Rect();

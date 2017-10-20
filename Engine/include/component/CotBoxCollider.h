@@ -1,7 +1,6 @@
 #pragma once
 
 #include "CotICollider.h"
-#include "math/CotMath.h"
 
 namespace Cot
 {

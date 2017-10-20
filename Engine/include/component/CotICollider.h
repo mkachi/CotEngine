@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CotIComponent.h"
+#include "math/CotMath.h"
 
 namespace Cot
 {

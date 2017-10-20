@@ -68,6 +68,12 @@ namespace Cot
 		SetRect(xx, yy, w, h);
 	}
 
+	Rect::Rect(const Vec2& origin, const Size& size)
+	{
+		this->origin = origin;
+		this->size = size;
+	}
+
 	Rect::Rect(const Rect& rect)
 	{
 		SetRect(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
