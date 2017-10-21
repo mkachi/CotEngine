@@ -36,11 +36,11 @@ namespace Cot
 					}
 					break;
 				}
-				else if (_colliders[i]->GetCollType() == ICollider::Type::Box &&
+				else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
 					_colliders[j]->GetCollType() == ICollider::Type::Circle)
 				{
-					if (IntersectRectCircle(
-						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
+					if (IntersectCircle(
+						static_cast<CircleCollider*>(_colliders[i])->GetCircle(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
 						_colliders[i]->Enter(_colliders[j]->GetOwner());
@@ -52,11 +52,15 @@ namespace Cot
 					}
 					break;
 				}
-				else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
-					_colliders[j]->GetCollType() == ICollider::Type::Circle)
+				else if (
+					(_colliders[i]->GetCollType() == ICollider::Type::Box &&
+					_colliders[j]->GetCollType() == ICollider::Type::Circle) ||
+
+					(_colliders[i]->GetCollType() == ICollider::Type::Circle &&
+					_colliders[j]->GetCollType() == ICollider::Type::Box))
 				{
-					if (IntersectCircle(
-						static_cast<CircleCollider*>(_colliders[i])->GetCircle(),
+					if (IntersectRectCircle(
+						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
 						_colliders[i]->Enter(_colliders[j]->GetOwner());

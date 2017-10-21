@@ -21,13 +21,13 @@ namespace Cot
 
 		static LRESULT CALLBACK MsgProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-		bool InitGraphcis();
+		bool InitGraphcis(uint width, uint height, bool fullScreen);
 
 	public:
 		Application();
 		~Application();
 
-		bool Init(HINSTANCE instance, const string& title, int width, int height, bool fullScreen);
+		bool Init(HINSTANCE instance, const string& title, uint width, uint height, bool fullScreen = false);
 		void RunWithScene(Scene* scene);
 		void Destroy();
 

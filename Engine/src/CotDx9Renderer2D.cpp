@@ -5,8 +5,9 @@
 
 namespace Cot
 {
+	static ID3DXSprite* _sprite = nullptr;
+
 	Dx9Renderer2D::Dx9Renderer2D()
-		: _sprite(nullptr)
 	{
 		D3DXCreateSprite(Dx9Device::GetDevice(), &_sprite);
 	}
@@ -46,5 +47,15 @@ namespace Cot
 		}
 		_sprite->End();
 		RenderManager::GetInstance().Clear();
+	}
+
+	void Dx9Renderer2D::Reset()
+	{
+		_sprite->OnResetDevice();
+	}
+
+	void Dx9Renderer2D::Lost()
+	{
+		_sprite->OnLostDevice();
 	}
 }

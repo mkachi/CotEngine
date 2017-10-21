@@ -25,29 +25,26 @@ namespace Cot
 
 	bool IntersectRectCircle(Rect& rect, Circle& circle)
 	{
-		Vec2 center(rect.GetMidX(), rect.GetMidY());
+		Vec2 distance = Vec2(
+			std::abs(circle.center.x - rect.origin.x),
+			std::abs(circle.center.y - rect.origin.y));
 
-		float w = rect.size.width / 2;
-		float h = rect.size.height / 2;
-
-		float dx = std::abs(rect.origin.x - center.x);
-		float dy = std::abs(rect.origin.y - center.y);
-
-		if (dx > (circle.r + w) || dy > (circle.r + h))
+		if (distance.x > (rect.size.width / 2 + circle.r) ||
+			distance.y > (rect.size.height / 2 + circle.r))
 		{
 			return false;
 		}
 
-		Vec2 distance(
-			std::abs(center.x - rect.origin.x - w), 
-			std::abs(center.y - rect.origin.y - h));
-
-		if (distance.x <= w || distance.y <= h)
+		if (distance.x <= (rect.size.width / 2) ||
+			distance.y <= (rect.size.height / 2))
 		{
 			return true;
 		}
 
-		float cornerDistanceSq = powf(distance.x - w, 2) + powf(distance.y - h, 2);
-		return (cornerDistanceSq <= powf(circle.r, 2));
+		Vec2 cornerDistance = Vec2(
+			std::pow((distance.x - rect.size.width / 2), 2),
+			std::pow((distance.y - rect.size.height / 2), 2)
+		);
+		return (cornerDistance <= std::pow(circle.r, 2));
 	}
 }

@@ -9,13 +9,18 @@ namespace Cot
 		: public IGraphics
 	{
 	private:
-		IDirect3D9*			_d3d;
+		IDirect3D9*		_d3d;
+		HWND			_wnd;
 
 	public:
 		Dx9Device();
 		virtual ~Dx9Device();
 
-		bool Init(HWND wnd) override;
+		bool Init(HWND wnd, uint width, uint height, bool fullScreen) override;
+		
+		void SetWinSize(const Size& size) override;
+		
+		void SetFullScreen(bool value) override;
 		void AddRenderer(IRenderer* renderer) override;
 		void Destroy() override;
 		void Render() override;
