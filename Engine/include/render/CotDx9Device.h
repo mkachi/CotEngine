@@ -16,11 +16,8 @@ namespace Cot
 		Dx9Device();
 		virtual ~Dx9Device();
 
-		bool Init(HWND wnd, uint width, uint height, bool fullScreen) override;
+		bool Init(HWND wnd) override;
 		
-		void SetWinSize(const Size& size) override;
-		
-		void SetFullScreen(bool value) override;
 		void AddRenderer(IRenderer* renderer) override;
 		void Destroy() override;
 		void Render() override;

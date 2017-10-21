@@ -15,15 +15,9 @@
     <ClCompile Include="..\Classes\DemoScene.cpp">
       <Filter>DemoScene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TestComponent.cpp">
-      <Filter>DemoScene</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\DemoScene.h">
-      <Filter>DemoScene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TestComponent.h">
       <Filter>DemoScene</Filter>
     </ClInclude>
   </ItemGroup>

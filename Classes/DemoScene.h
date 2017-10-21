@@ -1,7 +1,6 @@
 #pragma once
 
 #include <CotEngine.h>
-#include "TestComponent.h"
 
 class DemoScene
 	: public Cot::Scene

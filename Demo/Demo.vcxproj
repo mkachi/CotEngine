@@ -168,12 +168,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\DemoScene.cpp" />
-    <ClCompile Include="..\Classes\TestComponent.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\DemoScene.h" />
-    <ClInclude Include="..\Classes\TestComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">

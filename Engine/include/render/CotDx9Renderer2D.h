@@ -8,14 +8,14 @@ namespace Cot
 	class COT_API Dx9Renderer2D
 		: public IRenderer
 	{
-public:
+	private:
+		ID3DXSprite* _sprite;
+
+	public:
 		Dx9Renderer2D();
 		virtual ~Dx9Renderer2D();
 
 		void Draw() override;
-
-		static void Reset();
-		static void Lost();
 
 	};
 }

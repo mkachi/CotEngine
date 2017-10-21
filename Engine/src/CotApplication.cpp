@@ -41,10 +41,10 @@ namespace Cot
 		return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
-	bool Application::InitGraphcis(uint width, uint height, bool fullScreen)
+	bool Application::InitGraphcis()
 	{
 		_graphics = new Dx9Device();
-		if (!_graphics->Init(_wnd, width, height, fullScreen))
+		if (!_graphics->Init(_wnd))
 		{
 			return false;
 		}
@@ -91,7 +91,7 @@ namespace Cot
 			return false;
 		}
 
-		if (!InitGraphcis(width, height, fullScreen))
+		if (!InitGraphcis())
 		{
 			MessageBox(NULL, L"Cannot create graphics device.", L"Error", MB_OK);
 			return false;
