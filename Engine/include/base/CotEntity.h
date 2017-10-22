@@ -120,6 +120,8 @@ namespace Cot
 		Vec3 GetLocalScale();
 
 		Mat4 GetWorldMatrix();
+		
+		void SetDirty(bool value);
 		bool IsDirty() { return _dirty; }
 
 		void SetActive(bool active);

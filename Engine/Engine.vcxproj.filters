@@ -152,6 +152,9 @@
     <ClInclude Include="include\physics\CotPhysicsManager.h">
       <Filter>Physics</Filter>
     </ClInclude>
+    <ClInclude Include="include\tinyxml2.h">
+      <Filter>Base\tinyxml2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -180,6 +183,9 @@
     </Filter>
     <Filter Include="Physics">
       <UniqueIdentifier>{9f57a3f3-3eb7-4f64-a58e-ab9ee2063165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\tinyxml2">
+      <UniqueIdentifier>{92bb0844-ff23-4612-821f-b1e5b3bcc8eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +299,9 @@
     </ClCompile>
     <ClCompile Include="src\CotICollider.cpp">
       <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml2.cpp">
+      <Filter>Base\tinyxml2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

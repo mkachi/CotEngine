@@ -141,6 +141,7 @@ namespace Cot
 
 	void Application::Destroy()
 	{
+		PhysicsManager::Destroy();
 		DestroyAllDecoder();
 
 		RenderManager::Destroy();

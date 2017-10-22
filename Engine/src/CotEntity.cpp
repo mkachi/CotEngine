@@ -23,12 +23,6 @@ namespace Cot
 			SafeDelete(temp);
 		}
 		_components.clear();
-
-		if (_parent != nullptr)
-		{
-			_parent->RemoveChild(this);
-		}
-		RemoveAllChild();
 		SafeDelete(_broadCastProtocol);
 	}
 
@@ -73,16 +67,21 @@ namespace Cot
 	void Entity::SetParent(Entity* parent)
 	{
 		_parent = parent;
+		_parent->_children.push_back(this);
 	}
 
 	void Entity::AddChild(Entity* child)
 	{
-		child->SetParent(this);
+		child->_parent = this;
 		_children.push_back(child);
 	}
 
 	void Entity::RemoveChild(Entity* child)
 	{
+		if (_children.empty())
+		{
+			return;
+		}
 		_children.erase(std::find(_children.cbegin(), _children.cend(), child));
 	}
 
@@ -322,6 +321,11 @@ namespace Cot
 	{
 		if (_dirty)
 		{
+			for (int i = 0; i < _children.size(); ++i)
+			{
+				_children[i]->SetDirty(true);
+			}
+
 			_world = Mat4::Identity;
 
 			if (_parent != nullptr)
@@ -339,6 +343,11 @@ namespace Cot
 			_dirty = false;
 		}
 		return _world;
+	}
+
+	void Entity::SetDirty(bool value)
+	{
+		_dirty = value;
 	}
 
 	void Entity::SetActive(bool active)

@@ -7,8 +7,6 @@ class DemoScene
 {
 private:
 	Cot::Entity* entity;
-	Cot::Circle	circle1;
-	Cot::Rect	rect1;
 
 public:
 	bool Init() override;

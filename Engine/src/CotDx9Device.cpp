@@ -27,6 +27,16 @@ namespace Cot
 		D3DPRESENT_PARAMETERS presentParam;
 		ZeroMemory(&presentParam, sizeof(presentParam));
 
+		presentParam.Windowed = TRUE;
+		presentParam.hDeviceWindow = wnd;
+		presentParam.SwapEffect = D3DSWAPEFFECT_DISCARD;
+		presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
+		presentParam.EnableAutoDepthStencil = TRUE;
+		presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
+		presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
+		presentParam.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+
+
 		if (FAILED(_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, wnd,
 			D3DCREATE_SOFTWARE_VERTEXPROCESSING,
 			&presentParam, &_device)))

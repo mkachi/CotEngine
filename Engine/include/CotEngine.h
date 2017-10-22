@@ -1,5 +1,6 @@
 #pragma once
 
+#include "base/tinyxml2.h"
 #include "base/CotApplication.h"
 #include "base/CotEntity.h"
 

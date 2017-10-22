@@ -70,6 +70,7 @@
     <ClInclude Include="include\render\CotDx9Device.h" />
     <ClInclude Include="include\render\CotDx9Renderer2D.h" />
     <ClInclude Include="include\render\CotRenderManager.h" />
+    <ClInclude Include="include\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CotApplication.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="src\CotVec3.cpp" />
     <ClCompile Include="src\CotVec4.cpp" />
     <ClCompile Include="src\CotWavDecoder.cpp" />
+    <ClCompile Include="src\tinyxml2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -166,28 +168,28 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(ProjectDir)thirdparty\tinyxml2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(ProjectDir)thirdparty\tinyxml2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(ProjectDir)thirdparty\tinyxml2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\Build\Products\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Build\Intermediates\$(Platform)_$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)thirdparty\directx\include;$(ProjectDir)thirdparty\openal\include;$(ProjectDir)thirdparty\libvorbis\include;$(ProjectDir)thirdparty\tinyxml2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)thirdparty\directx\lib\$(Platform);$(ProjectDir)thirdparty\openal\lib\$(Platform);$(ProjectDir)thirdparty\libvorbis\lib\$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
