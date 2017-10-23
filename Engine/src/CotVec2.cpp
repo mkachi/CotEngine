@@ -47,10 +47,18 @@ namespace Cot
 
 	const Vec2 Vec2::operator/(const Vec2& other) const
 	{
-		COT_ASSERT(other.x <= 0.0f, "Division by 0");
-		COT_ASSERT(other.y <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (other.x > 0.0f)
+		{
+			xx = x / other.x;
+		}
 
-		return Vec2(x / other.x, y / other.y);
+		float yy = 0.0f;
+		if (other.y > 0.0f)
+		{
+			yy = y / other.y;
+		}
+		return Vec2(xx, yy);
 	}
 
 	const Vec2 Vec2::operator+(const float value) const
@@ -70,9 +78,18 @@ namespace Cot
 
 	const Vec2 Vec2::operator/(const float value) const
 	{
-		COT_ASSERT(value <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (value > 0.0f)
+		{
+			xx = x / value;
+		}
 
-		return Vec2(x / value, y / value);
+		float yy = 0.0f;
+		if (value > 0.0f)
+		{
+			yy = y / value;
+		}
+		return Vec2(xx, yy);
 	}
 
 	Vec2& Vec2::operator+=(const Vec2& other)
@@ -98,11 +115,20 @@ namespace Cot
 
 	Vec2& Vec2::operator/=(const Vec2& other)
 	{
-		COT_ASSERT(other.x <= 0.0f, "Division by 0");
-		COT_ASSERT(other.y <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (other.x > 0.0f)
+		{
+			xx = x / other.x;
+		}
+		x = xx;
 
-		x /= other.x;
-		y /= other.y;
+		float yy = 0.0f;
+		if (other.y > 0.0f)
+		{
+			yy = y / other.y;
+		}
+		y = yy;
+
 		return *this;
 	}
 
@@ -136,10 +162,15 @@ namespace Cot
 
 	Vec2& Vec2::operator/=(const float value)
 	{
-		COT_ASSERT(value <= 0.0f, "Division by 0");
-
-		x /= value;
-		y /= value;
+		if (value > 0.0f)
+		{
+			x /= value;
+			y /= value;
+		}
+		else
+		{
+			x = y = 0.0f;
+		}
 		return *this;
 	}
 

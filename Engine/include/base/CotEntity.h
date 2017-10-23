@@ -17,9 +17,9 @@ namespace Cot
 		Mat4		_world;
 		bool		_dirty;
 
-		Vec3		_position;
-		Vec3		_rotate;
-		Vec3		_scale;
+		Vec3		_localPosition;
+		Vec3		_localRotate;
+		Vec3		_localScale;
 		Entity*		_parent;
 
 		std::vector<Entity*> _children;
@@ -77,6 +77,7 @@ namespace Cot
 		void AddChild(Entity* child);
 		std::vector<Entity*>& GetChildren() { return _children; }
 
+		void RemoveParent();
 		void RemoveChild(Entity* child);
 		void RemoveChildByName(const string& name);
 		void RemoveAllChild();
@@ -93,16 +94,16 @@ namespace Cot
 		void SetPositionX(float x);
 		void SetPositionY(float y);
 		void SetPositionZ(float z);
-		Vec3 GetPosition() { return _position; }
+		Vec3 GetPosition();
 
 		void SetRotateAxis(float deg, const Vec3& axis);
-		Vec3 GetRotate() { return _rotate; }
+		Vec3 GetRotate();
 
 		void SetScale(const Vec3& scale);
 		void SetScaleX(float x);
 		void SetScaleY(float y);
 		void SetScaleZ(float z);
-		Vec3 GetScale() { return _scale; }
+		Vec3 GetScale();
 
 		void SetLocalPosition(const Vec3& position);
 		void SetLocalPositionX(float x);

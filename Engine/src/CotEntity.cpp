@@ -9,9 +9,9 @@ namespace Cot
 		, _active(true)
 		, _world(Mat4::Identity)
 		, _dirty(true)
-		, _position(Vec3::Zero)
-		, _rotate(Vec3::Zero)
-		, _scale(Vec3::One)
+		, _localPosition(Vec3::Zero)
+		, _localRotate(Vec3::Zero)
+		, _localScale(Vec3::One)
 		, _parent(nullptr)
 	{	}
 
@@ -31,7 +31,10 @@ namespace Cot
 		for (int i = 0; i < _components.size(); ++i)
 		{
 			IComponent* temp = _components[i].second;
-			temp->Start();
+			if (temp->IsEnable())
+			{
+				temp->Start();
+			}
 		}
 	}
 
@@ -68,12 +71,37 @@ namespace Cot
 	{
 		_parent = parent;
 		_parent->_children.push_back(this);
+
+		SetPosition(_localPosition);
+		SetRotateAxis(_localRotate.x, Vec3(1.0f, 0.0f, 0.0f));
+		SetRotateAxis(_localRotate.y, Vec3(0.0f, 1.0f, 0.0f));
+		SetRotateAxis(_localRotate.z, Vec3(0.0f, 0.0f, 1.0f));
+		SetScale(_localScale);
 	}
 
 	void Entity::AddChild(Entity* child)
 	{
 		child->_parent = this;
 		_children.push_back(child);
+
+		child->SetPosition(child->_localPosition);
+		child->SetPosition(child->_localPosition);
+		child->SetRotateAxis(child->_localRotate.x, Vec3(1.0f, 0.0f, 0.0f));
+		child->SetRotateAxis(child->_localRotate.y, Vec3(0.0f, 1.0f, 0.0f));
+		child->SetRotateAxis(child->_localRotate.z, Vec3(0.0f, 0.0f, 1.0f));
+		child->SetScale(child->_localScale);
+	}
+
+	void Entity::RemoveParent()
+	{
+		if (_parent != nullptr)
+		{
+			_dirty = true;
+			_localPosition += _parent->_localScale;
+			_localRotate += _parent->_localRotate;
+			_localScale *= _parent->_localScale;
+			_parent = nullptr;
+		}
 	}
 
 	void Entity::RemoveChild(Entity* child)
@@ -83,6 +111,11 @@ namespace Cot
 			return;
 		}
 		_children.erase(std::find(_children.cbegin(), _children.cend(), child));
+
+		child->_dirty = true;
+		child->_localPosition += _localPosition;
+		child->_localRotate += _localRotate;
+		child->_localScale *= _localScale;
 	}
 
 	void Entity::RemoveChildByName(const string& name)
@@ -97,14 +130,23 @@ namespace Cot
 			}
 		}
 		_children.erase(find);
+
+		(*find)->_dirty = true;
+		(*find)->_localPosition += _localPosition;
+		(*find)->_localRotate += _localRotate;
+		(*find)->_localScale *= _localScale;
 	}
 
 	void Entity::RemoveAllChild()
 	{
 		for (auto& child : _children)
 		{
-			SafeDelete(child);
+			child->_dirty = true;
+			child->_localPosition += _localPosition;
+			child->_localRotate += _localRotate;
+			child->_localScale *= _localScale;
 		}
+		_children.clear();
 	}
 
 	void Entity::SetName(const string& name)
@@ -114,34 +156,59 @@ namespace Cot
 
 	void Entity::ResetTransform()
 	{
-		_position = Vec3::Zero;
-		_rotate = Vec3::Zero;
-		_scale = Vec3::One;
+		_localPosition = Vec3::Zero;
+		_localRotate = Vec3::Zero;
+		_localScale = Vec3::One;
 		_dirty = true;
 	}
 
 	void Entity::SetPosition(const Vec3& position)
 	{
 		_dirty = true;
-		_position = position;
+		if (_parent != nullptr)
+		{
+			_localPosition = position - _parent->_localPosition;
+		}
+		_localPosition = position;
 	}
 
 	void Entity::SetPositionX(float x)
 	{
 		_dirty = true;
-		_position.x = x;
+		if (_parent != nullptr)
+		{
+			_localPosition.x = x - _parent->_localPosition.x;
+		}
+		_localPosition.x = x;
 	}
 
 	void Entity::SetPositionY(float y)
 	{
 		_dirty = true;
-		_position.y = y;
+		if (_parent != nullptr)
+		{
+			_localPosition.y = y - _parent->_localPosition.y;
+		}
+		_localPosition.y = y;
 	}
 
 	void Entity::SetPositionZ(float z)
 	{
 		_dirty = true;
-		_position.z = z;
+		if (_parent != nullptr)
+		{
+			_localPosition.z = z - _parent->_localPosition.z;
+		}
+		_localPosition.z = z;
+	}
+
+	Vec3 Entity::GetPosition()
+	{
+		if (_parent != nullptr)
+		{
+			return _localPosition + _parent->_localPosition;
+		}
+		return _localPosition;
 	}
 
 	void Entity::SetRotateAxis(float deg, const Vec3& axis)
@@ -152,84 +219,104 @@ namespace Cot
 		{
 			r += 360.0f;
 		}
-		_rotate = axis * r;
+
+		if (_parent != nullptr)
+		{
+			_localRotate = (axis * r) - _parent->_localRotate;
+			return;
+		}
+		_localRotate = axis * r;
+	}
+
+	Vec3 Entity::GetRotate()
+	{
+		if (_parent != nullptr)
+		{
+			return _localRotate + _parent->_localRotate;
+		}
+		return _localRotate;
 	}
 
 	void Entity::SetScale(const Vec3& scale)
 	{
 		_dirty = true;
-		_scale = scale;
+		if (_parent != nullptr)
+		{
+			_localScale = scale / _parent->_localScale;
+			return;
+		}
+		_localScale = scale;
 	}
 
 	void Entity::SetScaleX(float x)
 	{
 		_dirty = true;
-		_scale.x = x;
+		if (_parent != nullptr)
+		{
+			_localScale.x = x / _parent->_localScale.x;
+			return;
+		}
+		_localScale.x = x;
 	}
 
 	void Entity::SetScaleY(float y)
 	{
 		_dirty = true;
-		_scale.y = y;
+		if (_parent != nullptr)
+		{
+			_localScale.y = y / _parent->_localScale.y;
+			return;
+		}
+		_localScale.y = y;
 	}
 
 	void Entity::SetScaleZ(float z)
 	{
 		_dirty = true;
-		_scale.z = z;
+		if (_parent != nullptr)
+		{
+			_localScale.z = z / _parent->_localScale.z;
+			return;
+		}
+		_localScale.z = z;
+	}
+
+	Vec3 Entity::GetScale()
+	{
+		if (_parent != nullptr)
+		{
+			return _localScale * _parent->_localScale;
+		}
+		return _localScale;
 	}
 
 	void Entity::SetLocalPosition(const Vec3& position)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_position = position + _parent->_position;
-			return;
-		}
-		_position = position;
+		_localPosition = position;
 	}
 
 	void Entity::SetLocalPositionX(float x)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_position.x = x + _parent->_position.x;
-			return;
-		}
-		_position.x = x;
+		_localPosition.x = x;
 	}
 
 	void Entity::SetLocalPositionY(float y)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_position.y = y + _parent->_position.y;
-			return;
-		}
-		_position.y = y;
+		_localPosition.y = y;
 	}
 
 	void Entity::SetLocalPositionZ(float z)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_position.z = z + _parent->_position.z;
-			return;
-		}
-		_position.z = z;
+		_localPosition.z = z;
 	}
 
 	Vec3 Entity::GetLocalPosition()
 	{
-		if (_parent != nullptr)
-		{
-			return _position - _parent->_position;
-		}
-		return _position;
+		return _localPosition;
 	}
 
 	void Entity::SetLocalRotateAxis(float deg, const Vec3& axis)
@@ -240,81 +327,41 @@ namespace Cot
 		{
 			r += 360.0f;
 		}
-
-		if (_parent != nullptr)
-		{
-			_rotate = _parent->_rotate + (axis * r);
-			return;
-		}
-		_rotate = axis * r;
+		_localRotate = axis * r;
 	}
 
 	Vec3 Entity::GetLocalRotate()
 	{
-		if (_parent != nullptr)
-		{
-			return _rotate - _parent->_rotate;
-		}
-		return _position;
+		return _localRotate;
 	}
 
 	void Entity::SetLocalScale(const Vec3& scale)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_scale = _parent->_scale * scale;
-			return;
-		}
-		_scale = scale;
+		_localScale = scale;
 	}
 
 	void Entity::SetLocalScaleX(float x)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_scale.x = _parent->_scale.x * x;
-			return;
-		}
-		_scale.x = x;
+		_localScale.x = x;
 	}
 
 	void Entity::SetLocalScaleY(float y)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_scale.y = _parent->_scale.y * y;
-			return;
-		}
-		_scale.y = y;
+		_localScale.y = y;
 	}
 
 	void Entity::SetLocalScaleZ(float z)
 	{
 		_dirty = true;
-		if (_parent != nullptr)
-		{
-			_scale.z = _parent->_scale.z * z;
-			return;
-		}
-		_scale.z = z;
+		_localScale.z = z;
 	}
 
 	Vec3 Entity::GetLocalScale()
 	{
-		if (_parent != nullptr)
-		{
-			if (_parent->_scale.x <= 0.0f || 
-				_parent->_scale.y <= 0.0f || 
-				_parent->_scale.z <= 0.0f)
-			{
-				return Vec3::Zero;
-			}
-			return _scale / _parent->_scale;
-		}
-		return _scale;
+		return _localScale;
 	}
 
 	Mat4 Entity::GetWorldMatrix()
@@ -333,12 +380,12 @@ namespace Cot
 				_world = _parent->GetWorldMatrix();
 			}
 
-			_world *= Mat4::Translate(_position);
+			_world *= Mat4::Translate(_localPosition);
 			Quaternion quaternion = Quaternion::Identity;
-			_world *= Mat4::Rotate(_rotate.x, Vec3(1.0f, 0.0f, 0.0f));
-			_world *= Mat4::Rotate(_rotate.y, Vec3(0.0f, 1.0f, 0.0f));
-			_world *= Mat4::Rotate(_rotate.z, Vec3(0.0f, 0.0f, 1.0f));
-			_world *= Mat4::Scale(_scale);
+			_world *= Mat4::Rotate(_localRotate.x, Vec3(1.0f, 0.0f, 0.0f));
+			_world *= Mat4::Rotate(_localRotate.y, Vec3(0.0f, 1.0f, 0.0f));
+			_world *= Mat4::Rotate(_localRotate.z, Vec3(0.0f, 0.0f, 1.0f));
+			_world *= Mat4::Scale(_localScale);
 
 			_dirty = false;
 		}

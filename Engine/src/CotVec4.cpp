@@ -65,12 +65,30 @@ namespace Cot
 
 	const Vec4 Vec4::operator/(const Vec4& other) const
 	{
-		COT_ASSERT(other.x <= 0.0f, "Division by 0");
-		COT_ASSERT(other.y <= 0.0f, "Division by 0");
-		COT_ASSERT(other.z <= 0.0f, "Division by 0");
-		COT_ASSERT(other.w <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (other.x > 0.0f)
+		{
+			xx = x / other.x;
+		}
 
-		return Vec4(x / other.x, y / other.y, z / other.z, w / other.w);
+		float yy = 0.0f;
+		if (other.y > 0.0f)
+		{
+			yy = y / other.y;
+		}
+
+		float zz = 0.0f;
+		if (other.z > 0.0f)
+		{
+			zz = z / other.z;
+		}
+
+		float ww = 0.0f;
+		if (other.w > 0.0f)
+		{
+			ww = w / other.w;
+		}
+		return Vec4(xx, yy, zz, ww);
 	}
 
 	const Vec4 Vec4::operator+(const float value) const
@@ -90,9 +108,30 @@ namespace Cot
 
 	const Vec4 Vec4::operator/(const float value) const
 	{
-		COT_ASSERT(value <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (value > 0.0f)
+		{
+			xx = x / value;
+		}
 
-		return Vec4(x / value, y / value, z / value, w / value);
+		float yy = 0.0f;
+		if (value > 0.0f)
+		{
+			yy = y / value;
+		}
+
+		float zz = 0.0f;
+		if (value > 0.0f)
+		{
+			zz = z / value;
+		}
+
+		float ww = 0.0f;
+		if (value > 0.0f)
+		{
+			ww = w / value;
+		}
+		return Vec4(xx, yy, zz, ww);
 	}
 
 	Vec4& Vec4::operator+=(const Vec4& other)
@@ -124,15 +163,34 @@ namespace Cot
 
 	Vec4& Vec4::operator/=(const Vec4& other)
 	{
-		COT_ASSERT(other.x <= 0.0f, "Division by 0");
-		COT_ASSERT(other.y <= 0.0f, "Division by 0");
-		COT_ASSERT(other.z <= 0.0f, "Division by 0");
-		COT_ASSERT(other.w <= 0.0f, "Division by 0");
+		float xx = 0.0f;
+		if (other.x > 0.0f)
+		{
+			xx = x / other.x;
+		}
+		x = xx;
 
-		x /= other.x;
-		y /= other.y;
-		z /= other.z;
-		w /= other.w;
+		float yy = 0.0f;
+		if (other.y > 0.0f)
+		{
+			yy = y / other.y;
+		}
+		y = yy;
+
+		float zz = 0.0f;
+		if (other.z > 0.0f)
+		{
+			zz = z / other.z;
+		}
+		z = zz;
+
+		float ww = 0.0f;
+		if (other.w > 0.0f)
+		{
+			ww = w / other.w;
+		}
+		w = ww;
+
 		return *this;
 	}
 
@@ -174,12 +232,17 @@ namespace Cot
 
 	Vec4& Vec4::operator/=(const float value)
 	{
-		COT_ASSERT(value <= 0.0f, "Division by 0");
-
-		x /= value;
-		y /= value;
-		z /= value;
-		w /= value;
+		if (value > 0.0f)
+		{
+			x /= value;
+			y /= value;
+			z /= value;
+			w /= value;
+		}
+		else
+		{
+			x = y = z = w = 0.0f;
+		}
 		return *this;
 	}
 
