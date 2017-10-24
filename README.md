@@ -5,4 +5,4 @@
 
 > Our amazing Representative character!  
 
-![Character](http://www.kachinest.com:7070/CotEngine/Character.png "CotGirl")
+![Character](http://www.kachinest.com:7070/Images/CotEngine.png "CotGirl")
