@@ -11,6 +11,8 @@ bool DemoScene::Init()
 		entity[i]->AddComponent<TestComponent>()->Init(ToString(i));
 		this->AddEntity(entity[i]);
 	}
+	this->CreateKeyListener();
+	this->CreateMouseListener();
 
 	return true;
 }
@@ -18,4 +20,14 @@ bool DemoScene::Init()
 void DemoScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
+
+	if (this->GetKeyListener()->IsKeyDown(KeyCode::A))
+	{
+		printf("A\n");
+	}
+
+	if (this->GetMouseListener()->IsMouseDown(MouseButton::LButton))
+	{
+		printf("MouseDown\n");
+	}
 }

@@ -1,18 +1,22 @@
 #include "base/CotApplication.h"
 #include "base/CotSceneManager.h"
+
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
 #include "render/CotDx9DebugRenderer.h"
 #include "render/CotRenderManager.h"
+
 #include "asset/CotAudioClip.h"
 #include "asset/CotAssetManager.h"
+
 #include "physics/CotPhysicsManager.h"
+
+#include "input/CotInputManager.h"
 
 namespace Cot
 {
 	Application::Application()
 		: _graphics(nullptr)
-		, _inputDevice(nullptr)
 	{	}
 
 	Application::~Application()
@@ -22,17 +26,17 @@ namespace Cot
 	{
 		switch (msg)
 		{
-		case WM_KEYUP:			UpdateKeyUp(wParam);		return 0;
-		case WM_KEYDOWN:		UpdateKeyDown(wParam);		return 0;
+		case WM_KEYUP:			InputManager::GetInstance().UpdateKeyUp(wParam);		return 0;
+		case WM_KEYDOWN:		InputManager::GetInstance().UpdateKeyDown(wParam);		return 0;
 
-		case WM_LBUTTONDOWN:	UpdateMouseDown(MouseButton::LButton);	return 0;
-		case WM_LBUTTONUP:		UpdateMouseUp(MouseButton::LButton);	return 0;
+		case WM_LBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::LButton);		return 0;
+		case WM_LBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::LButton);	return 0;
 
-		case WM_RBUTTONDOWN:	UpdateMouseDown(MouseButton::RButton);	return 0;
-		case WM_RBUTTONUP:		UpdateMouseUp(MouseButton::RButton);	return 0;
+		case WM_RBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::RButton);		return 0;
+		case WM_RBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::RButton);	return 0;
 
-		case WM_MBUTTONDOWN:	UpdateMouseDown(MouseButton::MButton);	return 0;;
-		case WM_MBUTTONUP:		UpdateMouseUp(MouseButton::MButton);	return 0;;
+		case WM_MBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::MButton);		return 0;
+		case WM_MBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::MButton);	return 0;
 
 		case WM_DESTROY:
 			PostQuitMessage(0);
@@ -101,14 +105,8 @@ namespace Cot
 		ShowWindow(_wnd, SW_SHOWDEFAULT);
 		UpdateWindow(_wnd);
 
-		_inputDevice = new InputDevice(_wnd);
-		if (_inputDevice == nullptr)
-		{
-			MessageBox(NULL, L"Cannot create input device.", L"Error", MB_OK);
-			return false;
-		}
-		_inputDevice->CreateKeyCodeTable();
-		RegisteInputDevice(_inputDevice);
+		CreatekeyTable();
+		InputManager::GetInstance().SetHandle(_wnd);
 
 		return true;
 	}
@@ -133,7 +131,7 @@ namespace Cot
 				time.Tick();
 				sceneManager.Update(time);
 				PhysicsManager::GetInstance().Update(time);
-				InputClear();
+				InputManager::GetInstance().Clear();
 				_graphics->Render();
 			}
 		}
@@ -148,10 +146,9 @@ namespace Cot
 		AssetManager::GetInstance().DestroyAllAssets();
 		AssetManager::Destroy();
 
-		SafeDelete(_inputDevice);
-
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
+		InputManager::Destroy();
 
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);

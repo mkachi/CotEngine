@@ -3,7 +3,6 @@
 #include "CotRule.h"
 #include "CotScene.h"
 #include "render/CotIGraphics.h"
-#include "input/CotInput.h"
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
@@ -17,7 +16,6 @@ namespace Cot
 		HINSTANCE		_instance;
 		wstring			_title;
 		IGraphics*		_graphics;
-		InputDevice*	_inputDevice;
 
 		static LRESULT CALLBACK MsgProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
 

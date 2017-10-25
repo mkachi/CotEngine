@@ -1,142 +1,13 @@
-#include "input/CotInputDevice.h"
+#include "input/CotKeyCode.h"
+#include <unordered_map>
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-#define CLEAR_QUEUE(_queue_) \
-	for(int i = 0; i < _queue_.size(); ++i) \
-	{ \
-		_queue_.pop(); \
-	}
-
 namespace Cot
 {
-	InputDevice::InputDevice(HWND wnd)
-		: _wnd(wnd)
-	{	}
-
-	InputDevice::~InputDevice()
-	{	}
-
-	Vec2 InputDevice::GetMousePosition()
-	{
-		POINT point;
-		GetCursorPos(&point);
-		ScreenToClient(_wnd, &point);
-		return Vec2(point.x, point.y);
-	}
-
-	bool InputDevice::IsKeyDown(KeyCode code)
-	{
-		if (_keyDownQueue.empty() || _keyStayState[(uint)code])
-		{
-			return false;
-		}
-
-		KeyCode temp = _keyDownQueue.front();
-		if (temp == code)
-		{
-			_keyStayState[(uint)code] = true;
-			_keyDownQueue.pop();
-			return true;
-		}
-		return false;
-	}
-
-	bool InputDevice::IsKeyUp(KeyCode code)
-	{
-		if (_keyUpQueue.empty())
-		{
-			return false;
-		}
-
-		KeyCode temp = _keyUpQueue.front();
-		if (temp == code)
-		{
-			_keyUpQueue.pop();
-			return true;
-		}
-		return false;
-	}
-
-	bool InputDevice::IsKeyStay(KeyCode code)
-	{
-		return _keyState[(uint)code];
-	}
-
-	bool InputDevice::IsMouseDown(MouseButton code)
-	{
-		if (_mouseDownQueue.empty())
-		{
-			return false;
-		}
-
-		MouseButton temp = _mouseDownQueue.front();
-		if (temp == code)
-		{
-			_mouseDownQueue.pop();
-			return true;
-		}
-		return false;
-	}
-
-	bool InputDevice::IsMouseUp(MouseButton code)
-	{
-		if (_mouseUpQueue.empty())
-		{
-			return false;
-		}
-
-		MouseButton temp = _mouseUpQueue.front();
-		if (temp == code)
-		{
-			_mouseUpQueue.pop();
-			return true;
-		}
-		return false;
-	}
-
-	bool InputDevice::IsMouseStay(MouseButton code)
-	{
-		return _mouseState[(uint)code];
-	}
-
-	void InputDevice::UpdateKeyDown(uint key)
-	{
-		KeyCode code = ToKeyCode(key);
-		_keyState[(uint)code] = true;
-		_keyDownQueue.push(code);
-	}
-
-	void InputDevice::UpdateKeyUp(uint key)
-	{
-		KeyCode code = ToKeyCode(key);
-		_keyState[(uint)code] = false;
-		_keyStayState[(uint)code] = false;
-		_keyUpQueue.push(code);
-	}
-
-	void InputDevice::UpdateMouseDown(MouseButton button)
-	{
-		_mouseState[(uint)button] = true;
-		_mouseDownQueue.push(button);
-	}
-
-	void InputDevice::UpdateMouseUp(MouseButton button)
-	{
-		_mouseState[(uint)button] = false;
-		_mouseUpQueue.push(button);
-	}
-
-	void InputDevice::Clear()
-	{
-		CLEAR_QUEUE(_keyDownQueue);
-		CLEAR_QUEUE(_keyUpQueue);
-		CLEAR_QUEUE(_mouseDownQueue);
-		CLEAR_QUEUE(_mouseUpQueue);
-	}
-
-	void InputDevice::CreateKeyCodeTable()
+	static std::unordered_map<uchar, KeyCode> _keySwaper;
+	void CreatekeyTable()
 	{
 		_keySwaper = {
 			{ VK_ESCAPE			, KeyCode::Esc			 , },
@@ -246,5 +117,10 @@ namespace Cot
 			{ VK_NUMPAD9		, KeyCode::Num_9		 , },
 			{ VK_SPACE			, KeyCode::SpaceBar		 , },
 		};
+	}
+
+	KeyCode ToCotKeyCode(uint key)
+	{
+		return _keySwaper[key];
 	}
 }

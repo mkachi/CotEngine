@@ -5,6 +5,7 @@
 namespace Cot
 {
 	enum class KeyCode
+		: uint
 	{
 		Esc = 0,
 		F1,
@@ -112,10 +113,14 @@ namespace Cot
 		KEYBOARD_END,
 	};
 	enum class MouseButton
+		: uint
 	{
 		LButton = 0,
 		MButton,
 		RButton,
 		MOUSE_END,
 	};
+
+	COT_API inline void CreatekeyTable();
+	COT_API inline KeyCode ToCotKeyCode(uint key);
 }

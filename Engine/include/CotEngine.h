@@ -10,7 +10,6 @@
 #include "component/CotBoxCollider.h"
 #include "component/CotCircleCollider.h"
 
-#include "input/CotInput.h"
 #include "math/CotMath.h"
 
 #include "editor/CotEditorAttribute.h"

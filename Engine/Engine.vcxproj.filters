@@ -122,13 +122,7 @@
     <ClInclude Include="include\editor\CotEditorAttribute.h">
       <Filter>Editor</Filter>
     </ClInclude>
-    <ClInclude Include="include\input\CotInput.h">
-      <Filter>Input</Filter>
-    </ClInclude>
     <ClInclude Include="include\input\CotKeyCode.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="include\input\CotInputDevice.h">
       <Filter>Input</Filter>
     </ClInclude>
     <ClInclude Include="include\component\CotBoxCollider.h">
@@ -154,6 +148,21 @@
     </ClInclude>
     <ClInclude Include="include\tinyxml2.h">
       <Filter>Base\tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotIInputListener.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotKeyListener.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotMouseListener.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\input\CotInputManager.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\CotNode.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -276,12 +285,6 @@
     <ClCompile Include="src\CotAudioSource.cpp">
       <Filter>Component</Filter>
     </ClCompile>
-    <ClCompile Include="src\CotInput.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CotInputDevice.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
     <ClCompile Include="src\CotBoxCollider.cpp">
       <Filter>Component</Filter>
     </ClCompile>
@@ -302,6 +305,21 @@
     </ClCompile>
     <ClCompile Include="src\tinyxml2.cpp">
       <Filter>Base\tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotKeyListener.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotKeyCode.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotMouseListener.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotInputManager.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotNode.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

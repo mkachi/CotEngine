@@ -33,6 +33,12 @@ public: \
 
 #define COT_DEFAULT_CASE default: break
 
+#define CLEAR_QUEUE(_queue_) \
+	for(int i = 0; i < _queue_.size(); ++i) \
+	{ \
+		_queue_.pop(); \
+	}
+
 #ifdef _DEBUG
 #define COT_ASSERT(_IF_, _MESSAGE_) if (_IF_) { assert(0); }
 #else
