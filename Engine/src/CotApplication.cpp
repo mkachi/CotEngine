@@ -45,14 +45,14 @@ namespace Cot
 		return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
 
-	bool Application::InitGraphcis()
+	bool Application::InitGraphcis(int width, int height)
 	{
 		_graphics = new Dx9Device();
 		if (!_graphics->Init(_wnd))
 		{
 			return false;
 		}
-		_graphics->AddRenderer(new Dx9Renderer2D());
+		_graphics->AddRenderer(new Dx9Renderer2D(width, height));
 		_graphics->AddRenderer(new Dx9DebugRenderer());
 
 		return true;
@@ -95,7 +95,7 @@ namespace Cot
 			return false;
 		}
 
-		if (!InitGraphcis())
+		if (!InitGraphcis(width, height))
 		{
 			MessageBox(NULL, L"Cannot create graphics device.", L"Error", MB_OK);
 			return false;

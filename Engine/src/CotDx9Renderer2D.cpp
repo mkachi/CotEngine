@@ -1,12 +1,14 @@
 #include "render/CotDx9Renderer2D.h"
 #include "render/CotRenderManager.h"
 #include "render/CotDx9Device.h"
+#include "physics/CotPhysics.h"
 #include <algorithm>
 
 namespace Cot
 {
-	Dx9Renderer2D::Dx9Renderer2D()
+	Dx9Renderer2D::Dx9Renderer2D(int width, int height)
 	{
+		_screen.SetRect(0.0f, 0.0f, width, height);
 		D3DXCreateSprite(Dx9Device::GetDevice(), &_sprite);
 	}
 
@@ -30,6 +32,11 @@ namespace Cot
 		_sprite->Begin(D3DXSPRITE_ALPHABLEND);
 		for (uint i = 0; i < renderQ.size(); ++i)
 		{
+			if (!Cot::IntersectRect(_screen, renderQ[i]->GetRect()))
+			{
+				continue;
+			}
+
 			Vec3 center = Vec3(
 				renderQ[i]->GetTexture()->GetWidth() * renderQ[i]->GetAnchor().x,
 				renderQ[i]->GetTexture()->GetHeight() * renderQ[i]->GetAnchor().y,
