@@ -168,6 +168,7 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			_localPosition = position - _parent->_localPosition;
+			return;
 		}
 		_localPosition = position;
 	}
@@ -178,6 +179,7 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			_localPosition.x = x - _parent->_localPosition.x;
+			return;
 		}
 		_localPosition.x = x;
 	}
@@ -188,6 +190,7 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			_localPosition.y = y - _parent->_localPosition.y;
+			return;
 		}
 		_localPosition.y = y;
 	}
@@ -198,6 +201,7 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			_localPosition.z = z - _parent->_localPosition.z;
+			return;
 		}
 		_localPosition.z = z;
 	}

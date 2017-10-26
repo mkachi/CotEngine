@@ -13,3 +13,11 @@
 #include "math/CotMath.h"
 
 #include "editor/CotEditorAttribute.h"
+
+namespace Cot
+{
+	inline const char* GetVersion()
+	{
+		return "CotEngine v0.10";
+	}
+}
