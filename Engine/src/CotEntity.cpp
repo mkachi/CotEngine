@@ -97,7 +97,7 @@ namespace Cot
 		if (_parent != nullptr)
 		{
 			_dirty = true;
-			_localPosition += _parent->_localScale;
+			_localPosition += _parent->_localPosition;
 			_localRotate += _parent->_localRotate;
 			_localScale *= _parent->_localScale;
 			_parent = nullptr;
