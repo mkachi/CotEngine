@@ -11,6 +11,7 @@ namespace Cot
 	private:
 		IDirect3D9*		_d3d;
 		HWND			_wnd;
+		D3DPRESENT_PARAMETERS _presentParam;
 
 	public:
 		Dx9Device();

@@ -24,22 +24,29 @@ namespace Cot
 			return false;
 		}
 
-		D3DPRESENT_PARAMETERS presentParam;
-		ZeroMemory(&presentParam, sizeof(presentParam));
+		ZeroMemory(&_presentParam, sizeof(_presentParam));
 
-		presentParam.Windowed = TRUE;
-		presentParam.hDeviceWindow = wnd;
-		presentParam.SwapEffect = D3DSWAPEFFECT_DISCARD;
-		presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
-		presentParam.EnableAutoDepthStencil = TRUE;
-		presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
-		presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
-		presentParam.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+		// Full Screen is FALSE
+		_presentParam.Windowed = TRUE;
+		_presentParam.hDeviceWindow = wnd;
+		_presentParam.SwapEffect = D3DSWAPEFFECT_DISCARD;
+
+		// Full Screen is D3DFMT_X8R8G8B8 window mode is D3DFMT_UNKNOWN
+		_presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
+
+		// Full Screen BackBufferSize
+		// _presentParam.BackBufferWidth = 800;
+		// _presentParam.BackBufferHeight = 600;
+
+		_presentParam.EnableAutoDepthStencil = TRUE;
+		_presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
+		_presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
+		_presentParam.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 
 
 		if (FAILED(_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, wnd,
 			D3DCREATE_SOFTWARE_VERTEXPROCESSING,
-			&presentParam, &_device)))
+			&_presentParam, &_device)))
 		{
 			return false;
 		}
@@ -83,8 +90,25 @@ namespace Cot
 
 	void Dx9Device::Render()
 	{
+		// Device lost
+		//HRESULT result;
+		//if (FAILED(result = _device->TestCooperativeLevel()))
+		//{
+		//	if (result == D3DERR_DEVICELOST)
+		//	{
+		//		return;
+		//	}
+		//
+		//	if (result == D3DERR_DEVICENOTRESET)
+		//	{
+		//		_device->Reset(&_presentParam);
+		//		return;
+		//	}
+		//}
+
 		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, ToDxMath(_clearColor), 1.0f, 0);
 		_device->BeginScene();
+
 		for (auto& renderer : _renderers)
 		{
 			renderer->Draw();

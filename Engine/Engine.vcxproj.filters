@@ -119,9 +119,6 @@
     <ClInclude Include="include\component\CotAudioSource.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="include\editor\CotEditorAttribute.h">
-      <Filter>Editor</Filter>
-    </ClInclude>
     <ClInclude Include="include\input\CotKeyCode.h">
       <Filter>Input</Filter>
     </ClInclude>
@@ -149,20 +146,11 @@
     <ClInclude Include="include\tinyxml2.h">
       <Filter>Base\tinyxml2</Filter>
     </ClInclude>
-    <ClInclude Include="include\input\CotIInputListener.h">
+    <ClInclude Include="include\input\CotInputDevice.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="include\input\CotKeyListener.h">
+    <ClInclude Include="include\input\CotInput.h">
       <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="include\input\CotMouseListener.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="include\input\CotInputManager.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="include\base\CotNode.h">
-      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -180,9 +168,6 @@
     </Filter>
     <Filter Include="Component">
       <UniqueIdentifier>{6e4b00ca-6f1c-47c1-a8e7-9495c58066d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Editor">
-      <UniqueIdentifier>{48217712-9426-47ea-b8c9-1c50ff3ee491}</UniqueIdentifier>
     </Filter>
     <Filter Include="Asset">
       <UniqueIdentifier>{edb9366a-0218-47c8-b85d-599b4ca04d0b}</UniqueIdentifier>
@@ -306,20 +291,14 @@
     <ClCompile Include="src\tinyxml2.cpp">
       <Filter>Base\tinyxml2</Filter>
     </ClCompile>
-    <ClCompile Include="src\CotKeyListener.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
     <ClCompile Include="src\CotKeyCode.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="src\CotMouseListener.cpp">
+    <ClCompile Include="src\CotInputDevice.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="src\CotInputManager.cpp">
+    <ClCompile Include="src\CotInput.cpp">
       <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CotNode.cpp">
-      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

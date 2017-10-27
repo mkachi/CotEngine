@@ -1,12 +1,10 @@
 #pragma once
 
 #include "base/CotEntity.h"
-#include "base/CotNode.h"
 
 namespace Cot
 {
 	class COT_API IComponent
-		: public Node
 	{
 		COT_INTERFACE(IComponent);
 	protected:

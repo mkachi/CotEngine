@@ -11,13 +11,12 @@
 #include "component/CotCircleCollider.h"
 
 #include "math/CotMath.h"
-
-#include "editor/CotEditorAttribute.h"
+#include "input/CotInput.h"
 
 namespace Cot
 {
 	inline const char* GetVersion()
 	{
-		return "CotEngine v0.10.1";
+		return "CotEngine v1.0";
 	}
 }

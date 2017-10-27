@@ -11,10 +11,12 @@
 
 #include "physics/CotPhysicsManager.h"
 
-#include "input/CotInputManager.h"
+#include "input/CotInput.h"
 
 namespace Cot
 {
+	InputDevice* _inputDevice = nullptr;
+
 	Application::Application()
 		: _graphics(nullptr)
 	{	}
@@ -26,17 +28,20 @@ namespace Cot
 	{
 		switch (msg)
 		{
-		case WM_KEYUP:			InputManager::GetInstance().UpdateKeyUp(wParam);		return 0;
-		case WM_KEYDOWN:		InputManager::GetInstance().UpdateKeyDown(wParam);		return 0;
+		case WM_SYSKEYDOWN: 
+		case WM_KEYUP:			_inputDevice->UpdateKeyUp(wParam);						return 0;
 
-		case WM_LBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::LButton);		return 0;
-		case WM_LBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::LButton);	return 0;
+		case WM_SYSKEYUP:
+		case WM_KEYDOWN:		_inputDevice->UpdateKeyDown(wParam);					return 0;
 
-		case WM_RBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::RButton);		return 0;
-		case WM_RBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::RButton);	return 0;
+		case WM_LBUTTONUP:		_inputDevice->UpdateMouseUp(MouseButton::LButton);		return 0;
+		case WM_LBUTTONDOWN:	_inputDevice->UpdateMouseDown(MouseButton::LButton);	return 0;
 
-		case WM_MBUTTONUP:		InputManager::GetInstance().UpdateMouseUp((uint)MouseButton::MButton);		return 0;
-		case WM_MBUTTONDOWN:	InputManager::GetInstance().UpdateMouseDown((uint)MouseButton::MButton);	return 0;
+		case WM_RBUTTONUP:		_inputDevice->UpdateMouseUp(MouseButton::RButton);		return 0;
+		case WM_RBUTTONDOWN:	_inputDevice->UpdateMouseDown(MouseButton::RButton);	return 0;
+
+		case WM_MBUTTONUP:		_inputDevice->UpdateMouseUp(MouseButton::MButton);		return 0;
+		case WM_MBUTTONDOWN:	_inputDevice->UpdateMouseDown(MouseButton::MButton);	return 0;
 
 		case WM_DESTROY:
 			PostQuitMessage(0);
@@ -106,7 +111,8 @@ namespace Cot
 		UpdateWindow(_wnd);
 
 		CreatekeyTable();
-		InputManager::GetInstance().SetHandle(_wnd);
+		_inputDevice = new InputDevice(_wnd);
+		RegisteInputDevice(_inputDevice);
 
 		return true;
 	}
@@ -131,7 +137,7 @@ namespace Cot
 				time.Tick();
 				sceneManager.Update(time);
 				PhysicsManager::GetInstance().Update(time);
-				InputManager::GetInstance().Clear();
+				_inputDevice->Poll();
 				_graphics->Render();
 			}
 		}
@@ -148,7 +154,7 @@ namespace Cot
 
 		SceneManager::GetInstance().DestroyAllScene();
 		SceneManager::Destroy();
-		InputManager::Destroy();
+		DestroyInputDevice();
 
 		SafeDestroy(_graphics);
 		DestroyWindow(_wnd);
