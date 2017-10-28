@@ -152,6 +152,9 @@
     <ClInclude Include="include\input\CotInput.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="include\asset\CotTextureAtlas.h">
+      <Filter>Asset</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -299,6 +302,9 @@
     </ClCompile>
     <ClCompile Include="src\CotInput.cpp">
       <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotTextureAtlas.cpp">
+      <Filter>Asset</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

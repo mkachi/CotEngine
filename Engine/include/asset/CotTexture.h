@@ -24,6 +24,7 @@ namespace Cot
 		virtual ~Texture();
 
 		static Texture* Load(const string& filename);
+
 		IDirect3DTexture9* GetTexture() { return _texture; }
 
 		string GetFilename() { return _filename; }

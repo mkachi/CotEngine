@@ -7,7 +7,6 @@ class DemoScene
 {
 private:
 	Cot::Entity* a;
-	Cot::Entity* b;
 
 public:
 	bool Init() override;

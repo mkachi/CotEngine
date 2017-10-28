@@ -6,6 +6,7 @@ namespace Cot
 	{
 		Reset();
 		_clip = AudioClip::Load(filename);
+		_clip->Retain();
 		alGenSources(1, &_source);
 		alSourcei(_source, AL_BUFFER, _clip->GetBuffer());
 

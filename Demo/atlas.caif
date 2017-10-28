@@ -1,0 +1,11 @@
+<Atlas image="atlas.png">
+  <count value="8" />
+  <Image k="stoneLeft" x="0" y="0" w="70" h="70" />
+  <Image k="stoneMid" x="70" y="0" w="70" h="70" />
+  <Image k="stoneRight" x="140" y="0" w="70" h="70" />
+  <Image k="stoneWall" x="0" y="70" w="70" h="70" />
+  <Image k="tochLit" x="70" y="70" w="70" h="70" />
+  <Image k="tochLit2" x="140" y="70" w="70" h="70" />
+  <Image k="torch" x="0" y="140" w="70" h="70" />
+  <Image k="window" x="70" y="140" w="70" h="70" />
+</Atlas>

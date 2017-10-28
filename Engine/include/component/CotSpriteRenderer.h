@@ -17,7 +17,7 @@ namespace Cot
 
 	public:
 		SpriteRenderer* Init(const string& filename);
-		SpriteRenderer* Init(const string& filename, const Rect& rect);
+		SpriteRenderer* Init(const string& caif, const string& key);
 
 		void Reset() override;
 		void Update(Time& time) override;

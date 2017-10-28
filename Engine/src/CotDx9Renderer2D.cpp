@@ -38,8 +38,8 @@ namespace Cot
 			}
 
 			Vec3 center = Vec3(
-				renderQ[i]->GetTexture()->GetWidth() * renderQ[i]->GetAnchor().x,
-				renderQ[i]->GetTexture()->GetHeight() * renderQ[i]->GetAnchor().y,
+				renderQ[i]->GetRect().size.width * renderQ[i]->GetAnchor().x,
+				renderQ[i]->GetRect().size.height * renderQ[i]->GetAnchor().y,
 				0.0f);
 
 			_sprite->SetTransform(&ToDxMath(renderQ[i]->GetOwner()->GetWorldMatrix()));

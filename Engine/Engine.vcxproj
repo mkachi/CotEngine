@@ -23,6 +23,7 @@
     <ClInclude Include="include\asset\CotAssetManager.h" />
     <ClInclude Include="include\asset\CotAudioClip.h" />
     <ClInclude Include="include\asset\CotTexture.h" />
+    <ClInclude Include="include\asset\CotTextureAtlas.h" />
     <ClInclude Include="include\audio\CotIDecoder.h" />
     <ClInclude Include="include\audio\CotOggDecoder.h" />
     <ClInclude Include="include\audio\CotOpenAL.h" />
@@ -103,6 +104,7 @@
     <ClCompile Include="src\CotSceneManager.cpp" />
     <ClCompile Include="src\CotSpriteRenderer.cpp" />
     <ClCompile Include="src\CotTexture.cpp" />
+    <ClCompile Include="src\CotTextureAtlas.cpp" />
     <ClCompile Include="src\CotTime.cpp" />
     <ClCompile Include="src\CotDx9Device.cpp" />
     <ClCompile Include="src\CotDx9Renderer2D.cpp" />
