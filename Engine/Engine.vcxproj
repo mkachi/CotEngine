@@ -40,6 +40,7 @@
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotEntity.h" />
     <ClInclude Include="include\base\CotVectorMap.hpp" />
+    <ClInclude Include="include\component\CotAnimation.h" />
     <ClInclude Include="include\component\CotAudioListener.h" />
     <ClInclude Include="include\component\CotAudioSource.h" />
     <ClInclude Include="include\component\CotBoxCollider.h" />
@@ -73,6 +74,7 @@
     <ClInclude Include="include\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CotAnimation.cpp" />
     <ClCompile Include="src\CotApplication.cpp" />
     <ClCompile Include="src\CotAsset.cpp" />
     <ClCompile Include="src\CotAssetManager.cpp" />

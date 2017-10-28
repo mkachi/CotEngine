@@ -23,7 +23,9 @@ namespace Cot
 		void Update(Time& time) override;
 		void OnDestroy() override;
 
+		void SetTexture(Texture* texture);
 		void SetTexture(const string& filename);
+		void SetTexture(const string& caif, const string& key);
 		Texture* GetTexture() { return _texture; }
 
 		void SetAnchor(const Vec2& anchor);

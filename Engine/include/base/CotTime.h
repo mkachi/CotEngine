@@ -21,6 +21,7 @@ namespace Cot
 		void SetTimeScale(const float scale);
 		float GetTimeScale() const { return _timeScale; }
 		float GetDeltaTime() const { return _deltaTime * _timeScale; }
+		float GetUnscaledDeltaTime() const { return _deltaTime; }
 
 	};
 }

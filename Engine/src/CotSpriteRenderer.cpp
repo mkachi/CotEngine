@@ -86,13 +86,26 @@ namespace Cot
 
 	void SpriteRenderer::OnDestroy()
 	{
-		_texture->Release();
+		SafeRelease(_texture);
+	}
+
+	void SpriteRenderer::SetTexture(Texture* texture)
+	{
+		_texture = texture;
+		_texture->Retain();
+		_rect = Rect(0, 0, _texture->GetWidth(), _texture->GetHeight());
 	}
 
 	void SpriteRenderer::SetTexture(const string& filename)
 	{
 		SafeRelease(_texture);
-		_texture = Texture::Load(filename);
+		Init(filename);
+	}
+
+	void SpriteRenderer::SetTexture(const string& caif, const string& key)
+	{
+		SafeRelease(_texture);
+		Init(caif, key);
 	}
 
 	void SpriteRenderer::SetAnchor(const Vec2& anchor)

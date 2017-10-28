@@ -5,6 +5,7 @@
 #include "base/CotEntity.h"
 
 #include "component/CotSpriteRenderer.h"
+#include "component/CotAnimation.h"
 #include "component/CotAudioListener.h"
 #include "component/CotAudioSource.h"
 #include "component/CotBoxCollider.h"
@@ -17,6 +18,6 @@ namespace Cot
 {
 	inline const char* GetVersion()
 	{
-		return "CotEngine v1.1";
+		return "CotEngine v1.2";
 	}
 }
