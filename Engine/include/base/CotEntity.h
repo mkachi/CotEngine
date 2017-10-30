@@ -1,8 +1,8 @@
 #pragma once
 
-#include "CotBroadCastProtocol.h"
+#include "CotBroadcastProtocol.h"
 #include "CotTime.h"
-#include "CotVectorMap.hpp"
+#include "container/CotVectorMap.hpp"
 #include "math/CotMath.h"
 
 namespace Cot

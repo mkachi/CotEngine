@@ -92,9 +92,6 @@
     <ClInclude Include="include\base\CotScene.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="include\base\CotVectorMap.hpp">
-      <Filter>Base</Filter>
-    </ClInclude>
     <ClInclude Include="include\component\CotSpriteRenderer.h">
       <Filter>Component</Filter>
     </ClInclude>
@@ -158,6 +155,12 @@
     <ClInclude Include="include\component\CotAnimation.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="include\container\CotVectorMap.hpp">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\container\CotQueue.hpp">
+      <Filter>Container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -187,8 +190,8 @@
     <Filter Include="Base\tinyxml2">
       <UniqueIdentifier>{92bb0844-ff23-4612-821f-b1e5b3bcc8eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Action">
-      <UniqueIdentifier>{2b53b740-10df-4066-8ff5-9a5917f3316a}</UniqueIdentifier>
+    <Filter Include="Container">
+      <UniqueIdentifier>{73b9db3e-90b5-42fb-88b2-cdda0918f3aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace Cot
 		COT_COMPONENT(CircleCollider);
 	private:
 		float	_radius;
+		Vec2	_offset;
 
 	public:
 		CircleCollider* Init(float radius = 0.0f);
@@ -16,8 +17,11 @@ namespace Cot
 		void Reset() override;
 		void Update(Time& time) override;
 
+		void SetOffset(const Vec2& offset);
+		Vec2 GetOffset() { return _offset; }
+
 		void SetRadius(float radius);
-		Circle GetCircle() { return Circle(_radius, Vec2(GetOwner()->GetPosition().ToArray)); }
+		Circle GetCircle();
 
 	};
 }

@@ -9,6 +9,7 @@ namespace Cot
 		COT_COMPONENT(BoxCollider);
 	private:
 		Size	_size;
+		Vec2	_offset;
 
 	public:
 		BoxCollider* Init(const Size& size = Size(300, 300));
@@ -18,8 +19,11 @@ namespace Cot
 
 		void SetSpriteSize();
 
+		void SetOffset(const Vec2& offset);
+		Vec2 GetOffset() { return _offset; }
+
 		void SetRect(const Size& size);
-		Rect GetRect() { return Rect(Vec2(GetOwner()->GetPosition().ToArray), _size); }
+		Rect GetRect();
 
 	};
 }

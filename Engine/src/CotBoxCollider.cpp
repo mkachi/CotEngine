@@ -33,4 +33,15 @@ namespace Cot
 	{
 		_size = size;
 	}
+
+	Rect BoxCollider::GetRect()
+	{
+		Vec2 position = Vec2(_offset.x + GetOwner()->GetPosition().x, _offset.y + GetOwner()->GetPosition().y);
+		return Rect(position, _size);
+	}
+
+	void BoxCollider::SetOffset(const Vec2& offset)
+	{
+		_offset = offset;
+	}
 }

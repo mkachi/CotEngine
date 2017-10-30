@@ -23,4 +23,15 @@ namespace Cot
 	{
 		_radius = radius;
 	}
+
+	Circle CircleCollider::GetCircle()
+	{
+		Vec2 position = Vec2(_offset.x + GetOwner()->GetPosition().x, _offset.y + GetOwner()->GetPosition().y);
+		return Circle(_radius, position);
+	}
+
+	void CircleCollider::SetOffset(const Vec2& offset)
+	{
+		_offset = offset;
+	}
 }

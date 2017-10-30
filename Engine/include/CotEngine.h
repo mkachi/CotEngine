@@ -14,10 +14,13 @@
 #include "math/CotMath.h"
 #include "input/CotInput.h"
 
+#include "container/CotVectorMap.hpp"
+#include "container/CotQueue.hpp"
+
 namespace Cot
 {
 	inline const char* GetVersion()
 	{
-		return "CotEngine v1.2";
+		return "CotEngine v1.3";
 	}
 }

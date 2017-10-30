@@ -12,13 +12,13 @@ namespace Cot
 		return rad * 57.295779f;
 	}
 
-	float Clamp(const float value, const float min, const float max)
-	{
-		return (value > min) ? (value < max) ? value : max : min;
-	}
-
 	float Pi()
 	{
 		return 3.141592f;
+	}
+
+	float Lerp(float v1, float v2, float amount)
+	{
+		return (v1 + (v2 - v1) * amount);
 	}
 }

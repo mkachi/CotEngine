@@ -39,7 +39,6 @@
     <ClInclude Include="include\base\CotTime.h" />
     <ClInclude Include="include\base\CotType.h" />
     <ClInclude Include="include\base\CotEntity.h" />
-    <ClInclude Include="include\base\CotVectorMap.hpp" />
     <ClInclude Include="include\component\CotAnimation.h" />
     <ClInclude Include="include\component\CotAudioListener.h" />
     <ClInclude Include="include\component\CotAudioSource.h" />
@@ -48,6 +47,8 @@
     <ClInclude Include="include\component\CotICollider.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
+    <ClInclude Include="include\container\CotQueue.hpp" />
+    <ClInclude Include="include\container\CotVectorMap.hpp" />
     <ClInclude Include="include\CotEngine.h" />
     <ClInclude Include="include\input\CotInput.h" />
     <ClInclude Include="include\input\CotInputDevice.h" />
