@@ -4,7 +4,7 @@ namespace Cot
 {
 	COT_SINGLETON_CPP(RenderManager);
 
-	void RenderManager::Add(SpriteRenderer* command)
+	void RenderManager::Add(IRenderComponent* command)
 	{
 		_renderQ.push_back(command);
 	}

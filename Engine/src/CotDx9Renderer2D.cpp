@@ -2,7 +2,8 @@
 #include "render/CotRenderManager.h"
 #include "render/CotDx9Device.h"
 #include "physics/CotPhysics.h"
-#include <algorithm>
+#include "component/CotSpriteRenderer.h"
+#include "component/CotFontRenderer.h"
 
 namespace Cot
 {
@@ -19,11 +20,11 @@ namespace Cot
 
 	void Dx9Renderer2D::Draw()
 	{
-		std::vector<SpriteRenderer*> renderQ = RenderManager::GetInstance().GetRenderQ();
+		std::vector<IRenderComponent*> renderQ = RenderManager::GetInstance().GetRenderQ();
 
 		if (renderQ.size() > 1)
 		{
-			std::sort(renderQ.begin(), renderQ.end(), [](SpriteRenderer* a, SpriteRenderer* b)->bool
+			std::sort(renderQ.begin(), renderQ.end(), [](IRenderComponent* a, IRenderComponent* b)->bool
 			{
 				return a->GetDepth() < b->GetDepth();
 			});
@@ -32,23 +33,42 @@ namespace Cot
 		_sprite->Begin(D3DXSPRITE_ALPHABLEND);
 		for (uint i = 0; i < renderQ.size(); ++i)
 		{
-			if (!Cot::IntersectRect(_screen, renderQ[i]->GetRect()))
+			if (renderQ[i]->GetRenderType() == IRenderComponent::Type::Font)
 			{
-				continue;
+				FontRenderer* fontRenderer = static_cast<FontRenderer*>(renderQ[i]);
+
+				wstring text = ToWString(fontRenderer->GetText());
+				_sprite->SetTransform(&ToDxMath(fontRenderer->GetOwner()->GetWorldMatrix()));
+
+				fontRenderer->GetFont()->
+					GetData()->DrawTextW(_sprite,
+						text.c_str(), -1, 
+						&ToDxMath(Rect(
+							fontRenderer->GetOwner()->GetPosition().x, 
+							fontRenderer->GetOwner()->GetPosition().y, 0.0f, 0.0f)), DT_NOCLIP,
+						ToDxMath(fontRenderer->GetColor()));
 			}
+			else if (renderQ[i]->GetRenderType() == IRenderComponent::Type::Sprite)
+			{
+				SpriteRenderer* spriteRenderer = static_cast<SpriteRenderer*>(renderQ[i]);
+				if (!Cot::IntersectRect(_screen, spriteRenderer->GetRect()))
+				{
+					continue;
+				}
 
-			Vec3 center = Vec3(
-				renderQ[i]->GetRect().size.width * renderQ[i]->GetAnchor().x,
-				renderQ[i]->GetRect().size.height * renderQ[i]->GetAnchor().y,
-				0.0f);
+				Vec3 center = Vec3(
+					spriteRenderer->GetRect().size.width * spriteRenderer->GetAnchor().x,
+					spriteRenderer->GetRect().size.height * spriteRenderer->GetAnchor().y,
+					0.0f);
 
-			_sprite->SetTransform(&ToDxMath(renderQ[i]->GetOwner()->GetWorldMatrix()));
-			_sprite->Draw(
-				renderQ[i]->GetTexture()->GetTexture(),
-				&ToDxMath(renderQ[i]->GetRect()),
-				&ToDxMath(center),
-				nullptr,
-				ToDxMath(renderQ[i]->GetColor()));
+				_sprite->SetTransform(&ToDxMath(spriteRenderer->GetOwner()->GetWorldMatrix()));
+				_sprite->Draw(
+					spriteRenderer->GetTexture()->GetTexture(),
+					&ToDxMath(spriteRenderer->GetRect()),
+					&ToDxMath(center),
+					nullptr,
+					ToDxMath(spriteRenderer->GetColor()));
+			}
 		}
 		_sprite->End();
 		RenderManager::GetInstance().Clear();

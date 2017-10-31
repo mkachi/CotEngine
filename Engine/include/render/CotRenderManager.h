@@ -1,7 +1,7 @@
 #pragma once
 
 #include "base/CotRule.h"
-#include "component/CotSpriteRenderer.h"
+#include "component/CotIRenderComponent.h"
 
 namespace Cot
 {
@@ -9,13 +9,13 @@ namespace Cot
 	{
 		COT_SINGLETON_H(RenderManager);
 	private:
-		std::vector<SpriteRenderer*> _renderQ;
+		std::vector<IRenderComponent*> _renderQ;
 
 	public:
-		void Add(SpriteRenderer* command);
+		void Add(IRenderComponent* command);
 		void Clear();
 
-		std::vector<SpriteRenderer*> GetRenderQ() { return _renderQ; }
+		std::vector<IRenderComponent*> GetRenderQ() { return _renderQ; }
 
 	};
 }

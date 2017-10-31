@@ -54,13 +54,18 @@ namespace Cot
 		_key = filename;
 		_wkey = ToWString(filename);
 		D3DXGetImageInfoFromFile(_wkey.c_str(), &_info);
-		D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), _wkey.c_str(),
+		HRESULT result = D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), _wkey.c_str(),
 			D3DX_DEFAULT_NONPOW2,
 			D3DX_DEFAULT_NONPOW2, 0, 1,
 			D3DFMT_UNKNOWN,
 			D3DPOOL_DEFAULT,
 			D3DX_DEFAULT, D3DX_DEFAULT,
 			NULL, NULL, NULL, &_texture);
+
+		if (FAILED(result))
+		{
+			return false;
+		}
 
 		return true;
 	}

@@ -161,6 +161,15 @@
     <ClInclude Include="include\container\CotQueue.hpp">
       <Filter>Container</Filter>
     </ClInclude>
+    <ClInclude Include="include\asset\CotFont.h">
+      <Filter>Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\component\CotFontRenderer.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\component\CotIRenderComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -316,6 +325,15 @@
       <Filter>Asset</Filter>
     </ClCompile>
     <ClCompile Include="src\CotAnimation.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotFont.cpp">
+      <Filter>Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotFontRenderer.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotIRenderComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
   </ItemGroup>

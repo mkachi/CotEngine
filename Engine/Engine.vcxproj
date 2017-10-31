@@ -22,6 +22,7 @@
     <ClInclude Include="include\asset\CotAsset.h" />
     <ClInclude Include="include\asset\CotAssetManager.h" />
     <ClInclude Include="include\asset\CotAudioClip.h" />
+    <ClInclude Include="include\asset\CotFont.h" />
     <ClInclude Include="include\asset\CotTexture.h" />
     <ClInclude Include="include\asset\CotTextureAtlas.h" />
     <ClInclude Include="include\audio\CotIDecoder.h" />
@@ -44,8 +45,10 @@
     <ClInclude Include="include\component\CotAudioSource.h" />
     <ClInclude Include="include\component\CotBoxCollider.h" />
     <ClInclude Include="include\component\CotCircleCollider.h" />
+    <ClInclude Include="include\component\CotFontRenderer.h" />
     <ClInclude Include="include\component\CotICollider.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
+    <ClInclude Include="include\component\CotIRenderComponent.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\container\CotQueue.hpp" />
     <ClInclude Include="include\container\CotVectorMap.hpp" />
@@ -87,12 +90,15 @@
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
     <ClCompile Include="src\CotDx9DebugRenderer.cpp" />
+    <ClCompile Include="src\CotFont.cpp" />
+    <ClCompile Include="src\CotFontRenderer.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />
     <ClCompile Include="src\CotGL2DX.cpp" />
     <ClCompile Include="src\CotICollider.cpp" />
     <ClCompile Include="src\CotIComponent.cpp" />
     <ClCompile Include="src\CotInput.cpp" />
     <ClCompile Include="src\CotInputDevice.cpp" />
+    <ClCompile Include="src\CotIRenderComponent.cpp" />
     <ClCompile Include="src\CotKeyCode.cpp" />
     <ClCompile Include="src\CotMat4.cpp" />
     <ClCompile Include="src\CotMathFunc.cpp" />

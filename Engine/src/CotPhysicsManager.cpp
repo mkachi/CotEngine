@@ -36,7 +36,8 @@ namespace Cot
 					}
 					break;
 				}
-				else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
+				
+				if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
 					_colliders[j]->GetCollType() == ICollider::Type::Circle)
 				{
 					if (IntersectCircle(
@@ -52,7 +53,8 @@ namespace Cot
 					}
 					break;
 				}
-				else if (
+				
+				if (
 					(_colliders[i]->GetCollType() == ICollider::Type::Box &&
 					_colliders[j]->GetCollType() == ICollider::Type::Circle) ||
 

@@ -8,6 +8,7 @@ namespace Cot
 {
 	SpriteRenderer* SpriteRenderer::Init(const string& filename)
 	{
+		Reset();
 		_texture = Texture::Load(filename);
 		_texture->Retain();
 		_rect = Rect(0, 0, _texture->GetWidth(), _texture->GetHeight());
@@ -16,6 +17,7 @@ namespace Cot
 
 	SpriteRenderer* SpriteRenderer::Init(const string& caif, const string& key)
 	{
+		Reset();
 		string atlasKey = (caif + "@" + key);
 		if (AssetManager::GetInstance().IsHave(atlasKey))
 		{
@@ -73,6 +75,7 @@ namespace Cot
 
 	void SpriteRenderer::Reset()
 	{
+		_renderType = IRenderComponent::Type::Sprite;
 		SafeRelease(_texture);
 		_anchor = Vec2(0.5f, 0.5f);
 		_color = Color::White;
@@ -91,6 +94,7 @@ namespace Cot
 
 	void SpriteRenderer::SetTexture(Texture* texture)
 	{
+		SafeRelease(_texture);
 		_texture = texture;
 		_texture->Retain();
 		_rect = Rect(0, 0, _texture->GetWidth(), _texture->GetHeight());
@@ -106,25 +110,5 @@ namespace Cot
 	{
 		SafeRelease(_texture);
 		Init(caif, key);
-	}
-
-	void SpriteRenderer::SetAnchor(const Vec2& anchor)
-	{
-		_anchor = anchor;
-	}
-
-	void SpriteRenderer::SetColor(const Color& color)
-	{
-		_color = color;
-	}
-
-	void SpriteRenderer::SetRect(const Rect& rect)
-	{
-		_rect = rect;
-	}
-
-	void SpriteRenderer::SetDepth(int depth)
-	{
-		_depth = depth;
 	}
 }

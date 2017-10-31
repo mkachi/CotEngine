@@ -11,6 +11,7 @@ namespace Cot
 		COT_SINGLETON_H(AssetManager);
 	private:
 		std::unordered_map<string, Asset*> _assets;
+		std::unordered_map<string, wstring> _fontCache;
 
 		Asset* GetAsset(const string& key);
 
@@ -24,8 +25,9 @@ namespace Cot
 			return static_cast<T>(GetAsset(key));
 		}
 
-		bool IsHave(const string& key);
+		void AddFontCache(const string& fontPath);
 
+		bool IsHave(const string& key);
 		void DestroyAllAssets();
 
 	};

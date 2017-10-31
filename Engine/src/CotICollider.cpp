@@ -4,7 +4,7 @@ namespace Cot
 {
 	void ICollider::Enter(Entity* entity)
 	{
-		if (!_enter)
+		if (!_enter && _owner->IsDirty())
 		{
 			_enter = true;
 			for (auto& component : GetOwner()->GetComponentMap())
