@@ -26,6 +26,8 @@ namespace Cot
 		ALuint GetBuffer() { return _buffer; }
 		int GetLength() { return _length; }
 
+		void Reload() override {}
+
 	};
 
 	COT_API inline void DestroyAllDecoder();

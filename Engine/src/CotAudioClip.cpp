@@ -36,6 +36,7 @@ namespace Cot
 	bool AudioClip::Init(const string& filename)
 	{
 		_key = filename;
+		_filePath = filename;
 
 		for (auto& decoder : _decoders)
 		{

@@ -24,5 +24,7 @@ namespace Cot
 		Texture* GetTexture() { return _texture; }
 		Rect GetRect() { return _rect; }
 
+		void Reload() override {}
+
 	};
 }

@@ -8,10 +8,7 @@ namespace Cot
 	
 	TextureAtlas::~TextureAtlas()
 	{
-		if (_texture != nullptr)
-		{
-			_texture->Release();
-		}
+		SafeRelease(_texture);
 	}
 	
 	bool TextureAtlas::Init(const string& key, Texture* texture, const Rect& rect)

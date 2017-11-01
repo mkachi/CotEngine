@@ -125,9 +125,6 @@
     <ClInclude Include="include\component\CotICollider.h">
       <Filter>Component</Filter>
     </ClInclude>
-    <ClInclude Include="include\render\CotDx9DebugRenderer.h">
-      <Filter>Render</Filter>
-    </ClInclude>
     <ClInclude Include="include\base\CotCallBack.hpp">
       <Filter>Base</Filter>
     </ClInclude>
@@ -293,9 +290,6 @@
     </ClCompile>
     <ClCompile Include="src\CotBoxCollider.cpp">
       <Filter>Component</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CotDx9DebugRenderer.cpp">
-      <Filter>Render</Filter>
     </ClCompile>
     <ClCompile Include="src\CotCircleCollider.cpp">
       <Filter>Component</Filter>

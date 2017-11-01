@@ -27,17 +27,20 @@ namespace Cot
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<BoxCollider*>(_colliders[j])->GetRect()))
 					{
-						_colliders[i]->Enter(_colliders[j]->GetOwner());
-						_colliders[i]->Stay(_colliders[j]->GetOwner());
+						_colliders[j]->Enter(_colliders[i]->GetOwner());
+						_colliders[j]->Stay(_colliders[i]->GetOwner());
+
+					//	_colliders[j]->Enter(_colliders[i]->GetOwner());
+					//	_colliders[j]->Stay(_colliders[i]->GetOwner());
 					}
 					else
 					{
-						_colliders[i]->Exit(_colliders[j]->GetOwner());
+						_colliders[j]->Exit(_colliders[i]->GetOwner());
+					//	_colliders[j]->Exit(_colliders[i]->GetOwner());
 					}
-					break;
 				}
 				
-				if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
+				/*else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
 					_colliders[j]->GetCollType() == ICollider::Type::Circle)
 				{
 					if (IntersectCircle(
@@ -46,20 +49,23 @@ namespace Cot
 					{
 						_colliders[i]->Enter(_colliders[j]->GetOwner());
 						_colliders[i]->Stay(_colliders[j]->GetOwner());
+
+						_colliders[j]->Enter(_colliders[i]->GetOwner());
+						_colliders[j]->Stay(_colliders[i]->GetOwner());
 					}
 					else
 					{
 						_colliders[i]->Exit(_colliders[j]->GetOwner());
+						_colliders[j]->Exit(_colliders[i]->GetOwner());
 					}
-					break;
 				}
 				
-				if (
+				else if (
 					(_colliders[i]->GetCollType() == ICollider::Type::Box &&
-					_colliders[j]->GetCollType() == ICollider::Type::Circle) ||
+					 _colliders[j]->GetCollType() == ICollider::Type::Circle) ||
 
 					(_colliders[i]->GetCollType() == ICollider::Type::Circle &&
-					_colliders[j]->GetCollType() == ICollider::Type::Box))
+					 _colliders[j]->GetCollType() == ICollider::Type::Box))
 				{
 					if (IntersectRectCircle(
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
@@ -67,16 +73,18 @@ namespace Cot
 					{
 						_colliders[i]->Enter(_colliders[j]->GetOwner());
 						_colliders[i]->Stay(_colliders[j]->GetOwner());
+
+						_colliders[j]->Enter(_colliders[i]->GetOwner());
+						_colliders[j]->Stay(_colliders[i]->GetOwner());
 					}
 					else
 					{
 						_colliders[i]->Exit(_colliders[j]->GetOwner());
+						_colliders[j]->Exit(_colliders[i]->GetOwner());
 					}
-					break;
-				}
+				}*/
 			}
 		}
-
 		_colliders.clear();
 	}
 }

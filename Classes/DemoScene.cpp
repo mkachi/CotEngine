@@ -4,24 +4,31 @@ using namespace Cot;
 
 bool DemoScene::Init()
 {
-	a = new Entity("a");
-	FontRenderer* fontRenderer1 = a->AddComponent<FontRenderer>()->Init("Arial.ttf", "Test", 60);
-	fontRenderer1->SetDepth(1);
-	a->SetPosition(Vec3(0.0f, 0.0f));
-	this->AddEntity(a);
+	//Root
+	root = new Entity("root");
+	root->SetPosition(Vec3(0.0f, 0.0f));
+	this->AddEntity(root);
 
-	Entity* c = new Entity("a");
-	SpriteRenderer* spriteRenderer = c->AddComponent<SpriteRenderer>()->Init("Circle.png");
-	spriteRenderer->SetDepth(0);
-	c->SetPosition(Vec3(0.0f, 0.0f));
-	this->AddEntity(c);
+	//Ob pool initialize
+	for (int i = 0; i < 2; i++)
+	{
+		testEntity[i] = new Entity(ToString(i));
+		testEntity[i]->SetParent(root);
+		testEntity[i]->AddComponent<SpriteRenderer>()->Init("testPng.png");
+		testEntity[i]->SetPosition(Vec3(120 * i, 300));
+		testEntity[i]->AddComponent<BoxCollider>()->SetSpriteSize();
+		this->AddEntity(testEntity[i]);
+	} // 100 100
 
-	Entity* b = new Entity("a");
-	FontRenderer* fontRenderer2 = b->AddComponent<FontRenderer>()->Init("Arial.ttf", "Ang", 60);
-	fontRenderer2->SetDepth(-1);
-	fontRenderer2->SetColor(Color(1.0f, 0.0f, 0.0f));
-	b->SetPosition(Vec3(40.0f, 0.0f));
-	this->AddEntity(b);
+	// 256 256
+	//Mover object
+	entity2 = new Entity("Test2");
+	entity2->SetParent(root);
+	entity2->AddComponent<SpriteRenderer>()->Init("testPng.png");
+	entity2->AddComponent<TestComponent>();
+	entity2->SetPosition(Vec3(0.0f, 300.0f, 0.0f));
+	entity2->AddComponent<BoxCollider>()->SetSpriteSize();
+	this->AddEntity(entity2);
 
 	return true;
 }
@@ -29,4 +36,13 @@ bool DemoScene::Init()
 void DemoScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
+
+	if (IsKeyStay(KeyCode::A))
+		entity2->SetPositionX(entity2->GetPosition().x - 100.0f * time.GetDeltaTime());
+	if (IsKeyStay(KeyCode::D))
+		entity2->SetPositionX(entity2->GetPosition().x + 100.0f * time.GetDeltaTime());
+	if (IsKeyStay(KeyCode::W))
+		entity2->SetPositionY(entity2->GetPosition().y - 100.0f * time.GetDeltaTime());
+	if (IsKeyStay(KeyCode::S))
+		entity2->SetPositionY(entity2->GetPosition().y + 100.0f * time.GetDeltaTime());
 }

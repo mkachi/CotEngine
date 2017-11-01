@@ -34,5 +34,7 @@ namespace Cot
 		uint GetWidth() { return _info.Width; }
 		uint GetHeight() { return _info.Height; }
 
+		void Reload() override;
+
 	};
 }

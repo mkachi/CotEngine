@@ -24,6 +24,7 @@ namespace Cot
 		{
 			return static_cast<T>(GetAsset(key));
 		}
+		void ReloadAll();
 
 		void AddFontCache(const string& fontPath);
 

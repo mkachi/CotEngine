@@ -6,12 +6,14 @@ namespace Cot
 {
 	BoxCollider* BoxCollider::Init(const Size& size)
 	{
+		Reset();
 		_size = size;
 		return this;
 	}
 
 	void BoxCollider::Reset()
 	{
+		_enter = false;
 		_collType = Type::Box;
 	}
 

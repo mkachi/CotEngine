@@ -33,6 +33,8 @@ namespace Cot
 
 	bool Font::Init(const string& filename, int fontSize)
 	{
+		_filePath = filename;
+
 		string::size_type pos = string::npos;
 		_fontPath = filename;
 		if ((pos = filename.find_last_of('/')) != string::npos)
@@ -53,11 +55,21 @@ namespace Cot
 
 		wstring wFilename = ToWString(filename);
 		AssetManager::GetInstance().AddFontCache(filename);
-		HRESULT result = D3DXCreateFont(Dx9Device::GetDevice(), _fontSize, 0, FW_NORMAL, 1, false, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_DONTCARE, wFilename.c_str(), &_d3dFont);
+		HRESULT result = D3DXCreateFont(Dx9Device::GetDevice(), _fontSize, 0, FW_NORMAL, 1, false, 
+			DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, 
+			DEFAULT_QUALITY, DEFAULT_PITCH | FF_DONTCARE, wFilename.c_str(), &_d3dFont);
 		if (FAILED(result))
 		{
 			return false;
 		}
 		return true;
+	}
+
+	void Font::Reload()
+	{
+		wstring wFilename = ToWString(_filePath);
+		D3DXCreateFont(Dx9Device::GetDevice(), _fontSize, 0, FW_NORMAL, 1, false,
+			DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
+			DEFAULT_QUALITY, DEFAULT_PITCH | FF_DONTCARE, wFilename.c_str(), &_d3dFont);
 	}
 }

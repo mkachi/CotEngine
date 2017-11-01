@@ -33,6 +33,7 @@ namespace Cot
 
 	bool Texture::Init(const string& filename)
 	{
+		_filePath = filename;
 		static uint ID_COUNT = 0;
 
 		_id = ++ID_COUNT;
@@ -52,9 +53,9 @@ namespace Cot
 		}
 
 		_key = filename;
-		_wkey = ToWString(filename);
-		D3DXGetImageInfoFromFile(_wkey.c_str(), &_info);
-		HRESULT result = D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), _wkey.c_str(),
+		wstring wFilename = ToWString(filename);
+		D3DXGetImageInfoFromFile(wFilename.c_str(), &_info);
+		HRESULT result = D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), wFilename.c_str(),
 			D3DX_DEFAULT_NONPOW2,
 			D3DX_DEFAULT_NONPOW2, 0, 1,
 			D3DFMT_UNKNOWN,
@@ -68,5 +69,18 @@ namespace Cot
 		}
 
 		return true;
+	}
+
+	void Texture::Reload()
+	{
+		wstring wFilename = ToWString(_filePath);
+		D3DXGetImageInfoFromFile(wFilename.c_str(), &_info);
+		D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), wFilename.c_str(),
+			D3DX_DEFAULT_NONPOW2,
+			D3DX_DEFAULT_NONPOW2, 0, 1,
+			D3DFMT_UNKNOWN,
+			D3DPOOL_DEFAULT,
+			D3DX_DEFAULT, D3DX_DEFAULT,
+			NULL, NULL, NULL, &_texture);
 	}
 }

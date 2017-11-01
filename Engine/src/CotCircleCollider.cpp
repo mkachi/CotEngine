@@ -5,12 +5,14 @@ namespace Cot
 {
 	CircleCollider* CircleCollider::Init(float radius)
 	{
+		Reset();
 		_radius = radius;
 		return this;
 	}
 
 	void CircleCollider::Reset()
 	{
+		_enter = false;
 		_collType = Type::Circle;
 	}
 

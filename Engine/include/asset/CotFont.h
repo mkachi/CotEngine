@@ -30,5 +30,7 @@ namespace Cot
 		int GetFontSize() { return _fontSize; }
 		string GetFontPath() { return _fontPath; }
 
+		void Reload() override;
+
 	};
 }

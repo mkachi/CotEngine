@@ -1,6 +1,7 @@
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
 #include "math/CotGL2DX.h"
+#include "asset/CotAssetManager.h"
 
 static IDirect3DDevice9* _device = nullptr;
 
@@ -90,22 +91,6 @@ namespace Cot
 
 	void Dx9Device::Render()
 	{
-		// Device lost
-		//HRESULT result;
-		//if (FAILED(result = _device->TestCooperativeLevel()))
-		//{
-		//	if (result == D3DERR_DEVICELOST)
-		//	{
-		//		return;
-		//	}
-		//
-		//	if (result == D3DERR_DEVICENOTRESET)
-		//	{
-		//		_device->Reset(&_presentParam);
-		//		return;
-		//	}
-		//}
-
 		_device->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, ToDxMath(_clearColor), 1.0f, 0);
 		_device->BeginScene();
 
@@ -115,6 +100,25 @@ namespace Cot
 		}
 		_device->EndScene();
 		_device->Present(NULL, NULL, NULL, NULL);
+
+		// Device lost
+		HRESULT result;
+		if (FAILED(result = _device->TestCooperativeLevel()))
+		{
+			if (result == D3DERR_DEVICELOST)
+			{
+				printf("Error Lost\n");
+				return;
+			}
+
+			if (result == D3DERR_DEVICENOTRESET)
+			{
+				printf("Lost\n");
+				_device->Reset(&_presentParam);
+				AssetManager::GetInstance().ReloadAll();
+				return;
+			}
+		}
 	}
 
 	IDirect3DDevice9* Dx9Device::GetDevice()

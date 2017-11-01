@@ -32,6 +32,14 @@ namespace Cot
 		}
 	}
 
+	void AssetManager::ReloadAll()
+	{
+		for (auto& asset : _assets)
+		{
+			asset.second->Reload();
+		}
+	}
+
 	void AssetManager::AddFontCache(const string& fontPath)
 	{
 		auto iter = _fontCache.find(fontPath);

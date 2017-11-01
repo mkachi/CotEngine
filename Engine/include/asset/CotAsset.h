@@ -8,7 +8,7 @@ namespace Cot
 	{
 	protected:
 		string	_key;
-		wstring	_wkey;
+		string	_filePath;
 		uint	_refCount;
 
 	public:
@@ -20,6 +20,8 @@ namespace Cot
 		void Retain();
 		void Release();
 		uint GetRefCount() { return _refCount; }
+
+		virtual void Reload() = 0;
 
 	};
 }

@@ -69,7 +69,6 @@
     <ClInclude Include="include\math\CotVec4.h" />
     <ClInclude Include="include\physics\CotPhysics.h" />
     <ClInclude Include="include\physics\CotPhysicsManager.h" />
-    <ClInclude Include="include\render\CotDx9DebugRenderer.h" />
     <ClInclude Include="include\render\CotIGraphics.h" />
     <ClInclude Include="include\render\CotIRenderer.h" />
     <ClInclude Include="include\render\CotDx9Device.h" />
@@ -89,7 +88,6 @@
     <ClCompile Include="src\CotCircleCollider.cpp" />
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />
-    <ClCompile Include="src\CotDx9DebugRenderer.cpp" />
     <ClCompile Include="src\CotFont.cpp" />
     <ClCompile Include="src\CotFontRenderer.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />

@@ -1,23 +1,23 @@
 #pragma once
 
 #include <CotEngine.h>
-#include <random>
+
+using namespace Cot;
 
 Component(TestComponent)
 {
 	COT_COMPONENT(TestComponent);
 private:
-	string	_str;
-	Cot::Vec3	_direction;
-	float	_count;
-
-	float GetRandom(float min, float max);
+	float	_delayCount;
+	bool	_show;
 
 public:
-	TestComponent* Init(const string& str);
+	void Awake() override;
 
-	string GetStr() { return _str; }
+	void Update(Time& time) override;
 
-	void Update(Cot::Time& time) override;
+	void OnTriggerEnter(Entity* entity) override;
+	void OnTriggerStay(Entity* entity) override;
+	void OnTriggerExit(Entity* entity) override;
 
 };

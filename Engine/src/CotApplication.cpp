@@ -3,7 +3,6 @@
 
 #include "render/CotDx9Device.h"
 #include "render/CotDx9Renderer2D.h"
-#include "render/CotDx9DebugRenderer.h"
 #include "render/CotRenderManager.h"
 
 #include "asset/CotAudioClip.h"
@@ -58,7 +57,6 @@ namespace Cot
 			return false;
 		}
 		_graphics->AddRenderer(new Dx9Renderer2D(width, height));
-		_graphics->AddRenderer(new Dx9DebugRenderer());
 
 		return true;
 	}
