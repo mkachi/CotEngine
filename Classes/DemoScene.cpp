@@ -24,10 +24,10 @@ bool DemoScene::Init()
 	//Mover object
 	entity2 = new Entity("Test2");
 	entity2->SetParent(root);
-	entity2->AddComponent<SpriteRenderer>()->Init("testPng.png");
-	entity2->AddComponent<TestComponent>();
 	entity2->SetPosition(Vec3(0.0f, 300.0f, 0.0f));
+	entity2->AddComponent<SpriteRenderer>()->Init("testPng.png");
 	entity2->AddComponent<BoxCollider>()->SetSpriteSize();
+	entity2->AddComponent<TestComponent>();
 	this->AddEntity(entity2);
 
 	return true;

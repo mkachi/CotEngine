@@ -413,11 +413,6 @@ namespace Cot
 			return;
 		}
 
-		for (auto& child : _children)
-		{
-			child->Update(time);
-		}
-
 		for (int i = 0; i < _components.size(); ++i)
 		{
 			IComponent* temp = _components[i].second;

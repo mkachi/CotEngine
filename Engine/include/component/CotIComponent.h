@@ -29,9 +29,7 @@ namespace Cot
 		virtual void OnDisable()		{}
 		virtual void OnDestroy()		{}
 
-		virtual void OnTriggerEnter(Entity* entity) {}
-		virtual void OnTriggerStay(Entity* entity)	{}
-		virtual void OnTriggerExit(Entity* entity)	{}
+		virtual void OnCollision(Entity* entity) {}
 
 	};
 }

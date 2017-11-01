@@ -15,9 +15,6 @@ public:
 	void Awake() override;
 
 	void Update(Time& time) override;
-
-	void OnTriggerEnter(Entity* entity) override;
-	void OnTriggerStay(Entity* entity) override;
-	void OnTriggerExit(Entity* entity) override;
+	void OnCollision(Entity* entity) override;
 
 };

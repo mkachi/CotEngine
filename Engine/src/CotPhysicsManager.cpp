@@ -20,69 +20,44 @@ namespace Cot
 					continue;
 				}
 
-				if (_colliders[i]->GetCollType() == ICollider::Type::Box &&
+				// Box vs Box
+				if (_colliders[i]->GetCollType() == ICollider::Type::Box && 
 					_colliders[j]->GetCollType() == ICollider::Type::Box)
 				{
 					if (IntersectRect(
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<BoxCollider*>(_colliders[j])->GetRect()))
 					{
-						_colliders[j]->Enter(_colliders[i]->GetOwner());
-						_colliders[j]->Stay(_colliders[i]->GetOwner());
-
-					//	_colliders[j]->Enter(_colliders[i]->GetOwner());
-					//	_colliders[j]->Stay(_colliders[i]->GetOwner());
-					}
-					else
-					{
-						_colliders[j]->Exit(_colliders[i]->GetOwner());
-					//	_colliders[j]->Exit(_colliders[i]->GetOwner());
+						_colliders[i]->Call(_colliders[j]->GetOwner());
+						_colliders[j]->Call(_colliders[i]->GetOwner());
 					}
 				}
-				
-				/*else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
+
+				// Circle vs Circle
+				else if (_colliders[i]->GetCollType() == ICollider::Type::Circle &&
 					_colliders[j]->GetCollType() == ICollider::Type::Circle)
 				{
 					if (IntersectCircle(
 						static_cast<CircleCollider*>(_colliders[i])->GetCircle(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
-						_colliders[i]->Enter(_colliders[j]->GetOwner());
-						_colliders[i]->Stay(_colliders[j]->GetOwner());
-
-						_colliders[j]->Enter(_colliders[i]->GetOwner());
-						_colliders[j]->Stay(_colliders[i]->GetOwner());
-					}
-					else
-					{
-						_colliders[i]->Exit(_colliders[j]->GetOwner());
-						_colliders[j]->Exit(_colliders[i]->GetOwner());
+						_colliders[i]->Call(_colliders[j]->GetOwner());
+						_colliders[j]->Call(_colliders[i]->GetOwner());
 					}
 				}
-				
-				else if (
-					(_colliders[i]->GetCollType() == ICollider::Type::Box &&
-					 _colliders[j]->GetCollType() == ICollider::Type::Circle) ||
 
-					(_colliders[i]->GetCollType() == ICollider::Type::Circle &&
-					 _colliders[j]->GetCollType() == ICollider::Type::Box))
+				// Circle vs Rect
+				else if (_colliders[i]->GetCollType() == ICollider::Type::Box &&
+					_colliders[j]->GetCollType() == ICollider::Type::Circle)
 				{
 					if (IntersectRectCircle(
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
-						_colliders[i]->Enter(_colliders[j]->GetOwner());
-						_colliders[i]->Stay(_colliders[j]->GetOwner());
-
-						_colliders[j]->Enter(_colliders[i]->GetOwner());
-						_colliders[j]->Stay(_colliders[i]->GetOwner());
+						_colliders[i]->Call(_colliders[j]->GetOwner());
+						_colliders[j]->Call(_colliders[i]->GetOwner());
 					}
-					else
-					{
-						_colliders[i]->Exit(_colliders[j]->GetOwner());
-						_colliders[j]->Exit(_colliders[i]->GetOwner());
-					}
-				}*/
+				}
 			}
 		}
 		_colliders.clear();

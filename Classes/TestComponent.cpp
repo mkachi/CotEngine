@@ -16,21 +16,7 @@ void TestComponent::Update(Time& time)
 	}
 }
 
-void TestComponent::OnTriggerEnter(Entity* entity)
+void TestComponent::OnCollision(Entity* entity)
 {
 	printf("Enter %s\n", entity->GetName().c_str());
-}
-
-void TestComponent::OnTriggerStay(Entity* entity)
-{
-	if (_show)
-	{
-		_show = false;
-		printf("Stay %s\n", entity->GetName().c_str());
-	}
-}
-
-void TestComponent::OnTriggerExit(Entity* entity)
-{
-	printf("Exit %s\n", entity->GetName().c_str());
 }
