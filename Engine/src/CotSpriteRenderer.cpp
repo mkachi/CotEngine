@@ -77,6 +77,7 @@ namespace Cot
 	{
 		_renderType = IRenderComponent::Type::Sprite;
 		SafeRelease(_texture);
+		_texture = nullptr;
 		_anchor = Vec2(0.5f, 0.5f);
 		_color = Color::White;
 		_depth = 0;
@@ -84,6 +85,10 @@ namespace Cot
 
 	void SpriteRenderer::Update(Time& time)
 	{
+		if (_texture == nullptr)
+		{
+			return;
+		}
 		RenderManager::GetInstance().Add(this);
 	}
 
