@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE hInsetance, HINSTANCE hPrevInstance, LPSTR lpszCmdP
 	}
 #endif
 	Cot::Application app;
-	if (app.Init(hInsetance, "Test", 800, 600, false))
+	if (app.Init(hInsetance, "Test", 1280, 720, true))
 	{
 		app.RunWithScene(new DemoScene());
 	}

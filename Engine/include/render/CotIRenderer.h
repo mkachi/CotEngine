@@ -9,5 +9,7 @@ namespace Cot
 		COT_INTERFACE(IRenderer);
 
 		virtual void Draw() = 0;
+		virtual void Reset() = 0;
+		virtual void Lost() = 0;
 	};
 }

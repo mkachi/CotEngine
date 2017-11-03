@@ -16,9 +16,11 @@ namespace Cot
 		std::vector<IRenderer*> _renderers;
 		Color		_clearColor;
 		bool		_fullScreen;
+		uint		_width;
+		uint		_height;
 
 	public:
-		virtual bool Init(HWND wnd) = 0;
+		virtual bool Init(HWND wnd, uint width, uint height, bool fullScreen) = 0;
 		virtual void Destroy() = 0;
 
 		virtual void AddRenderer(IRenderer* renderer) = 0;

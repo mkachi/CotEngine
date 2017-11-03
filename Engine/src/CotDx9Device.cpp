@@ -14,9 +14,12 @@ namespace Cot
 	Dx9Device::~Dx9Device()
 	{	}
 
-	bool Dx9Device::Init(HWND wnd)
+	bool Dx9Device::Init(HWND wnd, uint width, uint height, bool fullScreen)
 	{
 		_wnd = wnd;
+		_fullScreen = fullScreen;
+		_width = width;
+		_height = height;
 		_clearColor = Color::Black;
 
 		_d3d = Direct3DCreate9(D3D_SDK_VERSION);
@@ -25,28 +28,36 @@ namespace Cot
 			return false;
 		}
 
-		ZeroMemory(&_presentParam, sizeof(_presentParam));
+		// Present Param
+		InitPresentParam();
 
-		// Full Screen is FALSE
-		_presentParam.Windowed = TRUE;
-		_presentParam.hDeviceWindow = wnd;
-		_presentParam.SwapEffect = D3DSWAPEFFECT_DISCARD;
+		if (fullScreen)
+		{
+			if (CheckAdapterCompatible())
+			{
+				_presentParam.FullScreen_RefreshRateInHz = _displayMode.RefreshRate;
+			}
+			else
+			{
+				COT_ASSERT(true, "Graphics device does not support specified resolution or format");
+			}
+		}
 
-		// Full Screen is D3DFMT_X8R8G8B8 window mode is D3DFMT_UNKNOWN
-		_presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
+		D3DCAPS9 caps;
+		DWORD processingType;
+		_d3d->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &caps);
+		if ((caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT) == 0 ||
+			caps.VertexShaderVersion < D3DVS_VERSION(1, 1))
+		{
+			processingType = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
+		}
+		else
+		{
+			processingType = D3DCREATE_HARDWARE_VERTEXPROCESSING;
+		}
 
-		// Full Screen BackBufferSize
-		// _presentParam.BackBufferWidth = 800;
-		// _presentParam.BackBufferHeight = 600;
-
-		_presentParam.EnableAutoDepthStencil = TRUE;
-		_presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
-		_presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
-		_presentParam.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
-
-
-		if (FAILED(_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, wnd,
-			D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+		if (FAILED(_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, _wnd,
+			processingType,
 			&_presentParam, &_device)))
 		{
 			return false;
@@ -68,6 +79,50 @@ namespace Cot
 		_device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
 
 		return true;
+	}
+
+	bool Dx9Device::CheckAdapterCompatible()
+	{
+		uint modes = _d3d->GetAdapterModeCount(D3DADAPTER_DEFAULT, _presentParam.BackBufferFormat);
+		for (uint i = 0; i < modes; ++i)
+		{
+			_d3d->EnumAdapterModes(D3DADAPTER_DEFAULT, _presentParam.BackBufferFormat, i, &_displayMode);
+
+			if (_displayMode.Height == _presentParam.BackBufferHeight &&
+				_displayMode.Width == _presentParam.BackBufferWidth &&
+				_displayMode.RefreshRate >= _presentParam.FullScreen_RefreshRateInHz)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	void Dx9Device::InitPresentParam()
+	{
+		ZeroMemory(&_presentParam, sizeof(_presentParam));
+
+		// Full Screen is FALSE
+		_presentParam.Windowed = (!_fullScreen);
+		_presentParam.hDeviceWindow = _wnd;
+		_presentParam.SwapEffect = D3DSWAPEFFECT_DISCARD;
+
+		if (_fullScreen)
+		{
+			_presentParam.BackBufferFormat = D3DFMT_X8R8G8B8;
+		}
+		else
+		{
+			_presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
+		}
+
+		_presentParam.BackBufferWidth = _width;
+		_presentParam.BackBufferHeight = _height;
+
+		_presentParam.EnableAutoDepthStencil = TRUE;
+		_presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
+		_presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
+		_presentParam.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 	}
 
 	void Dx9Device::AddRenderer(IRenderer* renderer)
@@ -107,14 +162,42 @@ namespace Cot
 		{
 			if (result == D3DERR_DEVICELOST)
 			{
-				printf("Error Lost\n");
+				Sleep(100);
 				return;
 			}
 
 			if (result == D3DERR_DEVICENOTRESET)
 			{
-				printf("Lost\n");
+				SafeRelease(_device);
+				SafeRelease(_d3d);
+				InitPresentParam();
+
+				for (auto& renderer : _renderers)
+				{
+					renderer->Lost();
+				}
+
 				_device->Reset(&_presentParam);
+				_device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+				_device->SetRenderState(D3DRS_ZENABLE, false);
+				_device->SetRenderState(D3DRS_LIGHTING, false);
+				_device->SetRenderState(D3DRS_AMBIENT, 0x00202020);
+				_device->SetRenderState(D3DRS_NORMALIZENORMALS, true);
+				_device->SetRenderState(D3DRS_SPECULARENABLE, true);
+
+				_device->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
+
+				_device->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
+				_device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+
+				_device->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+				_device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+
+				for (auto& renderer : _renderers)
+				{
+					renderer->Reset();
+				}
+
 				AssetManager::GetInstance().ReloadAll();
 				return;
 			}

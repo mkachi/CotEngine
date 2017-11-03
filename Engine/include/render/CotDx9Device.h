@@ -11,13 +11,17 @@ namespace Cot
 	private:
 		IDirect3D9*		_d3d;
 		HWND			_wnd;
-		D3DPRESENT_PARAMETERS _presentParam;
+		D3DPRESENT_PARAMETERS	_presentParam;
+		D3DDISPLAYMODE			_displayMode;
+
+		void InitPresentParam();
+		bool CheckAdapterCompatible();
 
 	public:
 		Dx9Device();
 		virtual ~Dx9Device();
 
-		bool Init(HWND wnd) override;
+		bool Init(HWND wnd, uint width, uint height, bool fullScreen) override;
 		
 		void AddRenderer(IRenderer* renderer) override;
 		void Destroy() override;

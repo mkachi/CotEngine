@@ -18,6 +18,8 @@ namespace Cot
 		virtual ~Dx9Renderer2D();
 
 		void Draw() override;
+		void Reset() override;
+		void Lost() override;
 
 	};
 }

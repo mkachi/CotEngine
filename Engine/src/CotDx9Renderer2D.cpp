@@ -73,4 +73,14 @@ namespace Cot
 		_sprite->End();
 		RenderManager::GetInstance().Clear();
 	}
+
+	void Dx9Renderer2D::Reset()
+	{
+		_sprite->OnResetDevice();
+	}
+
+	void Dx9Renderer2D::Lost()
+	{
+		_sprite->OnLostDevice();
+	}
 }

@@ -19,7 +19,7 @@ namespace Cot
 
 		static LRESULT CALLBACK MsgProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-		bool InitGraphcis(int width, int height);
+		bool InitGraphcis(int width, int height, bool fullScreen);
 
 	public:
 		Application();
