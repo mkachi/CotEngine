@@ -67,6 +67,7 @@ namespace Cot
 
 	void Font::Reload()
 	{
+		SafeRelease(_d3dFont);
 		wstring wFilename = ToWString(_filePath);
 		D3DXCreateFont(Dx9Device::GetDevice(), _fontSize, 0, FW_NORMAL, 1, false,
 			DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,

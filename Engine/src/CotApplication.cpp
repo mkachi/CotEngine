@@ -27,10 +27,10 @@ namespace Cot
 	{
 		switch (msg)
 		{
-		case WM_SYSKEYDOWN: 
+		case WM_SYSKEYUP: 
 		case WM_KEYUP:			_inputDevice->UpdateKeyUp(wParam);						return 0;
 
-		case WM_SYSKEYUP:
+		case WM_SYSKEYDOWN:
 		case WM_KEYDOWN:		_inputDevice->UpdateKeyDown(wParam);					return 0;
 
 		case WM_LBUTTONUP:		_inputDevice->UpdateMouseUp(MouseButton::LButton);		return 0;
@@ -134,6 +134,10 @@ namespace Cot
 			{
 				time.Tick();
 				sceneManager.Update(time);
+				if (IsKeyStay(KeyCode::LAlt) && IsKeyDown(KeyCode::Enter))
+				{
+					_graphics->SetFullScreen(!_graphics->IsFullScreen());
+				}
 				PhysicsManager::GetInstance().Update(time);
 				_inputDevice->Poll();
 				_graphics->Render();

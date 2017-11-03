@@ -27,6 +27,9 @@ namespace Cot
 		void Destroy() override;
 		void Render() override;
 
+		void SetFullScreen(bool fullScreen) override;
+		void Reset() override;
+
 		static IDirect3DDevice9* GetDevice();
 
 	};

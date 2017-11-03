@@ -168,40 +168,57 @@ namespace Cot
 
 			if (result == D3DERR_DEVICENOTRESET)
 			{
-				SafeRelease(_device);
-				SafeRelease(_d3d);
-				InitPresentParam();
-
-				for (auto& renderer : _renderers)
-				{
-					renderer->Lost();
-				}
-
-				_device->Reset(&_presentParam);
-				_device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-				_device->SetRenderState(D3DRS_ZENABLE, false);
-				_device->SetRenderState(D3DRS_LIGHTING, false);
-				_device->SetRenderState(D3DRS_AMBIENT, 0x00202020);
-				_device->SetRenderState(D3DRS_NORMALIZENORMALS, true);
-				_device->SetRenderState(D3DRS_SPECULARENABLE, true);
-
-				_device->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
-
-				_device->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
-				_device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
-
-				_device->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-				_device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-
-				for (auto& renderer : _renderers)
-				{
-					renderer->Reset();
-				}
-
-				AssetManager::GetInstance().ReloadAll();
-				return;
+				Reset();
 			}
 		}
+	}
+
+	void Dx9Device::SetFullScreen(bool fullScreen)
+	{
+		_fullScreen = fullScreen;
+		if (fullScreen)
+		{
+			SetWindowLong(_wnd, GWL_STYLE, WS_EX_TOPMOST | WS_VISIBLE | WS_POPUP);
+		}
+		else
+		{
+			SetWindowLong(_wnd, GWL_STYLE, WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX);
+			SetWindowPos(_wnd, HWND_TOP, 0, 0, _width, _height, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+		}
+		Reset();
+	}
+
+	void Dx9Device::Reset()
+	{
+		InitPresentParam();
+
+		for (auto& renderer : _renderers)
+		{
+			renderer->Lost();
+		}
+
+		_device->Reset(&_presentParam);
+		_device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+		_device->SetRenderState(D3DRS_ZENABLE, false);
+		_device->SetRenderState(D3DRS_LIGHTING, false);
+		_device->SetRenderState(D3DRS_AMBIENT, 0x00202020);
+		_device->SetRenderState(D3DRS_NORMALIZENORMALS, true);
+		_device->SetRenderState(D3DRS_SPECULARENABLE, true);
+
+		_device->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
+
+		_device->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
+		_device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+
+		_device->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+		_device->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+
+		for (auto& renderer : _renderers)
+		{
+			renderer->Reset();
+		}
+
+		AssetManager::GetInstance().ReloadAll();
 	}
 
 	IDirect3DDevice9* Dx9Device::GetDevice()

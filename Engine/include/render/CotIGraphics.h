@@ -29,5 +29,10 @@ namespace Cot
 		void SetClearColor(const Color& color) { _clearColor = color; }
 		Color GetClearColor() { return _clearColor; }
 
+		virtual void SetFullScreen(bool fullScreen) = 0;
+		bool IsFullScreen() { return _fullScreen; }
+
+		virtual void Reset() = 0;
+
 	};
 }

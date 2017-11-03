@@ -73,6 +73,7 @@ namespace Cot
 
 	void Texture::Reload()
 	{
+		SafeRelease(_texture);
 		wstring wFilename = ToWString(_filePath);
 		D3DXGetImageInfoFromFile(wFilename.c_str(), &_info);
 		D3DXCreateTextureFromFileEx(Dx9Device::GetDevice(), wFilename.c_str(),
