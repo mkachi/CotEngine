@@ -47,4 +47,24 @@ namespace Cot
 		);
 		return (cornerDistance <= std::pow(circle.r, 2));
 	}
+
+	bool PointInRect(Rect& rect, Vec2& position)
+	{
+		Vec2 pos1 = Vec2(
+			rect.origin.x - (rect.size.width / 2),
+			rect.origin.y - (rect.size.height / 2));
+
+		Vec2 pos2 = Vec2(
+			rect.origin.x + (rect.size.width / 2),
+			rect.origin.y + (rect.size.height / 2));
+
+		if (pos1.x <= position.x &&
+			pos2.x >= position.x &&
+			pos1.y <= position.y &&
+			pos2.y >= position.y)
+		{
+			return true;
+		}
+		return false;
+	}
 }

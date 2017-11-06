@@ -38,6 +38,7 @@ namespace Cot
 
 		void UpdateMouseDown(MouseButton button);
 		void UpdateMouseUp(MouseButton button);
+		HWND GetWindowHandle() { return _wnd; }
 
 		void Poll();
 

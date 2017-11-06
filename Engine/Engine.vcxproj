@@ -44,6 +44,7 @@
     <ClInclude Include="include\component\CotAudioListener.h" />
     <ClInclude Include="include\component\CotAudioSource.h" />
     <ClInclude Include="include\component\CotBoxCollider.h" />
+    <ClInclude Include="include\component\CotButton.h" />
     <ClInclude Include="include\component\CotCircleCollider.h" />
     <ClInclude Include="include\component\CotFontRenderer.h" />
     <ClInclude Include="include\component\CotICollider.h" />
@@ -85,6 +86,7 @@
     <ClCompile Include="src\CotAudioListener.cpp" />
     <ClCompile Include="src\CotAudioSource.cpp" />
     <ClCompile Include="src\CotBoxCollider.cpp" />
+    <ClCompile Include="src\CotButton.cpp" />
     <ClCompile Include="src\CotCircleCollider.cpp" />
     <ClCompile Include="src\CotColor.cpp" />
     <ClCompile Include="src\CotColor32.cpp" />

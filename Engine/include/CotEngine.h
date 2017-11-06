@@ -11,6 +11,7 @@
 #include "component/CotAudioSource.h"
 #include "component/CotBoxCollider.h"
 #include "component/CotCircleCollider.h"
+#include "component/CotButton.h"
 
 #include "math/CotMath.h"
 #include "input/CotInput.h"
