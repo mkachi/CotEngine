@@ -28,8 +28,16 @@ namespace Cot
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<BoxCollider*>(_colliders[j])->GetRect()))
 					{
+						_colliders[i]->SetEnable(true);
+						_colliders[j]->SetEnable(true);
+
 						_colliders[i]->Call(_colliders[j]->GetOwner());
 						_colliders[j]->Call(_colliders[i]->GetOwner());
+					}
+					else
+					{
+						_colliders[i]->SetEnable(false);
+						_colliders[j]->SetEnable(false);
 					}
 				}
 
@@ -41,8 +49,16 @@ namespace Cot
 						static_cast<CircleCollider*>(_colliders[i])->GetCircle(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
+						_colliders[i]->SetEnable(true);
+						_colliders[j]->SetEnable(true);
+
 						_colliders[i]->Call(_colliders[j]->GetOwner());
 						_colliders[j]->Call(_colliders[i]->GetOwner());
+					}
+					else
+					{
+						_colliders[i]->SetEnable(false);
+						_colliders[j]->SetEnable(false);
 					}
 				}
 
@@ -54,8 +70,16 @@ namespace Cot
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
+						_colliders[i]->SetEnable(true);
+						_colliders[j]->SetEnable(true);
+
 						_colliders[i]->Call(_colliders[j]->GetOwner());
 						_colliders[j]->Call(_colliders[i]->GetOwner());
+					}
+					else
+					{
+						_colliders[i]->SetEnable(false);
+						_colliders[j]->SetEnable(false);
 					}
 				}
 			}

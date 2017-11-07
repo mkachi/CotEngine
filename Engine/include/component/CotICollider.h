@@ -23,6 +23,9 @@ namespace Cot
 	public:
 		void Call(Entity* entity);
 
+		void SetEnter(bool enter);
+		bool IsEnter() { return _enter; }
+
 		Type GetCollType() { return _collType; }
 
 	};
