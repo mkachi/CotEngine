@@ -29,7 +29,5 @@ namespace Cot
 		virtual void OnDisable()		{}
 		virtual void OnDestroy()		{}
 
-		virtual void OnCollision(Entity* entity) {}
-
 	};
 }

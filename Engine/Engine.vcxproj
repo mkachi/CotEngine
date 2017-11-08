@@ -94,7 +94,6 @@
     <ClCompile Include="src\CotFontRenderer.cpp" />
     <ClCompile Include="src\CotGeometry.cpp" />
     <ClCompile Include="src\CotGL2DX.cpp" />
-    <ClCompile Include="src\CotICollider.cpp" />
     <ClCompile Include="src\CotIComponent.cpp" />
     <ClCompile Include="src\CotInput.cpp" />
     <ClCompile Include="src\CotInputDevice.cpp" />

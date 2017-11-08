@@ -21,9 +21,7 @@ namespace Cot
 		bool	_enter = false;
 
 	public:
-		void Call(Entity* entity);
-
-		void SetEnter(bool enter);
+		void SetEnter(bool enter) { _enter = enter; }
 		bool IsEnter() { return _enter; }
 
 		Type GetCollType() { return _collType; }

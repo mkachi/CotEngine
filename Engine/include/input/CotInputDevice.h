@@ -10,14 +10,16 @@ namespace Cot
 	class COT_API InputDevice final
 	{
 	private:
-		HWND _wnd;
-		bool _keyDownState[(uint)KeyCode::KEYBOARD_END];
-		bool _keyStayState[(uint)KeyCode::KEYBOARD_END];
-		bool _keyUpState[(uint)KeyCode::KEYBOARD_END];
+		HWND	_wnd;
+		bool	_keyDownState[(uint)KeyCode::KEYBOARD_END];
+		bool	_keyStayState[(uint)KeyCode::KEYBOARD_END];
+		bool	_keyUpState[(uint)KeyCode::KEYBOARD_END];
 
-		bool _mouseDownState[(uint)MouseButton::MOUSE_END];
-		bool _mouseStayState[(uint)MouseButton::MOUSE_END];
-		bool _mouseUpState[(uint)MouseButton::MOUSE_END];
+		bool	_mouseDownState[(uint)MouseButton::MOUSE_END];
+		bool	_mouseStayState[(uint)MouseButton::MOUSE_END];
+		bool	_mouseUpState[(uint)MouseButton::MOUSE_END];
+
+		float	_wheelValue;
 
 	public:
 		InputDevice(HWND wnd);
@@ -35,10 +37,13 @@ namespace Cot
 		bool IsMouseUp(MouseButton button);
 
 		Vec2 GetMousePosition();
+		float GetMouseWheel() { return _wheelValue; }
 
 		void UpdateMouseDown(MouseButton button);
 		void UpdateMouseUp(MouseButton button);
 		HWND GetWindowHandle() { return _wnd; }
+
+		void UpdateWheelValue(float wheel);
 
 		void Poll();
 

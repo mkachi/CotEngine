@@ -1,20 +1,25 @@
 #pragma once
 
 #include <CotEngine.h>
+#include <component/CotICollider.h>
 
-using namespace Cot;
-
-Component(TestComponent)
+Component(GravityBody)
 {
-	COT_COMPONENT(TestComponent);
+	COT_COMPONENT(GravityBody);
 private:
-	float	_delayCount;
-	bool	_show;
+	Cot::ICollider* _collider;
+	float			_gravityScale;
+	Cot::Vec3		_force;
 
 public:
-	void Awake() override;
+	GravityBody* Init(Cot::ICollider* collider);
 
-	void Update(Time& time) override;
-	void OnCollision(Entity* entity) override;
+	void AddForce(const Cot::Vec3& distance, float power);
+
+	void SetGravityScale(float gravityScale);
+	float GetGravityScale() { return _gravityScale; }
+
+	void Reset() override;
+	void Update(Cot::Time& time) override;
 
 };

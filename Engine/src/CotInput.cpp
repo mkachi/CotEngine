@@ -48,4 +48,9 @@ namespace Cot
 	{
 		return _device->GetMousePosition();
 	}
+
+	float GetMouseWheel()
+	{
+		return _device->GetMouseWheel();
+	}
 }

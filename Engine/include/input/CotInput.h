@@ -16,4 +16,5 @@ namespace Cot
 	COT_API bool IsMouseUp(MouseButton button);
 
 	COT_API Vec2 GetMousePosition();
+	COT_API float GetMouseWheel();
 }

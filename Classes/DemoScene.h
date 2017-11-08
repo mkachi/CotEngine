@@ -7,7 +7,7 @@ class DemoScene
 	: public Cot::Scene
 {
 private:
-	Cot::Entity* root;
+	Cot::Entity* button;
 
 public:
 	bool Init() override;

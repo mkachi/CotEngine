@@ -92,6 +92,11 @@ namespace Cot
 		_mouseUpState[(uint)button] = true;
 	}
 
+	void InputDevice::UpdateWheelValue(float wheel)
+	{
+		_wheelValue = wheel;
+	}
+
 	void InputDevice::Poll()
 	{
 		for (int i = 0; i < (uint)KeyCode::KEYBOARD_END; ++i)
@@ -111,5 +116,7 @@ namespace Cot
 			}
 			_mouseUpState[i] = false;
 		}
+
+		_wheelValue = 0.0f;
 	}
 }
