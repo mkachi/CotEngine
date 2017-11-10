@@ -20,6 +20,7 @@ namespace Cot
 		Vec2	_anchor;
 		Color	_color;
 		Rect	_rect;
+		Size	_size;
 		int		_depth;
 
 	public:
@@ -30,6 +31,9 @@ namespace Cot
 
 		void SetRect(const Rect& rect);
 		Rect GetRect() { return _rect; }
+
+		void SetSize(const Size& size);
+		Size GetSize() { return _size; }
 
 		void SetDepth(int depth);
 		int GetDepth() { return _depth; }

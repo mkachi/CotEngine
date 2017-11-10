@@ -11,6 +11,11 @@ namespace Cot
 	{
 		_rect = rect;
 	}
+
+	void IRenderComponent::SetSize(const Size& size)
+	{
+		_size = size;
+	}
 	
 	void IRenderComponent::SetDepth(int depth)
 	{
@@ -22,4 +27,3 @@ namespace Cot
 		_color = color;
 	}
 }
-

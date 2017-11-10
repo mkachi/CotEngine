@@ -8,6 +8,7 @@ class DemoScene
 {
 private:
 	Cot::Entity* button;
+	Cot::PrograssBar* prograssBar;
 
 public:
 	bool Init() override;

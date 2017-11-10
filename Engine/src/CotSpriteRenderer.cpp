@@ -12,6 +12,7 @@ namespace Cot
 		_texture = Texture::Load(filename);
 		_texture->Retain();
 		_rect = Rect(0, 0, _texture->GetWidth(), _texture->GetHeight());
+		_size = Size(_texture->GetWidth(), _texture->GetHeight());
 		return this;
 	}
 
@@ -25,6 +26,7 @@ namespace Cot
 			_texture = atlas->GetTexture();
 			_texture->Retain();
 			_rect = atlas->GetRect();
+			_size = _rect.size;
 			return this;
 		}
 

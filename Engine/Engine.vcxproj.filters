@@ -170,6 +170,9 @@
     <ClInclude Include="include\component\CotButton.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="include\component\CotPrograssBar.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -331,6 +334,9 @@
       <Filter>Component</Filter>
     </ClCompile>
     <ClCompile Include="src\CotButton.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotPrograssBar.cpp">
       <Filter>Component</Filter>
     </ClCompile>
   </ItemGroup>

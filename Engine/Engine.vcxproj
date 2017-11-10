@@ -50,6 +50,7 @@
     <ClInclude Include="include\component\CotICollider.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotIRenderComponent.h" />
+    <ClInclude Include="include\component\CotPrograssBar.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\container\CotQueue.hpp" />
     <ClInclude Include="include\container\CotVectorMap.hpp" />
@@ -105,6 +106,7 @@
     <ClCompile Include="src\CotOggDecoder.cpp" />
     <ClCompile Include="src\CotPhysics.cpp" />
     <ClCompile Include="src\CotPhysicsManager.cpp" />
+    <ClCompile Include="src\CotPrograssBar.cpp" />
     <ClCompile Include="src\CotQuaternion.cpp" />
     <ClCompile Include="src\CotBroadCastProtocol.cpp" />
     <ClCompile Include="src\CotRenderManager.cpp" />
