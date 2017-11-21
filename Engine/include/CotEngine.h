@@ -1,8 +1,15 @@
 #pragma once
 
+#include "asset/CotAudioClip.h"
+#include "asset/CotTexture.h"
+#include "asset/CotFont.h"
+#include "asset/CotTextureAtlas.h"
+#include "asset/CotAssetManager.h"
+
 #include "base/tinyxml2.h"
 #include "base/CotApplication.h"
 #include "base/CotEntity.h"
+#include "base/CotSceneManager.h"
 
 #include "component/CotAudioListener.h"
 #include "component/CotAudioSource.h"
@@ -27,6 +34,6 @@ namespace Cot
 {
 	COT_API inline const char* GetVersion()
 	{
-		return "CotEngine v1.4.4";
+		return "CotEngine v1.4.5";
 	}
 }
