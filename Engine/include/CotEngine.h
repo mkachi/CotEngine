@@ -23,6 +23,7 @@
 
 #include "component/CotButton.h"
 #include "component/CotPrograssBar.h"
+#include "component/CotScrollBar.h"
 
 #include "math/CotMath.h"
 #include "input/CotInput.h"
@@ -34,6 +35,6 @@ namespace Cot
 {
 	COT_API inline const char* GetVersion()
 	{
-		return "CotEngine v1.4.5";
+		return "CotEngine v1.4.6";
 	}
 }

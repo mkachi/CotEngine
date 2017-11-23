@@ -20,6 +20,7 @@ namespace Cot
 		bool	_mouseUpState[(uint)MouseButton::MOUSE_END];
 
 		float	_wheelValue;
+		Vec2	_mousePosition;
 
 	public:
 		InputDevice(HWND wnd);
@@ -36,7 +37,9 @@ namespace Cot
 		bool IsMouseStay(MouseButton button);
 		bool IsMouseUp(MouseButton button);
 
-		Vec2 GetMousePosition();
+		void UpdateMousePosition(const Vec2& position);
+		Vec2 GetMousePosition() { return _mousePosition; }
+
 		float GetMouseWheel() { return _wheelValue; }
 
 		void UpdateMouseDown(MouseButton button);

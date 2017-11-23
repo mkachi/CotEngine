@@ -8,7 +8,7 @@ namespace Cot
 	ComponentExt(SpriteRenderer, IRenderComponent, COT_API)
 	{
 		COT_COMPONENT(SpriteRenderer);
-	private:
+	protected:
 		Texture*	_texture;
 
 	public:

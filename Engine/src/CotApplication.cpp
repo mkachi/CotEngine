@@ -43,6 +43,7 @@ namespace Cot
 		case WM_MBUTTONDOWN:	_inputDevice->UpdateMouseDown(MouseButton::MButton);	return 0;
 
 		case WM_MOUSEWHEEL:		_inputDevice->UpdateWheelValue(GET_WHEEL_DELTA_WPARAM(wParam)); return 0;
+		case WM_MOUSEMOVE:		_inputDevice->UpdateMousePosition(Vec2(LOWORD(lParam), HIWORD(lParam))); return 0;
 
 		case WM_DESTROY:
 			PostQuitMessage(0);

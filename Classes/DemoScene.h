@@ -7,8 +7,7 @@ class DemoScene
 	: public Cot::Scene
 {
 private:
-	Cot::Entity* button;
-	Cot::PrograssBar* prograssBar;
+	Cot::Entity* scroll;
 
 public:
 	bool Init() override;

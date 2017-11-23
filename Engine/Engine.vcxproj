@@ -51,6 +51,7 @@
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotIRenderComponent.h" />
     <ClInclude Include="include\component\CotPrograssBar.h" />
+    <ClInclude Include="include\component\CotScrollBar.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
     <ClInclude Include="include\container\CotQueue.hpp" />
     <ClInclude Include="include\container\CotVectorMap.hpp" />
@@ -112,6 +113,7 @@
     <ClCompile Include="src\CotRenderManager.cpp" />
     <ClCompile Include="src\CotScene.cpp" />
     <ClCompile Include="src\CotSceneManager.cpp" />
+    <ClCompile Include="src\CotScrollBar.cpp" />
     <ClCompile Include="src\CotSpriteRenderer.cpp" />
     <ClCompile Include="src\CotTexture.cpp" />
     <ClCompile Include="src\CotTextureAtlas.cpp" />

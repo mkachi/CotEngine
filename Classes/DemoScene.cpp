@@ -4,17 +4,15 @@ using namespace Cot;
 
 bool DemoScene::Init()
 {
-	button = new Entity("Button");
-	button->AddComponent<SpriteRenderer>()->Init("tile_grass.png");
-	Button* buttonEvent = button->AddComponent<Button>()->Init(Color(1.0f, 0.0f, 0.0f));
-	prograssBar = button->AddComponent<PrograssBar>();
-	prograssBar->SetValue(0.0f);
-	button->SetPosition(Vec2(1280.0f / 2.0f, 720.0f / 2.0f));
+	Entity* button = new Entity("Button");
+	button->AddComponent<SpriteRenderer>()->Init("ScrollButton.png");
+	button->AddComponent<Button>()->Init(Color(1.0f, 1.0f, 1.0f, 0.5f));
 	this->AddEntity(button);
 
-	buttonEvent->AddButtonDown([]()		{	printf("Down\n");	});
-	buttonEvent->AddButtonUp([]()		{	printf("Up\n");		});
-	buttonEvent->AddButtonClick([]()	{	printf("Click\n");	});
+	scroll = new Entity("Test");
+	scroll->AddComponent<ScrollBar>()->Init("ScrollBack.png", button);
+	scroll->SetPosition(Vec2(1280.0f * 0.5f, 720.0f * 0.5f));
+	this->AddEntity(scroll);
 
 	return true;
 }
@@ -23,13 +21,8 @@ void DemoScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
 
-	if (IsKeyStay(KeyCode::Q))
+	if (IsKeyDown(KeyCode::A))
 	{
-		prograssBar->SetValue(prograssBar->GetValue() + time.GetDeltaTime());
-	}
-
-	if (IsKeyStay(KeyCode::W))
-	{
-		prograssBar->SetValue(prograssBar->GetValue() - time.GetDeltaTime());
+		scroll->GetComponent<ScrollBar>()->SetValue(0.5f);
 	}
 }

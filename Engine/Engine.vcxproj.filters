@@ -173,6 +173,9 @@
     <ClInclude Include="include\component\CotPrograssBar.h">
       <Filter>Component</Filter>
     </ClInclude>
+    <ClInclude Include="include\component\CotScrollBar.h">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -337,6 +340,9 @@
       <Filter>Component</Filter>
     </ClCompile>
     <ClCompile Include="src\CotPrograssBar.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CotScrollBar.cpp">
       <Filter>Component</Filter>
     </ClCompile>
   </ItemGroup>

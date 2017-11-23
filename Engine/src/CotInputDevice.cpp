@@ -71,12 +71,9 @@ namespace Cot
 		return _mouseUpState[(uint)button];
 	}
 
-	Vec2 InputDevice::GetMousePosition()
+	void InputDevice::UpdateMousePosition(const Vec2& position)
 	{
-		POINT point;
-		GetCursorPos(&point);
-		ScreenToClient(_wnd, &point);
-		return Vec2(point.x, point.y);
+		_mousePosition = position;
 	}
 
 	void InputDevice::UpdateMouseDown(MouseButton button)
