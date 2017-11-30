@@ -42,7 +42,7 @@ namespace Cot
 		float	_delayCount;
 
 	public:
-		Animation* Init(const std::initializer_list<AnimationData>& textures, float delay);
+		Animation* Init(const std::vector<AnimationData>& textures, float delay);
 
 		void Reset() override;
 		void Update(Time& time) override;

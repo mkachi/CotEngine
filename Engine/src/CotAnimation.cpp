@@ -4,7 +4,7 @@
 
 namespace Cot
 {
-	Animation* Animation::Init(const std::initializer_list<AnimationData>& textures, float delay)
+	Animation* Animation::Init(const std::vector<AnimationData>& textures, float delay)
 	{
 		Reset();
 		_spriteRenderer = GetOwner()->GetComponent<SpriteRenderer>();
