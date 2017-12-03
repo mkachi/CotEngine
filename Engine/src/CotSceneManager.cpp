@@ -9,9 +9,9 @@ namespace Cot
 
 	void SceneManager::DestroyAllScene()
 	{
-		for (auto& scene : _scenes)
+		for (int i = 0; i < _scenes.size(); ++i)
 		{
-			SafeDelete(scene);
+			SafeDelete(_scenes[i]);
 		}
 		_scenes.clear();
 	}

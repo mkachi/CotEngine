@@ -12,6 +12,7 @@ namespace Cot
 	private:
 		ID3DXSprite* _sprite;
 		Rect	_screen;
+		bool	_mask;
 
 	public:
 		Dx9Renderer2D(int width, int height);

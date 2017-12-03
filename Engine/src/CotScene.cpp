@@ -8,9 +8,9 @@ namespace Cot
 
 	Scene::~Scene()
 	{	
-		for (auto& entity : _entitys)
+		for (int i = 0; i < _entitys.size(); ++i)
 		{
-			SafeDelete(entity);
+			SafeDelete(_entitys[i]);
 		}
 	}
 

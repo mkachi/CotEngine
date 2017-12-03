@@ -8,6 +8,7 @@
 namespace Cot
 {
 	Dx9Renderer2D::Dx9Renderer2D(int width, int height)
+		: _mask(false)
 	{
 		_screen.SetRect(0.0f, 0.0f, width, height);
 		D3DXCreateSprite(Dx9Device::GetDevice(), &_sprite);
@@ -31,8 +32,21 @@ namespace Cot
 		}
 
 		_sprite->Begin(D3DXSPRITE_ALPHABLEND);
+
 		for (uint i = 0; i < renderQ.size(); ++i)
 		{
+			if (renderQ[i]->IsUseMask())
+			{
+				_mask = true;
+				Dx9Device::GetDevice()->SetRenderState(D3DRS_SCISSORTESTENABLE, TRUE);
+
+				Rect rect = renderQ[i]->GetMaskData()->GetRect();
+				RECT dxMaskRect = ToDxMath(rect);
+				SetRect(&dxMaskRect, 640, 360, 665, 909);
+			//	dxMaskRect.top = renderQ[i]->GetMaskData()->GetRect().origin.y;
+				Dx9Device::GetDevice()->SetScissorRect(&dxMaskRect);
+			}
+
 			if (renderQ[i]->GetRenderType() == IRenderComponent::Type::Font)
 			{
 				FontRenderer* fontRenderer = static_cast<FontRenderer*>(renderQ[i]);
@@ -68,6 +82,11 @@ namespace Cot
 					&ToDxMath(center),
 					nullptr,
 					ToDxMath(spriteRenderer->GetColor()));
+			}
+
+			if (_mask)
+			{
+				Dx9Device::GetDevice()->SetRenderState(D3DRS_SCISSORTESTENABLE, FALSE);
 			}
 		}
 		_sprite->End();

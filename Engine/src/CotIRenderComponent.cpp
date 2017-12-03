@@ -2,6 +2,12 @@
 
 namespace Cot
 {
+	void IRenderComponent::SetMask(Mask* maskData, bool value)
+	{
+		_maskData = maskData;
+		_masked = value;
+	}
+
 	void IRenderComponent::SetAnchor(const Vec2& anchor)
 	{
 		_anchor = anchor;

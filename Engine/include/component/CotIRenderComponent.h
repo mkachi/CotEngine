@@ -1,7 +1,6 @@
 #pragma once
 
-#include "CotIComponent.h"
-#include "math/CotMath.h"
+#include "CotMask.h"
 
 namespace Cot
 {
@@ -22,9 +21,15 @@ namespace Cot
 		Rect	_rect;
 		Size	_size;
 		int		_depth;
+		Mask*	_maskData;
+		bool	_masked;
 
 	public:
 		Type GetRenderType() { return _renderType; }
+
+		void SetMask(Mask* maskData, bool value);
+		bool IsUseMask() { return _masked; }
+		Mask* GetMaskData() { return _maskData; }
 
 		void SetAnchor(const Vec2& anchor);
 		Vec2 GetAnchor() { return _anchor; }

@@ -50,6 +50,7 @@
     <ClInclude Include="include\component\CotICollider.h" />
     <ClInclude Include="include\component\CotIComponent.h" />
     <ClInclude Include="include\component\CotIRenderComponent.h" />
+    <ClInclude Include="include\component\CotMask.h" />
     <ClInclude Include="include\component\CotPrograssBar.h" />
     <ClInclude Include="include\component\CotScrollBar.h" />
     <ClInclude Include="include\component\CotSpriteRenderer.h" />
@@ -101,6 +102,7 @@
     <ClCompile Include="src\CotInputDevice.cpp" />
     <ClCompile Include="src\CotIRenderComponent.cpp" />
     <ClCompile Include="src\CotKeyCode.cpp" />
+    <ClCompile Include="src\CotMask.cpp" />
     <ClCompile Include="src\CotMat4.cpp" />
     <ClCompile Include="src\CotMathFunc.cpp" />
     <ClCompile Include="src\CotEntity.cpp" />

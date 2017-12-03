@@ -44,6 +44,8 @@ namespace Cot
 		}
 
 		D3DCAPS9 caps;
+		caps.RasterCaps = D3DPRASTERCAPS_SCISSORTEST;
+
 		DWORD processingType;
 		_d3d->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &caps);
 		if ((caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT) == 0 ||

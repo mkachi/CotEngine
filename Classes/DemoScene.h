@@ -8,6 +8,7 @@ class DemoScene
 {
 private:
 	Cot::Entity* scroll;
+	Cot::Entity* test;
 
 public:
 	bool Init() override;

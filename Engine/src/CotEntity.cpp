@@ -386,9 +386,9 @@ namespace Cot
 
 			_world *= Mat4::Translate(_localPosition);
 			Quaternion quaternion = Quaternion::Identity;
-			_world *= Mat4::Rotate(_localRotate.x, Vec3(1.0f, 0.0f, 0.0f));
-			_world *= Mat4::Rotate(_localRotate.y, Vec3(0.0f, 1.0f, 0.0f));
-			_world *= Mat4::Rotate(_localRotate.z, Vec3(0.0f, 0.0f, 1.0f));
+			_world *= Mat4::Rotate(ToRad(_localRotate.x), Vec3(1.0f, 0.0f, 0.0f));
+			_world *= Mat4::Rotate(ToRad(_localRotate.y), Vec3(0.0f, 1.0f, 0.0f));
+			_world *= Mat4::Rotate(ToRad(_localRotate.z), Vec3(0.0f, 0.0f, 1.0f));
 			_world *= Mat4::Scale(_localScale);
 
 			_dirty = false;
