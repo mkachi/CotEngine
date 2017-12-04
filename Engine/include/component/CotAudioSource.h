@@ -46,6 +46,9 @@ namespace Cot
 		void SetLoop(bool loop);
 		bool IsLoop() { return _loop; }
 
+		void SetVolume(float volume);
+		float GetVolume() { return _volume; }
+
 		int GetPosition();
 		int GetLength() { return _clip->GetLength(); }
 

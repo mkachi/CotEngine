@@ -87,6 +87,12 @@ namespace Cot
 		alSourcef(_source, AL_LOOPING, loop);
 	}
 
+	void AudioSource::SetVolume(float volume)
+	{
+		_volume = Clamp(volume, 0.0f, 1.0f);
+		alSourcef(_source, AL_GAIN, _volume);
+	}
+
 	int AudioSource::GetPosition()
 	{
 		int result = 0;
