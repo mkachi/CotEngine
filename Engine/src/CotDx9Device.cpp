@@ -117,10 +117,6 @@ namespace Cot
 		{
 			_presentParam.BackBufferFormat = D3DFMT_UNKNOWN;
 		}
-
-		_presentParam.BackBufferWidth = _width;
-		_presentParam.BackBufferHeight = _height;
-
 		_presentParam.EnableAutoDepthStencil = TRUE;
 		_presentParam.AutoDepthStencilFormat = D3DFMT_D24X8;
 		_presentParam.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
