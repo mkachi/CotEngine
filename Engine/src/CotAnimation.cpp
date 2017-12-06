@@ -86,6 +86,19 @@ namespace Cot
 		_delayCount = 0.0f;
 	}
 
+	void Animation::SetData(const std::vector<AnimationData>& textures)
+	{
+		Reset();
+		_textures = textures;
+	}
+
+	void Animation::SetData(const std::vector<AnimationData>& textures, float delay)
+	{
+		Reset();
+		_textures = textures;
+		_delay = delay;
+	}
+
 	void Animation::SetReverse(bool reverse)
 	{
 		_reverse = reverse;

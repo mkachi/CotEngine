@@ -53,6 +53,9 @@ namespace Cot
 
 		bool IsPlay() { return _play; }
 
+		void SetData(const std::vector<AnimationData>& textures);
+		void SetData(const std::vector<AnimationData>& textures, float delay);
+
 		void SetReverse(bool reverse);
 		bool IsReverse() { return _reverse; }
 
