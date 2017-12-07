@@ -422,4 +422,21 @@ namespace Cot
 			}
 		}
 	}
+
+	void Entity::LateUpdate(Time& time)
+	{
+		if (!_active)
+		{
+			return;
+		}
+
+		for (int i = 0; i < _components.size(); ++i)
+		{
+			IComponent* temp = _components[i].second;
+			if (temp->IsEnable())
+			{
+				temp->LateUpdate(time);
+			}
+		}
+	}
 }

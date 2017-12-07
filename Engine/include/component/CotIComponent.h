@@ -26,6 +26,7 @@ namespace Cot
 		virtual void Awake()			{}
 		virtual void Start()			{}
 		virtual void Update(Time& time)	{}
+		virtual void LateUpdate(Time& time) {}
 		virtual void OnDisable()		{}
 		virtual void OnDestroy()		{}
 

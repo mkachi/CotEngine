@@ -129,6 +129,7 @@ namespace Cot
 		bool IsActive() { return _active; }
 
 		virtual void Update(Time& time);
+		virtual void LateUpdate(Time& time);
 
 	};
 }

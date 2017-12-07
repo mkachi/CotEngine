@@ -22,6 +22,7 @@ namespace Cot
 
 		virtual bool Init() = 0;
 		virtual void Update(Time& time);
+		virtual void LateUpdate(Time& time);
 
 		void Start();
 		void AddEntity(Entity* entity);

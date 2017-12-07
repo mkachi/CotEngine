@@ -56,4 +56,12 @@ namespace Cot
 			scene->Update(time);
 		}
 	}
+
+	void SceneManager::LateUpdate(Time& time)
+	{
+		for (auto& scene : _scenes)
+		{
+			scene->LateUpdate(time);
+		}
+	}
 }

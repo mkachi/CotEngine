@@ -1,77 +1,5 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\TeamNut\CotEngine\\Build\Intermediates\x64_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
 cl : 명령줄 warning D9030: '/Gm'이(가) 다중 처리와 호환되지 않습니다. /MP 스위치를 무시합니다.
-  CotTextureAtlas.cpp
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_filePath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cottexture.h(14): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): warning C4251: 'Cot::AssetManager::_fontCache': class 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): note: 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-  CotTexture.cpp
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_filePath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cottexture.h(14): warning C4251: 'Cot::Texture::_filename': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Texture'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): warning C4251: 'Cot::AssetManager::_fontCache': class 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): note: 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
-  d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
   CotSpriteRenderer.cpp
 d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251: 'Cot::CallBack<T>::_functions': class 'std::vector<std::function<_Fty>,std::allocator<_Ty>>'에서는 class 'Cot::CallBack<T>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
@@ -953,9 +881,6 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
               _Kty=string,
               _Ty=Cot::CallBack<void (void)> *
           ]
-  CotPhysics.cpp
-  CotMathFunc.cpp
-  CotMat4.cpp
   CotMask.cpp
 d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251: 'Cot::CallBack<T>::_functions': class 'std::vector<std::function<_Fty>,std::allocator<_Ty>>'에서는 class 'Cot::CallBack<T>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
@@ -1329,7 +1254,6 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
               _Kty=string,
               _Ty=Cot::CallBack<void (void)> *
           ]
-  CotGL2DX.cpp
   CotFontRenderer.cpp
 d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251: 'Cot::CallBack<T>::_functions': class 'std::vector<std::function<_Fty>,std::allocator<_Ty>>'에서는 class 'Cot::CallBack<T>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
@@ -1470,49 +1394,6 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
               _Kty=string,
               _Ty=Cot::CallBack<void (void)> *
           ]
-  CotFont.cpp
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_filePath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotfont.h(13): warning C4251: 'Cot::Font::_fontName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Font'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotfont.h(14): warning C4251: 'Cot::Font::_fontPath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Font'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): warning C4251: 'Cot::AssetManager::_fontCache': class 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): note: 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
-  d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
   CotEntity.cpp
 d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251: 'Cot::CallBack<T>::_functions': class 'std::vector<std::function<_Fty>,std::allocator<_Ty>>'에서는 class 'Cot::CallBack<T>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
           with
@@ -1595,6 +1476,7 @@ d:\git\teamnut\cotengine\engine\include\component\coticomponent.h(11): warning C
 d:\git\teamnut\cotengine\engine\src\cotentity.cpp(20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 d:\git\teamnut\cotengine\engine\src\cotentity.cpp(31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 d:\git\teamnut\cotengine\engine\src\cotentity.cpp(416): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\git\teamnut\cotengine\engine\src\cotentity.cpp(433): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 d:\git\teamnut\cotengine\engine\include\container\cotvectormap.hpp(252): warning C4267: 'return': 'size_t'에서 'uint'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   d:\git\teamnut\cotengine\engine\include\container\cotvectormap.hpp(252): note: 클래스 템플릿 멤버 함수 'uint Cot::MultiVectorMap<string,Cot::IComponent *>::size(void) noexcept const'을(를) 컴파일하고 있습니다.
   d:\git\teamnut\cotengine\engine\src\cotentity.cpp(20): note: 컴파일 중인 함수 템플릿 인스턴스화 'uint Cot::MultiVectorMap<string,Cot::IComponent *>::size(void) noexcept const'에 대한 참조를 확인하십시오.
@@ -1792,47 +1674,6 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
           [
               _Kty=string,
               _Ty=Cot::CallBack<void (void)> *
-          ]
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  CotDx9Device.cpp
-d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): warning C4251: 'Cot::IGraphics::_renderers': class 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>'에서는 class 'Cot::IGraphics'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
-  d:\git\teamnut\cotengine\engine\include\render\cotigraphics.h(16): note: 'std::vector<Cot::IRenderer *,std::allocator<_Ty>>' 선언을 참조하십시오.
-          with
-          [
-              _Ty=Cot::IRenderer *
-          ]
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(10): warning C4251: 'Cot::Asset::_key': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotasset.h(11): warning C4251: 'Cot::Asset::_filePath': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'에서는 class 'Cot::Asset'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.11.25503\include\xstring(4079): note: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' 선언을 참조하십시오.
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): warning C4251: 'Cot::AssetManager::_assets': class 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(13): note: 'std::unordered_map<string,Cot::Asset *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=Cot::Asset *
-          ]
-d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): warning C4251: 'Cot::AssetManager::_fontCache': class 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>'에서는 class 'Cot::AssetManager'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
-          ]
-  d:\git\teamnut\cotengine\engine\include\asset\cotassetmanager.h(14): note: 'std::unordered_map<string,wstring,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' 선언을 참조하십시오.
-          with
-          [
-              _Kty=string,
-              _Ty=wstring
           ]
   CotCircleCollider.cpp
 d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251: 'Cot::CallBack<T>::_functions': class 'std::vector<std::function<_Fty>,std::allocator<_Ty>>'에서는 class 'Cot::CallBack<T>'의 클라이언트에서 DLL 인터페이스를 사용하도록 지정해야 합니다.
@@ -2829,4 +2670,27 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
           ]
   코드를 생성하고 있습니다...
 d:\git\teamnut\cotengine\engine\src\cotaudiosource.cpp(131): warning C4715: 'Cot::AudioSource::GetState': 모든 제어 경로에서 값을 반환하지는 않습니다.
+     D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.lib 라이브러리 및 D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.exp 개체를 생성하고 있습니다.
+MSVCRTD.lib(initializers.obj) : warning LNK4098: 'libcmtd.lib' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+libogg_static_d.lib(bitwise.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(bitwise.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libogg_static_d.lib(framing.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(framing.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(bitrate.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(bitrate.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(block.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(block.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(codebook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(codebook.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(envelope.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(envelope.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(floor0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(floor1.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor1.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(info.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(info.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(lpc.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lpc.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(lsp.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lsp.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(mapping0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mapping0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(mdct.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mdct.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(psy.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(psy.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(registry.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(registry.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(res0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(res0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(sharedbook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(sharedbook.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(smallft.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(smallft.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(synthesis.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(synthesis.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbis_static_d.lib(window.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(window.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+libvorbisfile_static_d.lib(vorbisfile.obj) : warning LNK4099: 'libvorbisfile.pdb' PDB를 'libvorbisfile_static_d.lib(vorbisfile.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbisfile.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
   Engine.vcxproj -> D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.dll

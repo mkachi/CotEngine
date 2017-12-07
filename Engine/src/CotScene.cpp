@@ -27,6 +27,14 @@ namespace Cot
 		}
 	}
 
+	void Scene::LateUpdate(Time& time)
+	{
+		for (auto& entity : _entitys)
+		{
+			entity->LateUpdate(time);
+		}
+	}
+
 	void Scene::Start()
 	{
 		for (auto& entity : _entitys)

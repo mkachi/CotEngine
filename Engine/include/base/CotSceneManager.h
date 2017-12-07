@@ -18,6 +18,7 @@ namespace Cot
 		void LoadScene(Scene* scene);
 		void AddScene(Scene* scene);
 		void Update(Time& time);
+		void LateUpdate(Time& time);
 
 		void DestroyAllScene();
 

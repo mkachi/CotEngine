@@ -144,6 +144,7 @@ namespace Cot
 				PhysicsManager::GetInstance().Update(time);
 				_inputDevice->Poll();
 				_graphics->Render();
+				sceneManager.LateUpdate(time);
 			}
 		}
 	}
