@@ -136,6 +136,8 @@ namespace Cot
 			else
 			{
 				time.Tick();
+				system("cls");
+				printf("%lf\n", 1 / time.GetDeltaTime());
 				sceneManager.Update(time);
 				if (IsKeyStay(KeyCode::LAlt) && IsKeyDown(KeyCode::Enter))
 				{

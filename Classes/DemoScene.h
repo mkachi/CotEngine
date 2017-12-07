@@ -1,14 +1,12 @@
 #pragma once
 
 #include <CotEngine.h>
-#include "TestComponent.h"
 
-class DemoScene
+class GameScene
 	: public Cot::Scene
 {
 private:
-	Cot::Entity* scroll;
-	Cot::Entity* test;
+	Cot::Entity* _player;
 
 public:
 	bool Init() override;

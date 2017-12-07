@@ -18,7 +18,7 @@ int WINAPI WinMain(HINSTANCE hInsetance, HINSTANCE hPrevInstance, LPSTR lpszCmdP
 	Cot::Application app;
 	if (app.Init(hInsetance, "Test", 1280, 720, false))
 	{
-		app.RunWithScene(new DemoScene());
+		app.RunWithScene(new GameScene());
 	}
 	app.Destroy();
 	

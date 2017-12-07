@@ -1,43 +1,50 @@
 #include "DemoScene.h"
+#include "Player.h"
+#include "Gravity.h"
 
 using namespace Cot;
 
-bool DemoScene::Init()
+bool GameScene::Init()
 {
-	Entity* button = new Entity("Button");
-	button->AddComponent<SpriteRenderer>()->Init("ScrollButton.png");
-	button->AddComponent<Button>()->Init(Color(1.0f, 1.0f, 1.0f, 0.5f));
-	this->AddEntity(button);
+#pragma region AudioListener
+	Entity* audioListener = new Entity("Listener");
+	audioListener->AddComponent<AudioListener>()->Init();
+	this->AddEntity(audioListener);
+#pragma endregion
 
-	scroll = new Entity("Test");
-	scroll->AddComponent<ScrollBar>()->Init("ScrollBack.png", button);
-	scroll->AddComponent<Mask>()->Init(scroll->GetComponent<ScrollBar>());
-	scroll->SetPosition(Vec2(1280.0f * 0.5f, 720.0f * 0.5f));
-	this->AddEntity(scroll);
+#pragma region Floor
+	Entity* floor = new Entity("Floor");
+	SpriteRenderer* floorRenderer = floor->AddComponent<SpriteRenderer>()->Init("Resources/floor_temp.png");
+	BoxCollider* collider = floor->AddComponent<BoxCollider>()->Init(floorRenderer->GetSize());
+	floor->SetPosition(Vec3(1280 / 2, 720 - 58.5f, 0.0f));
+	this->AddEntity(floor);
+#pragma endregion
 
-	test = new Entity("Test2");
-	test->AddComponent<SpriteRenderer>()->Init("ScrollButton.png");
-	this->AddEntity(test);
+#pragma region Player
+	_player = new Entity("Player");
+	_player->AddComponent<SpriteRenderer>()->Init("Resources/Player/Player_temp_idle.png");
+	_player->AddComponent<BoxCollider>()->SetSpriteSize();
+	_player->AddComponent<Gravity>()->Init(1.0f);
+	_player->AddComponent<Animation>()->Init(std::vector<AnimationData>(
+	{ AnimationData("Resources/Player/Player_temp_idle.png") }), 0.1f);
+	Player* info = _player->AddComponent<Player>()->Init(60.0f);
+	_player->SetPosition(Vec3(1280 / 2, 0.0f, 0.0f));
+	this->AddEntity(_player);
 
-	scroll->AddChild(test);
-	test->SetLocalPosition(Vec3(0.0f, 0.0f, 0.0f));
-
-//	scroll->SetRotateAxis(90.0f, Vec3(0.0f, 1.0f, 0.0f));
+	info->SetAnimationData(
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_idle.png") }), // idle
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_jump.png") }), // jump
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_move.png") }), // move
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_attack.png") }), // attack
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_shield.png") }), // shield
+		std::vector<AnimationData>({ AnimationData("Resources/Player/Player_temp_skill.png") })	// skill
+	);
+#pragma endregion
 
 	return true;
 }
 
-void DemoScene::Update(Cot::Time& time)
+void GameScene::Update(Cot::Time& time)
 {
 	Scene::Update(time);
-
-	if (IsKeyDown(KeyCode::A))
-	{
-		scroll->GetComponent<ScrollBar>()->SetValue(0.5f);
-	}
-
-	if (IsKeyStay(KeyCode::D))
-	{
-		test->SetRotateAxis(test->GetRotate().z + 50 * time.GetDeltaTime(), Vec3(0.0f, 0.0f, 1.0f));
-	}
 }

@@ -34,6 +34,10 @@ namespace Cot
 
 	RECT ToDxMath(Rect& rect)
 	{
-		return { (long)rect.GetMinX(), (long)rect.GetMinY(), (long)rect.GetMaxX(), (long)rect.GetMaxY() };
+		LONG left = rect.origin.x;
+		LONG top = rect.origin.y;
+		LONG right = rect.origin.x + rect.size.width;
+		LONG bottom = rect.origin.y + rect.size.height;
+		return { left, top, right, bottom };
 	}
 }

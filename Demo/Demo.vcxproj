@@ -168,11 +168,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\DemoScene.cpp" />
+    <ClCompile Include="..\Classes\Gravity.cpp" />
+    <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\TestComponent.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\DemoScene.h" />
+    <ClInclude Include="..\Classes\Gravity.h" />
+    <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\TestComponent.h" />
   </ItemGroup>
   <ItemGroup>

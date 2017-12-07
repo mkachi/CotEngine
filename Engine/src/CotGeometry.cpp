@@ -103,31 +103,37 @@ namespace Cot
 
 	float Rect::GetMinX()
 	{
+		return origin.x - (size.width / 2);
 		return origin.x;
 	}
 
 	float Rect::GetMidX()
 	{
+		return origin.x;
 		return origin.x + size.width / 2.0f;
 	}
 
 	float Rect::GetMaxX()
 	{
+		return origin.x + (size.width / 2);
 		return origin.x + size.width;
 	}
 
 	float Rect::GetMinY()
 	{
+		return origin.y - (size.height / 2);
 		return origin.y;
 	}
 
 	float Rect::GetMidY()
 	{
+		return origin.y;
 		return origin.y + size.height / 2.0f;
 	}
 
 	float Rect::GetMaxY()
 	{
+		return origin.y + (size.height / 2);
 		return origin.y + size.height;
 	}
 
