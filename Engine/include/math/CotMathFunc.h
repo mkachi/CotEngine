@@ -12,7 +12,15 @@ namespace Cot
 	template<typename T>
 	COT_API inline T Clamp(const T value, const T min, const T max)
 	{
-		return (value > min) ? (value < max) ? value : max : min;
+		if (value < min)
+		{
+			return min;
+		}
+		else if (value > max)
+		{
+			return max;
+		}
+		return value;
 	}
 
 	template<typename T>
