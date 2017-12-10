@@ -40,7 +40,7 @@ namespace Cot
 				_index -= 1;
 				if (_index < 0)
 				{
-					if (_loop)
+					if (!_loop)
 					{
 						Stop();
 						return;
@@ -118,6 +118,11 @@ namespace Cot
 	void Animation::SetPlayAwake(bool awake)
 	{
 		_playAwake = awake;
+	}
+
+	void Animation::SetLoop(bool loop)
+	{
+		_loop = loop;
 	}
 
 	AnimationData::AnimationData(const string& filename)
