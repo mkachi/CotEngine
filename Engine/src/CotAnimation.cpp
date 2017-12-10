@@ -17,6 +17,7 @@ namespace Cot
 	{
 		_play = _playAwake;
 		_pause = false;
+		_loop = false;
 		_reverse = false;
 		_index = 0;
 		_delayCount = 0.0f;
@@ -39,6 +40,11 @@ namespace Cot
 				_index -= 1;
 				if (_index < 0)
 				{
+					if (_loop)
+					{
+						Stop();
+						return;
+					}
 					_index = _textures.size() - 1;
 				}
 			}
@@ -47,6 +53,11 @@ namespace Cot
 				_index += 1;
 				if (_index >= _textures.size())
 				{
+					if (_loop)
+					{
+						Stop();
+						return;
+					}
 					_index = 0;
 				}
 			}

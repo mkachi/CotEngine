@@ -34,6 +34,7 @@ namespace Cot
 		SpriteRenderer*			_spriteRenderer;
 		std::vector<AnimationData>		_textures;
 		bool	_play;
+		bool	_loop;
 		bool	_pause;
 		bool	_reverse;
 		bool	_playAwake;
@@ -61,6 +62,9 @@ namespace Cot
 
 		void SetPlayAwake(bool awake);
 		bool IsPlayAwake() { return _playAwake; }
+
+		void SetLoop(bool loop);
+		bool IsLoop() { return _loop; }
 
 		int GetCurrentIndex() { return _index; }
 
