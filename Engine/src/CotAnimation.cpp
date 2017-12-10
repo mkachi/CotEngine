@@ -53,7 +53,7 @@ namespace Cot
 				_index += 1;
 				if (_index >= _textures.size())
 				{
-					if (_loop)
+					if (!_loop)
 					{
 						Stop();
 						return;

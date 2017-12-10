@@ -164,27 +164,4 @@ d:\git\teamnut\cotengine\engine\include\base\cotcallback.hpp(16): warning C4251:
               _Kty=string,
               _Ty=Cot::CallBack<void (void)> *
           ]
-     D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.lib 라이브러리 및 D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.exp 개체를 생성하고 있습니다.
-MSVCRTD.lib(initializers.obj) : warning LNK4098: 'libcmtd.lib' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
-libogg_static_d.lib(bitwise.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(bitwise.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libogg_static_d.lib(framing.obj) : warning LNK4099: 'libogg_static.pdb' PDB를 'libogg_static_d.lib(framing.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libogg_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(bitrate.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(bitrate.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(block.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(block.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(codebook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(codebook.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(envelope.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(envelope.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(floor0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(floor1.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(floor1.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(info.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(info.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(lpc.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lpc.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(lsp.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(lsp.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(mapping0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mapping0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(mdct.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(mdct.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(psy.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(psy.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(registry.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(registry.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(res0.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(res0.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(sharedbook.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(sharedbook.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(smallft.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(smallft.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(synthesis.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(synthesis.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbis_static_d.lib(window.obj) : warning LNK4099: 'libvorbis_static.pdb' PDB를 'libvorbis_static_d.lib(window.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbis_static.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-libvorbisfile_static_d.lib(vorbisfile.obj) : warning LNK4099: 'libvorbisfile.pdb' PDB를 'libvorbisfile_static_d.lib(vorbisfile.obj)' 또는 'D:\Git\TeamNut\CotEngine\Build\Products\x64_Debug\libvorbisfile.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
   Engine.vcxproj -> D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.dll
