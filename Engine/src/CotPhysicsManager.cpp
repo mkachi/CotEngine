@@ -28,6 +28,9 @@ namespace Cot
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<BoxCollider*>(_colliders[j])->GetRect()))
 					{
+						_colliders[i]->SetTarget(_colliders[j]->GetOwner());
+						_colliders[j]->SetTarget(_colliders[i]->GetOwner());
+
 						_colliders[i]->SetEnter(true);
 						_colliders[j]->SetEnter(true);
 					}
@@ -46,6 +49,9 @@ namespace Cot
 						static_cast<CircleCollider*>(_colliders[i])->GetCircle(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
+						_colliders[i]->SetTarget(_colliders[j]->GetOwner());
+						_colliders[j]->SetTarget(_colliders[i]->GetOwner());
+
 						_colliders[i]->SetEnter(true);
 						_colliders[j]->SetEnter(true);
 					}
@@ -64,6 +70,9 @@ namespace Cot
 						static_cast<BoxCollider*>(_colliders[i])->GetRect(),
 						static_cast<CircleCollider*>(_colliders[j])->GetCircle()))
 					{
+						_colliders[i]->SetTarget(_colliders[j]->GetOwner());
+						_colliders[j]->SetTarget(_colliders[i]->GetOwner());
+
 						_colliders[i]->SetEnter(true);
 						_colliders[j]->SetEnter(true);
 					}

@@ -1,7 +1,2 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 중간 디렉터리(D:\Git\TeamNut\CotEngine\\Build\Intermediates\x64_Debug\)에 다른 프로젝트(Demo.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  CotGL2DX.cpp
-d:\git\teamnut\cotengine\engine\src\cotgl2dx.cpp(37): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\git\teamnut\cotengine\engine\src\cotgl2dx.cpp(38): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\git\teamnut\cotengine\engine\src\cotgl2dx.cpp(39): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\git\teamnut\cotengine\engine\src\cotgl2dx.cpp(40): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Engine.vcxproj -> D:\Git\TeamNut\CotEngine\\Build\Products\x64_Debug\Engine.dll
