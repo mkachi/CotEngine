@@ -35,6 +35,6 @@ namespace Cot
 {
 	COT_API inline const char* GetVersion()
 	{
-		return "CotEngine v1.5.6";
+		return "CotEngine v1.5.7";
 	}
 }

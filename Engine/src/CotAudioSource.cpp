@@ -31,6 +31,7 @@ namespace Cot
 		_pitch = 1.0f;
 		_loop = false;
 		_2d = false;
+		_state = AudioState::Stopped;
 	}
 
 	void AudioSource::Update(Time& time)
@@ -48,27 +49,32 @@ namespace Cot
 
 	void AudioSource::Play()
 	{
+		_state = AudioState::Playing;
 		alSourceStop(_source);
 		alSourcePlay(_source);
 	}
 
 	void AudioSource::Pause()
 	{
+		_state = AudioState::Paused;
 		alSourcePause(_source);
 	}
 
 	void AudioSource::Resume()
 	{
+		_state = AudioState::Playing;
 		alSourcePlay(_source);
 	}
 
 	void AudioSource::Stop()
 	{
+		_state = AudioState::Stopped;
 		alSourceStop(_source);
 	}
 
 	void AudioSource::SetClip(const string& filename)
 	{
+		Stop();
 		SafeRelease(_clip);
 		_clip = AudioClip::Load(filename);
 		alGenSources(1, &_source);
@@ -109,25 +115,6 @@ namespace Cot
 	void AudioSource::Set2D(bool value)
 	{
 		_2d = value;
-	}
-
-	AudioState AudioSource::GetState()
-	{
-		int state;
-		alGetSourcei(_source, AL_SOURCE_STATE, &state);
-
-		if (state == AL_PLAYING)
-		{
-			return AudioState::Playing;
-		}
-		else if (state == AL_PAUSED)
-		{
-			return AudioState::Paused;
-		}
-		else if (state == AL_STOPPED)
-		{
-			return AudioState::Stopped;
-		}
 	}
 
 	void AudioSource::SetMaxDistance(float maxDistance)

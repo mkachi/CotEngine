@@ -17,6 +17,7 @@ namespace Cot
 		COT_COMPONENT(AudioSource);
 	private:
 		AudioClip*	_clip;
+		AudioState	_state;
 		ALuint		_source;
 		float		_volume;
 		float		_pitch;
@@ -61,7 +62,7 @@ namespace Cot
 		void Set2D(bool value);
 		bool Is2D() { return _2d; }
 
-		AudioState GetState();
+		AudioState GetState() { return _state; }
 
 	};
 }
