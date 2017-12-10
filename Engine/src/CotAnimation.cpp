@@ -79,7 +79,14 @@ namespace Cot
 	{
 		_play = true;
 		_pause = false;
-		_index = 0;
+		if (_reverse)
+		{
+			_index = _textures.size() + 1;
+		}
+		else
+		{
+			_index = -1;
+		}
 		_delayCount = 0.0f;
 	}
 
